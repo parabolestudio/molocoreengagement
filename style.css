@@ -16,3 +16,125 @@
   line-height: 1;
   font-family: "Spacegrotesk", "Space Grotesk", sans-serif;
 }
+
+#vis-2-dropdown-verticals {
+  .vis-filter-category-container {
+    position: relative;
+    display: flex;
+    width: fit-content;
+
+    .vis-filter-item {
+      z-index: 11;
+      padding: 12px 50px;
+      /* border: 1px solid #04033a; */
+      background-color: #f2f2f2;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+
+      @media (max-width: 590px) {
+        padding: 6px 12px;
+        gap: 8px;
+      }
+
+      &:first-child {
+        border-radius: 10px 0px 0px 10px;
+      }
+      &:nth-child(2) {
+        border-radius: 0px 10px 10px 0px;
+      }
+
+      p {
+        margin: 0;
+        color: #04033a;
+
+        @media (max-width: 590px) {
+          font-size: 14px;
+        }
+      }
+
+      &.selected {
+        background-color: #04033a;
+        p {
+          color: #ffffff;
+        }
+
+        .category-icon svg path {
+          fill: white;
+        }
+      }
+    }
+  }
+  .vis-filter-menu-container {
+    position: absolute;
+    top: 24px;
+    right: 0;
+    background-color: #ffffff;
+    z-index: 10;
+    border-left: 1px solid #040078;
+    border-right: 1px solid #040078;
+    border-bottom: 1px solid #040078;
+    border-radius: 0px 0px 10px 10px;
+    width: 100%;
+    padding: 40px 26px 26px 26px;
+
+    @media (max-width: 590px) {
+      padding: 30px 12px 12px 12px;
+    }
+
+    p {
+      margin: 0;
+      font-family: "Montserrat", sans-serif;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 1.25;
+      color: #000000;
+    }
+
+    .vertical-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 0px;
+      list-style: none;
+      padding: 0;
+
+      @media (max-width: 590px) {
+        gap: 8px;
+        margin-top: 8px;
+      }
+
+      .vertical-item {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        background-color: #f2f2f2;
+        color: #000000;
+        font-size: 16px;
+        line-height: 1.25;
+        border-radius: 20px;
+        cursor: pointer;
+        white-space: nowrap;
+        transition: all 0.3s ease-in-out;
+        @media (max-width: 590px) {
+          font-size: 14px;
+        }
+
+        span {
+          padding: 6px 12px;
+        }
+
+        &.active {
+          background-color: #04033a;
+          color: #ffffff;
+        }
+        &:hover {
+          background-color: #04033a;
+          color: #ffffff;
+        }
+      }
+    }
+  }
+}
