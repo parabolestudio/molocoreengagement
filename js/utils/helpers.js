@@ -1,5 +1,5 @@
 export const REPO_BASE_URL =
-  "https://raw.githubusercontent.com/parabole-studio/molocoreengagement/main/";
+  "https://raw.githubusercontent.com/parabolestudio/molocoreengagement/refs/heads/main/";
 
 export function populateCountrySelectors(countries, containerId) {
   const countryLabels = {
