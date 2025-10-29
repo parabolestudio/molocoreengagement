@@ -16,6 +16,13 @@
   line-height: 1;
   font-family: "Spacegrotesk", "Space Grotesk", sans-serif;
 }
+#vis-1,
+#vis-2,
+#vis-3 {
+  svg {
+    overflow: visible;
+  }
+}
 
 #vis-2-dropdown-verticals {
   .vis-filter-category-container {
