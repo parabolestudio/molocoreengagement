@@ -123,7 +123,90 @@ export function Vis2() {
     filteredData
   );
 
-  return html`<div>Vis2 here</div>`;
+  // dimensions
+  const visContainer = document.querySelector("#vis-2");
+  const width =
+    visContainer && visContainer.offsetWidth ? visContainer.offsetWidth : 600;
+  const height = 500;
+  const margin = {
+    top: 10,
+    right: 1,
+    bottom: 30,
+    left: 45,
+  };
+  const innerWidth = width - margin.left - margin.right;
+  const innerHeight = height - margin.top - margin.bottom;
+
+  // scales
+  const yScale = d3
+    .scaleLinear()
+    .domain([0, 100])
+    .range([innerHeight, 0])
+    .nice();
+
+  return html`<div>
+    <svg viewBox="0 0 ${width} ${height}">
+      <g transform="translate(${margin.left}, ${margin.top})">
+        <rect
+          width="${innerWidth}"
+          height="${innerHeight}"
+          fill="none"
+          stroke="none"
+        />
+        <line
+          x1="0"
+          y1="${yScale(0)}"
+          x2="${innerWidth}"
+          y2="${yScale(0)}"
+          stroke="#D9D9D9"
+          stroke-width="0.75"
+        />
+        <line
+          x1="0"
+          y1="${yScale(50)}"
+          x2="${innerWidth}"
+          y2="${yScale(50)}"
+          stroke="#D9D9D9"
+          stroke-width="0.75"
+        />
+        <line
+          x1="0"
+          y1="${yScale(100)}"
+          x2="${innerWidth}"
+          y2="${yScale(100)}"
+          stroke="#D9D9D9"
+          stroke-width="0.75"
+        />
+        <text
+          x="-6"
+          y="${yScale(0)}"
+          dominant-baseline="middle"
+          text-anchor="end"
+          class="charts-text-body"
+        >
+          0
+        </text>
+        <text
+          x="-6"
+          y="${yScale(50)}"
+          dominant-baseline="middle"
+          text-anchor="end"
+          class="charts-text-body"
+        >
+          50
+        </text>
+        <text
+          x="-6"
+          y="${yScale(100)}"
+          dominant-baseline="middle"
+          text-anchor="end"
+          class="charts-text-body"
+        >
+          100%
+        </text>
+      </g>
+    </svg>
+  </div>`;
 }
 
 export function renderVerticalSelector(gamingVerticals, consumerVerticals) {
