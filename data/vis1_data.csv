@@ -1,0 +1,250 @@
+country,install_type,vertical,subvertical,uninstall_rate
+Australia,Non-Organic,Gaming,Casino,65.78%
+Australia,Non-Organic,Gaming,Casual,43.94%
+Australia,Non-Organic,Non-Gaming,Dating,67.56%
+Australia,Non-Organic,Non-Gaming,Entertainment,58.55%
+Australia,Non-Organic,Non-Gaming,Finance,67.51%
+Australia,Non-Organic,Non-Gaming,Food & Drink,62.42%
+Australia,Non-Organic,Gaming,Hypercasual,53.98%
+Australia,Non-Organic,Non-Gaming,Lifestyle,72.66%
+Australia,Non-Organic,Gaming,Midcore,65.57%
+Australia,Non-Organic,Non-Gaming,Shopping,63.24%
+Australia,Non-Organic,Non-Gaming,Travel,41.66%
+Australia,Organic,Gaming,Casino,60.91%
+Australia,Organic,Gaming,Casual,34.02%
+Australia,Organic,Non-Gaming,Dating,64.67%
+Australia,Organic,Non-Gaming,Entertainment,34.68%
+Australia,Organic,Non-Gaming,Finance,32.43%
+Australia,Organic,Non-Gaming,Food & Drink,32.60%
+Australia,Organic,Gaming,Hypercasual,29.86%
+Australia,Organic,Non-Gaming,Lifestyle,53.80%
+Australia,Organic,Gaming,Midcore,58.41%
+Australia,Organic,Non-Gaming,News & Magazines,19.55%
+Australia,Organic,Non-Gaming,Shopping,32.23%
+Australia,Organic,Non-Gaming,Travel,25.58%
+Brazil,Non-Organic,Gaming,Casino,83.84%
+Brazil,Non-Organic,Gaming,Casual,61.86%
+Brazil,Non-Organic,Non-Gaming,Dating,79.98%
+Brazil,Non-Organic,Non-Gaming,Entertainment,73.12%
+Brazil,Non-Organic,Non-Gaming,Finance,71.13%
+Brazil,Non-Organic,Non-Gaming,Food & Drink,66.23%
+Brazil,Non-Organic,Gaming,Hypercasual,72.91%
+Brazil,Non-Organic,Non-Gaming,Lifestyle,60.95%
+Brazil,Non-Organic,Gaming,Midcore,79.43%
+Brazil,Non-Organic,Non-Gaming,Shopping,52.68%
+Brazil,Non-Organic,Non-Gaming,Travel,53.41%
+Brazil,Organic,Gaming,Casino,78.45%
+Brazil,Organic,Gaming,Casual,56.16%
+Brazil,Organic,Non-Gaming,Dating,61.68%
+Brazil,Organic,Non-Gaming,Entertainment,54.77%
+Brazil,Organic,Non-Gaming,Finance,47.65%
+Brazil,Organic,Non-Gaming,Food & Drink,45.36%
+Brazil,Organic,Gaming,Hypercasual,50.58%
+Brazil,Organic,Non-Gaming,Lifestyle,37.35%
+Brazil,Organic,Gaming,Midcore,78.03%
+Brazil,Organic,Non-Gaming,Shopping,44.28%
+Brazil,Organic,Non-Gaming,Travel,37.58%
+Canada,Non-Organic,Gaming,Casino,64.48%
+Canada,Non-Organic,Gaming,Casual,48.70%
+Canada,Non-Organic,Non-Gaming,Dating,56.41%
+Canada,Non-Organic,Non-Gaming,Entertainment,54.65%
+Canada,Non-Organic,Non-Gaming,Finance,68.15%
+Canada,Non-Organic,Non-Gaming,Food & Drink,63.74%
+Canada,Non-Organic,Gaming,Hypercasual,56.54%
+Canada,Non-Organic,Non-Gaming,Lifestyle,44.37%
+Canada,Non-Organic,Gaming,Midcore,69.57%
+Canada,Non-Organic,Non-Gaming,Shopping,59.61%
+Canada,Non-Organic,Non-Gaming,Travel,55.29%
+Canada,Organic,Gaming,Casino,55.47%
+Canada,Organic,Gaming,Casual,38.15%
+Canada,Organic,Non-Gaming,Dating,64.58%
+Canada,Organic,Non-Gaming,Entertainment,40.15%
+Canada,Organic,Non-Gaming,Finance,36.07%
+Canada,Organic,Non-Gaming,Food & Drink,44.94%
+Canada,Organic,Gaming,Hypercasual,32.02%
+Canada,Organic,Non-Gaming,Lifestyle,35.40%
+Canada,Organic,Gaming,Midcore,61.01%
+Canada,Organic,Non-Gaming,News & Magazines,17.65%
+Canada,Organic,Non-Gaming,Shopping,30.67%
+Canada,Organic,Non-Gaming,Travel,27.87%
+France,Non-Organic,Gaming,Casino,70.54%
+France,Non-Organic,Gaming,Casual,52.15%
+France,Non-Organic,Non-Gaming,Dating,62.18%
+France,Non-Organic,Non-Gaming,Entertainment,51.99%
+France,Non-Organic,Non-Gaming,Finance,68.76%
+France,Non-Organic,Non-Gaming,Food & Drink,59.72%
+France,Non-Organic,Gaming,Hypercasual,60.04%
+France,Non-Organic,Non-Gaming,Lifestyle,56.62%
+France,Non-Organic,Gaming,Midcore,72.67%
+France,Non-Organic,Non-Gaming,Shopping,50.74%
+France,Non-Organic,Non-Gaming,Travel,39.89%
+France,Organic,Gaming,Casino,61.59%
+France,Organic,Gaming,Casual,44.38%
+France,Organic,Non-Gaming,Dating,55.86%
+France,Organic,Non-Gaming,Entertainment,38.21%
+France,Organic,Non-Gaming,Finance,46.96%
+France,Organic,Non-Gaming,Food & Drink,29.21%
+France,Organic,Gaming,Hypercasual,35.61%
+France,Organic,Non-Gaming,Lifestyle,41.62%
+France,Organic,Gaming,Midcore,67.10%
+France,Organic,Non-Gaming,News & Magazines,20.02%
+France,Organic,Non-Gaming,Shopping,29.11%
+France,Organic,Non-Gaming,Travel,30.81%
+Germany,Non-Organic,Gaming,Casino,77.07%
+Germany,Non-Organic,Gaming,Casual,53.21%
+Germany,Non-Organic,Non-Gaming,Dating,62.02%
+Germany,Non-Organic,Non-Gaming,Entertainment,50.29%
+Germany,Non-Organic,Non-Gaming,Finance,69.37%
+Germany,Non-Organic,Non-Gaming,Food & Drink,52.91%
+Germany,Non-Organic,Gaming,Hypercasual,60.95%
+Germany,Non-Organic,Non-Gaming,Lifestyle,49.42%
+Germany,Non-Organic,Gaming,Midcore,69.55%
+Germany,Non-Organic,Non-Gaming,News & Magazines,54.06%
+Germany,Non-Organic,Non-Gaming,Shopping,51.49%
+Germany,Non-Organic,Non-Gaming,Travel,41.74%
+Germany,Organic,Gaming,Casino,61.23%
+Germany,Organic,Gaming,Casual,43.81%
+Germany,Organic,Non-Gaming,Dating,50.02%
+Germany,Organic,Non-Gaming,Entertainment,38.08%
+Germany,Organic,Non-Gaming,Finance,39.75%
+Germany,Organic,Non-Gaming,Food & Drink,32.56%
+Germany,Organic,Gaming,Hypercasual,33.36%
+Germany,Organic,Non-Gaming,Lifestyle,41.34%
+Germany,Organic,Gaming,Midcore,58.59%
+Germany,Organic,Non-Gaming,News & Magazines,22.82%
+Germany,Organic,Non-Gaming,Shopping,28.05%
+Germany,Organic,Non-Gaming,Travel,30.53%
+India,Non-Organic,Gaming,Casino,82.18%
+India,Non-Organic,Gaming,Casual,63.84%
+India,Non-Organic,Non-Gaming,Dating,85.27%
+India,Non-Organic,Non-Gaming,Entertainment,64.47%
+India,Non-Organic,Non-Gaming,Finance,66.19%
+India,Non-Organic,Non-Gaming,Food & Drink,66.18%
+India,Non-Organic,Gaming,Hypercasual,75.67%
+India,Non-Organic,Non-Gaming,Lifestyle,73.63%
+India,Non-Organic,Gaming,Midcore,82.82%
+India,Non-Organic,Non-Gaming,Shopping,64.83%
+India,Non-Organic,Non-Gaming,Travel,62.07%
+India,Organic,Gaming,Casino,75.12%
+India,Organic,Gaming,Casual,52.78%
+India,Organic,Non-Gaming,Dating,71.66%
+India,Organic,Non-Gaming,Entertainment,49.44%
+India,Organic,Non-Gaming,Finance,43.12%
+India,Organic,Non-Gaming,Food & Drink,47.18%
+India,Organic,Gaming,Hypercasual,51.23%
+India,Organic,Non-Gaming,Lifestyle,48.51%
+India,Organic,Gaming,Midcore,81.87%
+India,Organic,Non-Gaming,News & Magazines,31.98%
+India,Organic,Non-Gaming,Shopping,43.54%
+India,Organic,Non-Gaming,Travel,43.42%
+Indonesia,Non-Organic,Gaming,Casino,85.96%
+Indonesia,Non-Organic,Gaming,Casual,63.11%
+Indonesia,Non-Organic,Non-Gaming,Dating,83.74%
+Indonesia,Non-Organic,Non-Gaming,Entertainment,70.18%
+Indonesia,Non-Organic,Non-Gaming,Finance,65.17%
+Indonesia,Non-Organic,Non-Gaming,Food & Drink,63.35%
+Indonesia,Non-Organic,Gaming,Hypercasual,67.28%
+Indonesia,Non-Organic,Gaming,Midcore,80.79%
+Indonesia,Non-Organic,Non-Gaming,Shopping,70.56%
+Indonesia,Non-Organic,Non-Gaming,Travel,62.63%
+Indonesia,Organic,Gaming,Casino,84.86%
+Indonesia,Organic,Gaming,Casual,57.05%
+Indonesia,Organic,Non-Gaming,Dating,62.81%
+Indonesia,Organic,Non-Gaming,Entertainment,51.08%
+Indonesia,Organic,Non-Gaming,Finance,37.65%
+Indonesia,Organic,Non-Gaming,Food & Drink,37.85%
+Indonesia,Organic,Gaming,Hypercasual,50.64%
+Indonesia,Organic,Non-Gaming,Lifestyle,63.23%
+Indonesia,Organic,Gaming,Midcore,77.78%
+Indonesia,Organic,Non-Gaming,Shopping,54.25%
+Indonesia,Organic,Non-Gaming,Travel,37.21%
+Japan,Non-Organic,Gaming,Casino,85.51%
+Japan,Non-Organic,Gaming,Casual,64.10%
+Japan,Non-Organic,Non-Gaming,Dating,68.20%
+Japan,Non-Organic,Non-Gaming,Entertainment,66.16%
+Japan,Non-Organic,Non-Gaming,Finance,69.78%
+Japan,Non-Organic,Non-Gaming,Food & Drink,57.63%
+Japan,Non-Organic,Gaming,Hypercasual,74.76%
+Japan,Non-Organic,Non-Gaming,Lifestyle,53.31%
+Japan,Non-Organic,Gaming,Midcore,76.35%
+Japan,Non-Organic,Non-Gaming,Shopping,65.41%
+Japan,Non-Organic,Non-Gaming,Travel,57.01%
+Japan,Organic,Gaming,Casino,70.83%
+Japan,Organic,Gaming,Casual,53.54%
+Japan,Organic,Non-Gaming,Dating,57.95%
+Japan,Organic,Non-Gaming,Entertainment,43.64%
+Japan,Organic,Non-Gaming,Finance,40.59%
+Japan,Organic,Non-Gaming,Food & Drink,42.19%
+Japan,Organic,Gaming,Hypercasual,54.70%
+Japan,Organic,Non-Gaming,Lifestyle,39.75%
+Japan,Organic,Gaming,Midcore,68.64%
+Japan,Organic,Non-Gaming,Shopping,44.35%
+Japan,Organic,Non-Gaming,Travel,27.01%
+South Korea,Non-Organic,Gaming,Casino,54.93%
+South Korea,Non-Organic,Gaming,Casual,64.65%
+South Korea,Non-Organic,Non-Gaming,Dating,82.27%
+South Korea,Non-Organic,Non-Gaming,Entertainment,65.59%
+South Korea,Non-Organic,Non-Gaming,Finance,69.90%
+South Korea,Non-Organic,Non-Gaming,Food & Drink,37.20%
+South Korea,Non-Organic,Gaming,Hypercasual,61.96%
+South Korea,Non-Organic,Gaming,Midcore,73.51%
+South Korea,Non-Organic,Non-Gaming,Shopping,57.62%
+South Korea,Non-Organic,Non-Gaming,Travel,49.84%
+South Korea,Organic,Gaming,Casino,60.05%
+South Korea,Organic,Gaming,Casual,51.38%
+South Korea,Organic,Non-Gaming,Dating,67.43%
+South Korea,Organic,Non-Gaming,Entertainment,40.48%
+South Korea,Organic,Non-Gaming,Finance,46.12%
+South Korea,Organic,Non-Gaming,Food & Drink,35.51%
+South Korea,Organic,Gaming,Hypercasual,45.48%
+South Korea,Organic,Non-Gaming,Lifestyle,52.17%
+South Korea,Organic,Gaming,Midcore,65.55%
+South Korea,Organic,Non-Gaming,Shopping,45.31%
+South Korea,Organic,Non-Gaming,Travel,30.24%
+United Kingdom,Non-Organic,Gaming,Casino,61.64%
+United Kingdom,Non-Organic,Gaming,Casual,48.57%
+United Kingdom,Non-Organic,Non-Gaming,Dating,62.38%
+United Kingdom,Non-Organic,Non-Gaming,Entertainment,51.69%
+United Kingdom,Non-Organic,Non-Gaming,Finance,66.58%
+United Kingdom,Non-Organic,Non-Gaming,Food & Drink,56.62%
+United Kingdom,Non-Organic,Gaming,Hypercasual,56.21%
+United Kingdom,Non-Organic,Non-Gaming,Lifestyle,60.34%
+United Kingdom,Non-Organic,Gaming,Midcore,68.63%
+United Kingdom,Non-Organic,Non-Gaming,News & Magazines,53.94%
+United Kingdom,Non-Organic,Non-Gaming,Shopping,51.06%
+United Kingdom,Non-Organic,Non-Gaming,Travel,47.26%
+United Kingdom,Organic,Gaming,Casino,61.02%
+United Kingdom,Organic,Gaming,Casual,38.50%
+United Kingdom,Organic,Non-Gaming,Dating,51.67%
+United Kingdom,Organic,Non-Gaming,Entertainment,39.61%
+United Kingdom,Organic,Non-Gaming,Finance,35.94%
+United Kingdom,Organic,Non-Gaming,Food & Drink,28.07%
+United Kingdom,Organic,Gaming,Hypercasual,30.13%
+United Kingdom,Organic,Non-Gaming,Lifestyle,38.19%
+United Kingdom,Organic,Gaming,Midcore,62.42%
+United Kingdom,Organic,Non-Gaming,News & Magazines,16.09%
+United Kingdom,Organic,Non-Gaming,Shopping,26.24%
+United Kingdom,Organic,Non-Gaming,Travel,25.91%
+United States,Non-Organic,Gaming,Casino,55.97%
+United States,Non-Organic,Gaming,Casual,48.07%
+United States,Non-Organic,Non-Gaming,Dating,57.77%
+United States,Non-Organic,Non-Gaming,Entertainment,50.18%
+United States,Non-Organic,Non-Gaming,Finance,53.50%
+United States,Non-Organic,Non-Gaming,Food & Drink,47.21%
+United States,Non-Organic,Gaming,Hypercasual,57.44%
+United States,Non-Organic,Non-Gaming,Lifestyle,40.09%
+United States,Non-Organic,Gaming,Midcore,69.58%
+United States,Non-Organic,Non-Gaming,Shopping,39.82%
+United States,Non-Organic,Non-Gaming,Travel,41.93%
+United States,Organic,Gaming,Casino,48.87%
+United States,Organic,Gaming,Casual,40.09%
+United States,Organic,Non-Gaming,Dating,45.48%
+United States,Organic,Non-Gaming,Entertainment,44.99%
+United States,Organic,Non-Gaming,Finance,45.83%
+United States,Organic,Non-Gaming,Food & Drink,44.68%
+United States,Organic,Gaming,Hypercasual,33.55%
+United States,Organic,Non-Gaming,Lifestyle,29.34%
+United States,Organic,Gaming,Midcore,67.23%
+United States,Organic,Non-Gaming,News & Magazines,22.23%
+United States,Organic,Non-Gaming,Shopping,47.59%
+United States,Organic,Non-Gaming,Travel,46.20%

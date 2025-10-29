@@ -1,0 +1,26 @@
+app_number,app_and_country,app_type_and_country,country,cpa_improvement,roas_ratio
+App 1,App 1 (India),Financial Trading & Investing (India),IND,4.744966713,573.14%
+App 2,App 2 (Germany),Financial Trading & Investing (Germany),DEU,3.611006152,
+App 3,App 3 (USA),Entertainment (USA),USA,2.222392421,
+App 4,App 4 (India),Gaming (India),IND,2.210096701,292.26%
+App 5,App 22 (Argentina),Financial Trading & Investing (Argentina),ARG,2.076544593,56.34%
+App 6,App 23 (Mexico),Gaming (Mexico),MEX,1.999923991,322.90%
+App 7,App 5 (India),On-Demand Delivery #1 (India),IND,1.940128544,196.66%
+App 8,App 6 (USA),Books & Reference (USA),USA,1.696385407,262.14%
+App 9,App 7 (USA),On-Demand Delivery (USA),USA,1.387982933,291.45%
+App 10,App 8 (India),On-Demand Delivery #2 (India),IND,1.270451877,378.75%
+App 11,App 9 (USA),Social Media (USA),USA,0.9600415482,
+App 12,App 10 (UK),Financial Trading & Investing (USA),GBR,0.8912589477,
+App 13,App 24 (Turkey,Gaming (Turkey),TUR,0.6451254491,148.53%
+App 14,App 11 (USA),Gaming (USA),USA,0.3482301701,308.66%
+App 15,App 12 (India),Financial Trading & Investing (India),IND,0.2408295677,70.81%
+App 16,App 13 (India),Entertainment (India),IND,0.1638248019,25.17%
+App 17,App 14 (USA),Financial Mobile Banking (USA),USA,-0.09474288294,-20.33%
+App 18,App 15 (USA),Gaming (USA),USA,-0.294112717,135.72%
+App 19,App 16 (India),Financial Trading & Investing (India),IND,-0.4856004471,161.67%
+App 20,App 17 (USA),Sportsbetting (USA),USA,-0.5279491573,
+App 21,App 18 (India),Other Consumer (IND),IND,-0.6414194824,167.43%
+App 22,App 19 (USA),Financial Health & Banking (USA),USA,-0.687212559,
+App 23,App 20 (USA),Gaming (USA),USA,-1.468450014,-53.99%
+App 24,App 25 (Vietnam),On-Demand (Vietnam),VNM,-2.04019004,298.72%
+App 25,App 21 (India),Financial Trading & Investing (India),IND,-3.778208576,32.62%

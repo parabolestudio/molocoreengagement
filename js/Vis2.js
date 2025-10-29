@@ -115,14 +115,13 @@ export function Vis2() {
       d.vertical === vertical
   );
 
-  console.log(
-    "Render in Vis2:",
+  console.log("Render in Vis2:", {
     country,
     category,
     vertical,
     data,
-    filteredData
-  );
+    filteredData,
+  });
 
   // dimensions
   const visContainer = document.querySelector("#vis-2");
