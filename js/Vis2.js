@@ -35,6 +35,7 @@ export function Vis2() {
             ? "consumer"
             : null;
         d["vertical"] = d["subvertical"].toLowerCase();
+        d["installType"] = d["is_payer"].toLowerCase();
       });
       fetchedData = fetchedData.filter((d) => d["vertical"] !== "unclassified");
 
@@ -127,7 +128,7 @@ export function Vis2() {
   const visContainer = document.querySelector("#vis-2");
   const width =
     visContainer && visContainer.offsetWidth ? visContainer.offsetWidth : 600;
-  const height = 500;
+  const height = 600;
   const margin = {
     top: 10,
     right: 1,
@@ -138,11 +139,28 @@ export function Vis2() {
   const innerHeight = height - margin.top - margin.bottom;
 
   // scales
-  const yScale = d3
+  const yScale = d3.scaleLinear().domain([0, 100]).range([innerHeight, 0]);
+  const xScale = d3
     .scaleLinear()
-    .domain([0, 100])
-    .range([innerHeight, 0])
-    .nice();
+    .domain([0, d3.max(filteredData, (d) => d.inactivityDays) || 30])
+    .range([0, innerWidth]);
+
+  const lineGen = d3
+    .line()
+    .x((d) => xScale(d.inactivityDays))
+    .y((d) => yScale(d.returnPerc))
+    .curve(d3.curveCatmullRom);
+
+  const datapointsPayer = filteredData
+    .filter((d) => d.installType === "payer")
+    .sort((a, b) => a.inactivityDays - b.inactivityDays);
+  const datapointsNonPayer = filteredData
+    .filter((d) => d.installType === "non-payer")
+    .sort((a, b) => a.inactivityDays - b.inactivityDays);
+
+  // prepend a starting point at day 0, 100% return rate
+  datapointsPayer.unshift({ inactivityDays: 0, returnPerc: 100 });
+  datapointsNonPayer.unshift({ inactivityDays: 0, returnPerc: 100 });
 
   return html`<div>
     <svg viewBox="0 0 ${width} ${height}">
@@ -153,57 +171,101 @@ export function Vis2() {
           fill="none"
           stroke="none"
         />
-        <line
-          x1="0"
-          y1="${yScale(0)}"
-          x2="${innerWidth}"
-          y2="${yScale(0)}"
-          stroke="#D9D9D9"
-          stroke-width="0.75"
-        />
-        <line
-          x1="0"
-          y1="${yScale(50)}"
-          x2="${innerWidth}"
-          y2="${yScale(50)}"
-          stroke="#D9D9D9"
-          stroke-width="0.75"
-        />
-        <line
-          x1="0"
-          y1="${yScale(100)}"
-          x2="${innerWidth}"
-          y2="${yScale(100)}"
-          stroke="#D9D9D9"
-          stroke-width="0.75"
-        />
-        <text
-          x="-6"
-          y="${yScale(0)}"
-          dominant-baseline="middle"
-          text-anchor="end"
-          class="charts-text-body"
-        >
-          0
-        </text>
-        <text
-          x="-6"
-          y="${yScale(50)}"
-          dominant-baseline="middle"
-          text-anchor="end"
-          class="charts-text-body"
-        >
-          50
-        </text>
-        <text
-          x="-6"
-          y="${yScale(100)}"
-          dominant-baseline="middle"
-          text-anchor="end"
-          class="charts-text-body"
-        >
-          100%
-        </text>
+        <g>
+          <line
+            x1="0"
+            y1="${yScale(0)}"
+            x2="${innerWidth}"
+            y2="${yScale(0)}"
+            stroke="#D9D9D9"
+            stroke-width="0.75"
+          />
+          <line
+            x1="0"
+            y1="${yScale(50)}"
+            x2="${innerWidth}"
+            y2="${yScale(50)}"
+            stroke="#D9D9D9"
+            stroke-width="0.75"
+          />
+          <line
+            x1="0"
+            y1="${yScale(100)}"
+            x2="${innerWidth}"
+            y2="${yScale(100)}"
+            stroke="#D9D9D9"
+            stroke-width="0.75"
+          />
+          <text
+            x="-6"
+            y="${yScale(0)}"
+            dominant-baseline="middle"
+            text-anchor="end"
+            class="charts-text-body"
+          >
+            0
+          </text>
+          <text
+            x="-6"
+            y="${yScale(50)}"
+            dominant-baseline="middle"
+            text-anchor="end"
+            class="charts-text-body"
+          >
+            50
+          </text>
+          <text
+            x="-6"
+            y="${yScale(100)}"
+            dominant-baseline="middle"
+            text-anchor="end"
+            class="charts-text-body"
+          >
+            100%
+          </text>
+          <g transform="translate(0, ${yScale(0) + 20})">
+            <text
+              x="${xScale(0)}"
+              dominant-baseline="middle"
+              text-anchor="start"
+              class="charts-text-body"
+            >
+              Day 1 of inactivity
+            </text>
+            <text
+              x="${xScale(15)}"
+              dominant-baseline="middle"
+              text-anchor="middle"
+              class="charts-text-body"
+            >
+              Day 15
+            </text>
+            <text
+              x="${xScale(30)}"
+              dominant-baseline="middle"
+              text-anchor="end"
+              class="charts-text-body"
+            >
+              Day 30
+            </text>
+          </g>
+        </g>
+        <g>
+          <path
+            d="${lineGen(datapointsPayer)}"
+            stroke="#0280FB"
+            stroke-width="3"
+            fill="none"
+            style="transition: all ease 0.3s"
+          />
+          <path
+            d="${lineGen(datapointsNonPayer)}"
+            stroke="#C368F9"
+            stroke-width="3"
+            fill="none"
+            style="transition: all ease 0.3s"
+          />
+        </g>
       </g>
     </svg>
   </div>`;
