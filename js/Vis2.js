@@ -10,11 +10,14 @@ import {
   verticalsMap,
 } from "./utils/helpers.js";
 
+const defaultCategory = "consumer";
+const defaultVertical = "education";
+
 export function Vis2() {
   const [data, setData] = useState(null);
   const [country, setCountry] = useState("USA");
-  const [category, setCategory] = useState("consumer");
-  const [vertical, setVertical] = useState("all");
+  const [category, setCategory] = useState(defaultCategory);
+  const [vertical, setVertical] = useState(defaultVertical);
 
   useEffect(() => {
     // Fetch data when the component mounts
@@ -33,6 +36,7 @@ export function Vis2() {
             : null;
         d["vertical"] = d["subvertical"].toLowerCase();
       });
+      fetchedData = fetchedData.filter((d) => d["vertical"] !== "unclassified");
 
       setData(fetchedData);
 
@@ -56,16 +60,12 @@ export function Vis2() {
             .map((d) => d.vertical)
         )
       );
-      console.log("Gaming verticals:", gamingVerticals);
-      console.log("Consumer verticals:", consumerVerticals);
       renderVerticalSelector(gamingVerticals, consumerVerticals);
     });
   }, []);
 
-  console.log("Vis2 data:", data);
-
   if (!data) {
-    return html`<div>Loading...</div>`;
+    return html`<div>Loading data...</div>`;
   }
 
   // listen to country change events
@@ -107,7 +107,21 @@ export function Vis2() {
     };
   }, []);
 
-  console.log("Render in Vis2:", country, category, vertical, data);
+  const filteredData = data.filter(
+    (d) =>
+      d.country === country &&
+      d.category === category &&
+      d.vertical === vertical
+  );
+
+  console.log(
+    "Render in Vis2:",
+    country,
+    category,
+    vertical,
+    data,
+    filteredData
+  );
 
   return html`<div>Vis2 here</div>`;
 }
@@ -136,8 +150,8 @@ function Vis2DropdownVerticals({
   gamingVerticals = [],
   consumerVerticals = [],
 }) {
-  const [category, setCategory] = useState("consumer");
-  const [vertical, setVertical] = useState("all");
+  const [category, setCategory] = useState(defaultCategory);
+  const [vertical, setVertical] = useState(defaultVertical);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   function handleCategoryChange(newCategory) {
@@ -145,13 +159,12 @@ function Vis2DropdownVerticals({
       console.log("Changing category to:", newCategory);
       setCategory(newCategory);
 
-      console.log("Resetting vertical to 'all'");
-      setVertical("all");
+      const newVertical = newCategory === "gaming" ? "midcore" : "education";
+      console.log("Resetting vertical to ", newVertical);
+      setVertical(newVertical);
 
-      // Open the menu
       setIsMenuOpen(true);
 
-      // Dispatch custom event to notify other components
       document.dispatchEvent(
         new CustomEvent(`vis-2-category-changed`, {
           detail: { selectedCategory: newCategory },
@@ -159,7 +172,7 @@ function Vis2DropdownVerticals({
       );
       document.dispatchEvent(
         new CustomEvent(`vis-2-vertical-changed`, {
-          detail: { selectedVertical: "all" },
+          detail: { selectedVertical: newVertical },
         })
       );
     } else {
@@ -174,8 +187,6 @@ function Vis2DropdownVerticals({
   //     }
   //     return verticals.filter((v) => includedVerticals.includes(v.value));
   //   }
-
-  console.log(gamingVerticals, consumerVerticals);
 
   const getVerticalItems = () => {
     // const verticalSet =
@@ -198,7 +209,6 @@ function Vis2DropdownVerticals({
         };
       })
       .sort((a, b) => {
-        // keep "all" at the top
         if (a.value === "all") return -1;
         if (b.value === "all") return 1;
         return a.label.localeCompare(b.label);
@@ -243,16 +253,11 @@ function Vis2DropdownVerticals({
           transform="rotate(${isMenuOpen && category === "consumer" ? 180 : 0})"
           style="transition: transform 0.3s ease;"
         >
-          <circle
-            cx="11.9265"
-            cy="11"
-            r="11"
-            fill="${category === "consumer" ? "white" : "#04033a"}"
-          />
+          <circle cx="11.9265" cy="11" r="11" fill="white" />
           <path
             d="M7.23413 8.90234C7.34553 8.89042 7.45696 8.92688 7.54468 9.01758H7.54565L11.9421 13.04L16.3074 9.01758C16.3952 8.92652 16.5073 8.8904 16.6189 8.90234C16.73 8.91429 16.8347 8.97257 16.9148 9.05859C17.0046 9.15511 17.0345 9.28424 17.0242 9.40039C17.0141 9.51344 16.9637 9.62686 16.8748 9.70117L16.8757 9.70215L12.2107 14.002L12.2097 14.001C12.1763 14.0338 12.1287 14.0573 12.0896 14.0713C12.0452 14.0872 11.9915 14.0996 11.9431 14.0996C11.8947 14.0996 11.8415 14.088 11.7957 14.0732C11.7485 14.058 11.7016 14.0374 11.6628 14.0166L11.6511 14.0107L11.6423 14.002L6.97729 9.70215L6.97144 9.69727C6.8145 9.52852 6.75833 9.25203 6.93823 9.05859C7.01833 8.97257 7.12306 8.91429 7.23413 8.90234Z"
-            stroke="${category === "consumer" ? "#04033a" : "white"}"
-            fill="${category === "consumer" ? "#04033a" : "white"}"
+            stroke="#04033a"
+            fill="#04033a"
             stroke-width="0.2"
           />
         </svg>
@@ -271,16 +276,11 @@ function Vis2DropdownVerticals({
           transform="rotate(${isMenuOpen && category === "gaming" ? 180 : 0})"
           style="transition: transform 0.3s ease;"
         >
-          <circle
-            cx="11.9265"
-            cy="11"
-            r="11"
-            fill="${category === "gaming" ? "white" : "#04033a"}"
-          />
+          <circle cx="11.9265" cy="11" r="11" fill="white" />
           <path
             d="M7.23413 8.90234C7.34553 8.89042 7.45696 8.92688 7.54468 9.01758H7.54565L11.9421 13.04L16.3074 9.01758C16.3952 8.92652 16.5073 8.8904 16.6189 8.90234C16.73 8.91429 16.8347 8.97257 16.9148 9.05859C17.0046 9.15511 17.0345 9.28424 17.0242 9.40039C17.0141 9.51344 16.9637 9.62686 16.8748 9.70117L16.8757 9.70215L12.2107 14.002L12.2097 14.001C12.1763 14.0338 12.1287 14.0573 12.0896 14.0713C12.0452 14.0872 11.9915 14.0996 11.9431 14.0996C11.8947 14.0996 11.8415 14.088 11.7957 14.0732C11.7485 14.058 11.7016 14.0374 11.6628 14.0166L11.6511 14.0107L11.6423 14.002L6.97729 9.70215L6.97144 9.69727C6.8145 9.52852 6.75833 9.25203 6.93823 9.05859C7.01833 8.97257 7.12306 8.91429 7.23413 8.90234Z"
-            stroke="${category === "gaming" ? "#04033a" : "white"}"
-            fill="${category === "gaming" ? "#04033a" : "white"}"
+            stroke="#04033a"
+            fill="#04033a"
             stroke-width="0.2"
           />
         </svg>

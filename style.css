@@ -25,7 +25,7 @@
 
     .vis-filter-item {
       z-index: 11;
-      padding: 12px 50px;
+      padding: 10px 16px;
       /* border: 1px solid #04033a; */
       background-color: #f2f2f2;
       cursor: pointer;
@@ -59,10 +59,6 @@
         background-color: #04033a;
         p {
           color: #ffffff;
-        }
-
-        .category-icon svg path {
-          fill: white;
         }
       }
     }
