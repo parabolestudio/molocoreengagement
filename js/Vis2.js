@@ -19,8 +19,8 @@ export function Vis2() {
   useEffect(() => {
     // Fetch data when the component mounts
     d3.csv(
-      // `${REPO_BASE_URL}/data/vis2_data.csv`
-      `./data/vis2_data.csv`
+      `${REPO_BASE_URL}/data/vis2_data.csv`
+      //   `./data/vis2_data.csv`
     ).then((fetchedData) => {
       fetchedData.forEach((d) => {
         d["inactivityDays"] = +d["inactivity_days"];
