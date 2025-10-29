@@ -18,6 +18,7 @@ export function Vis2() {
   const [country, setCountry] = useState("USA");
   const [category, setCategory] = useState(defaultCategory);
   const [vertical, setVertical] = useState(defaultVertical);
+  const [hoveredItem, setHoveredItem] = useState(null);
 
   useEffect(() => {
     // Fetch data when the component mounts
@@ -121,6 +122,7 @@ export function Vis2() {
     vertical,
     data,
     filteredData,
+    hoveredItem,
   });
 
   // dimensions
@@ -161,8 +163,58 @@ export function Vis2() {
   datapointsPayer.unshift({ inactivityDays: 0, returnPerc: 100 });
   datapointsNonPayer.unshift({ inactivityDays: 0, returnPerc: 100 });
 
-  return html`<div>
-    <svg viewBox="0 0 ${width} ${height}">
+  const highlightPayer = hoveredItem
+    ? datapointsPayer.find((d) => d.inactivityDays === hoveredItem.hoveredDay)
+    : null;
+  const highlightNonPayer = hoveredItem
+    ? datapointsNonPayer.find(
+        (d) => d.inactivityDays === hoveredItem.hoveredDay
+      )
+    : null;
+
+  return html`<div style="position: relative">
+    <svg
+      viewBox="0 0 ${width} ${height}"
+      onmousemove="${(event) => {
+        const pointer = d3.pointer(event);
+
+        const leftSide = margin.left;
+        const rightSide = leftSide + innerWidth;
+
+        if (pointer[0] >= leftSide && pointer[0] <= rightSide) {
+          const innerX = pointer[0] - margin.left;
+
+          const hoveredDay = Math.round(xScale.invert(innerX));
+
+          // get value for hoveredItem
+          const datapointPayer =
+            datapointsPayer.find((d) => d.inactivityDays === hoveredDay) || {};
+          const datapointNonPayer =
+            datapointsNonPayer.find((d) => d.inactivityDays === hoveredDay) ||
+            {};
+
+          setHoveredItem({
+            x: innerX,
+            y:
+              margin.top +
+              yScale(
+                Math.max(
+                  datapointPayer.returnPerc || 0,
+                  datapointNonPayer.returnPerc || 0
+                )
+              ) -
+              170 -
+              15,
+            hoveredDay,
+            variablePayer: datapointPayer.returnPerc || null,
+            variableNonPayer: datapointNonPayer.returnPerc || null,
+          });
+        } else {
+          setHoveredItem(null);
+        }
+      }}"
+      onmouseleave="${() => setHoveredItem(null)}"
+    >
       <g transform="translate(${margin.left}, ${margin.top})">
         <rect
           width="${innerWidth}"
@@ -265,8 +317,60 @@ export function Vis2() {
             style="transition: all ease 0.3s"
           />
         </g>
+        <g>
+          ${hoveredItem && highlightPayer
+            ? html`<circle
+                cx="${xScale(hoveredItem.hoveredDay)}"
+                cy="${yScale(highlightPayer ? highlightPayer.returnPerc : 0)}"
+                r="5"
+                fill="#0280FB"
+                style="transition: all ease 0.3s"
+              />`
+            : ""}
+          ${hoveredItem && highlightNonPayer
+            ? html`<circle
+                cx="${xScale(hoveredItem.hoveredDay)}"
+                cy="${yScale(
+                  highlightNonPayer ? highlightNonPayer.returnPerc : 0
+                )}"
+                r="5"
+                fill="#C368F9"
+                style="transition: all ease 0.3s"
+              />`
+            : ""}
+        </g>
       </g>
     </svg>
+    <${Tooltip} hoveredItem=${hoveredItem} />
+  </div>`;
+}
+
+function Tooltip({ hoveredItem }) {
+  if (!hoveredItem) return null;
+
+  return html`<div
+    class="tooltip"
+    style="left: ${hoveredItem.x}px; top: ${hoveredItem.y}px;"
+  >
+    <p class="tooltip-title">Day ${hoveredItem.hoveredDay}</p>
+    <div>
+      <p class="tooltip-label">Paid</p>
+      <p class="tooltip-value">
+        ${hoveredItem.variablePayer
+          ? hoveredItem.variablePayer.toFixed(0) + "%"
+          : null}
+      </p>
+    </div>
+
+    <div style="border-top: 1px solid #D9D9D9; width: 100%;" />
+    <div>
+      <p class="tooltip-label">Organic</p>
+      <p class="tooltip-value">
+        ${hoveredItem.variableNonPayer
+          ? hoveredItem.variableNonPayer.toFixed(0) + "%"
+          : null}
+      </p>
+    </div>
   </div>`;
 }
 
