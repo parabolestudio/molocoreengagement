@@ -8,9 +8,9 @@ import { REPO_BASE_URL, populateCountrySelectors } from "./utils/helpers.js";
 
 export function Vis1() {
   const [data, setData] = useState(null);
-  const [country, setCountry] = useState("United States");
+  const [country, setCountry] = useState("USA");
   const [category, setCategory] = useState("consumer");
-  const [installType, setInstallType] = useState("payer");
+  const [installType, setInstallType] = useState("non-organic");
 
   useEffect(() => {
     // Fetch data when the component mounts
@@ -26,6 +26,7 @@ export function Vis1() {
             : d["vertical"].toLowerCase() === "non-gaming"
             ? "consumer"
             : null;
+        d["vertical"] = d["subvertical"].toLowerCase();
         d["installType"] = d["install_type"].toLowerCase();
       });
 
@@ -41,7 +42,7 @@ export function Vis1() {
       renderSwitcher(
         [
           { label: "Consumer", value: "consumer" },
-          { label: "Gaming", value: "non-consumer" },
+          { label: "Gaming", value: "gaming" },
         ],
         "vis-1-dropdown-categories"
       );
@@ -54,6 +55,51 @@ export function Vis1() {
         "vis-1-dropdown-install-types"
       );
     });
+  }, []);
+
+  // listen to country change events
+  useEffect(() => {
+    const handleCountryChange = (e) => setCountry(e.detail.selected);
+    document.addEventListener(
+      `#vis-1-dropdown-countries-changed`,
+      handleCountryChange
+    );
+    return () => {
+      document.removeEventListener(
+        `#vis-1-dropdown-countries-changed`,
+        handleCountryChange
+      );
+    };
+  }, []);
+
+  // listen to category change events
+  useEffect(() => {
+    const handleCategoryChange = (e) => setCategory(e.detail.activeItem);
+    document.addEventListener(
+      `vis-1-dropdown-categories-switched`,
+      handleCategoryChange
+    );
+    return () => {
+      document.removeEventListener(
+        `vis-1-dropdown-categories-switched`,
+        handleCategoryChange
+      );
+    };
+  }, []);
+
+  // listen to install type change events
+  useEffect(() => {
+    const handleInstallTypeChange = (e) => setInstallType(e.detail.activeItem);
+    document.addEventListener(
+      "vis-1-dropdown-install-types-switched",
+      handleInstallTypeChange
+    );
+    return () => {
+      document.removeEventListener(
+        "vis-1-dropdown-install-types-switched",
+        handleInstallTypeChange
+      );
+    };
   }, []);
 
   if (!data) {
@@ -82,14 +128,17 @@ function renderSwitcher(items, containerId) {
   if (containerElement) {
     containerElement.innerHTML = "";
     (async () => {
-      renderComponent(html`<${Switcher} items=${items} />`, containerElement);
+      renderComponent(
+        html`<${Switcher} items=${items} containerId=${containerId} />`,
+        containerElement
+      );
     })();
   } else {
     console.error(`Could not find container element for ${containerId}`);
   }
 }
 
-function Switcher({ items }) {
+function Switcher({ items, containerId }) {
   if (!items || items.length === 0) {
     items = [
       { label: "Consumer", value: "consumer" },
@@ -102,10 +151,15 @@ function Switcher({ items }) {
   return html`<div class="vis-switcher-container">
     ${items.map(
       (item) => html`<div
-        class="vis-switcher-item ${item.value === activeItem
-          ? "vis-switcher-item-active"
-          : ""}"
-        onclick=${() => setActiveItem(item.value)}
+        class="vis-switcher-item ${item.value === activeItem ? "active" : ""}"
+        onclick=${() => {
+          setActiveItem(item.value);
+          document.dispatchEvent(
+            new CustomEvent(`${containerId}-switched`, {
+              detail: { activeItem: item.value },
+            })
+          );
+        }}
       >
         ${item.label}
       </div>`

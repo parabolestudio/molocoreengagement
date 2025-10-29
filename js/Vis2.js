@@ -270,7 +270,7 @@ export function Vis2() {
   </div>`;
 }
 
-export function renderVerticalSelector(gamingVerticals, consumerVerticals) {
+function renderVerticalSelector(gamingVerticals, consumerVerticals) {
   const containerElement = document.getElementById("vis-2-dropdown-verticals");
   if (containerElement) {
     containerElement.innerHTML = "";
