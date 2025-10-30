@@ -1,5 +1,5 @@
 import { html, useState, useEffect } from "./utils/preact-htm.js";
-import { REPO_BASE_URL, countryLabels } from "./utils/helpers.js";
+import { REPO_BASE_URL, countryLabels, isMobile } from "./utils/helpers.js";
 import { renderSwitcher } from "./Switcher.js";
 
 export function Vis3() {
@@ -107,7 +107,7 @@ export function Vis3() {
     .domain(allApps)
     .range([0, innerHeight])
     .paddingInner(0.2)
-    .paddingOuter(0.5);
+    .paddingOuter(0.25);
   const absMaxMetricValue = d3.max(filteredData, (d) => Math.abs(d[metric]));
   const xScale = d3
     .scaleLinear()
@@ -260,7 +260,7 @@ export function Vis3() {
             stroke-width="0.75"
           />
           <text
-            x="${innerWidth - 20}"
+            x="${isMobile ? innerWidth - 5 : innerWidth - 20}"
             y="${yZero - 20}"
             text-anchor="end"
             dominant-baseline="middle"
@@ -270,7 +270,7 @@ export function Vis3() {
             RE more efficient →
           </text>
           <text
-            x="${0 + 20}"
+            x="${isMobile ? 5 : 20}"
             y="${yZero + 20}"
             text-anchor="start"
             dominant-baseline="middle"

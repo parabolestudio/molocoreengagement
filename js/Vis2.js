@@ -8,6 +8,7 @@ import {
   REPO_BASE_URL,
   populateCountrySelectors,
   verticalsMap,
+  isMobile,
 } from "./utils/helpers.js";
 
 const defaultCategory = "consumer";
@@ -129,7 +130,7 @@ export function Vis2() {
   const visContainer = document.querySelector("#vis-2");
   const width =
     visContainer && visContainer.offsetWidth ? visContainer.offsetWidth : 600;
-  const height = 600;
+  const height = isMobile ? 310 : 600;
   const margin = {
     top: 10,
     right: 1,
@@ -164,6 +165,8 @@ export function Vis2() {
   datapointsPayer.unshift({ inactivityDays: 0, returnPerc: 100 });
   datapointsNonPayer.unshift({ inactivityDays: 0, returnPerc: 100 });
 
+  console.log("Datapoints Payer:", datapointsPayer);
+
   const highlightPayer = hoveredItem
     ? datapointsPayer.find((d) => d.inactivityDays === hoveredItem.hoveredDay)
     : null;
@@ -179,8 +182,10 @@ export function Vis2() {
   const day30NonPayer = yScale(
     datapointsNonPayer[datapointsNonPayer.length - 1].returnPerc
   );
-  const day30PayerOffset = day30Payer < day30NonPayer ? -12 : 12;
-  const day30NonPayerOffset = day30Payer < day30NonPayer ? 12 : -12;
+  const offset = 12;
+  const day30PayerOffset =
+    day30Payer < day30NonPayer ? (isMobile ? -(offset + 3) : -offset) : offset;
+  const day30NonPayerOffset = day30Payer < day30NonPayer ? offset : -offset;
 
   return html`<div style="position: relative">
     <svg

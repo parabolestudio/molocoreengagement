@@ -1,6 +1,8 @@
 export const REPO_BASE_URL =
   "https://raw.githubusercontent.com/parabolestudio/molocoreengagement/refs/heads/main/";
 
+export const isMobile = window.innerWidth <= 480;
+
 export const countryLabels = {
   AUS: "Australia",
   BRA: "Brazil",
