@@ -4,6 +4,7 @@ import { renderSwitcher } from "./Switcher.js";
 
 export function Vis3() {
   const [data, setData] = useState(null);
+  const [filteredData, setFilteredData] = useState(null);
   const [metric, setMetric] = useState("cpa");
   const [hoveredItem, setHoveredItem] = useState(null);
 
@@ -36,9 +37,11 @@ export function Vis3() {
           d["roas_ratio"] && d["roas_ratio"] !== "" ? +d["roas_ratio"] : null;
       });
 
-      fetchedData.sort((a, b) => b[metric] - a[metric]);
-
       setData(fetchedData);
+
+      const newFilteredData = fetchedData.filter((d) => d[metric] !== null);
+      newFilteredData.sort((a, b) => b[metric] - a[metric]);
+      setFilteredData(newFilteredData);
     });
   }, []);
 
@@ -64,9 +67,16 @@ export function Vis3() {
     setHoveredItem(null);
 
     // sort data based on new metric
-    if (data) {
-      const sortedData = [...data].sort((a, b) => b[metric] - a[metric]);
-      setData(sortedData);
+    if (filteredData) {
+      console.log("Sorting filtered data for metric change", {
+        filteredData,
+        metric,
+      });
+      let newFilteredData = data.filter((d) => d[metric] !== null);
+      newFilteredData = [...newFilteredData].sort(
+        (a, b) => b[metric] - a[metric]
+      );
+      setFilteredData(newFilteredData);
     }
   }, [metric]);
 
@@ -74,7 +84,7 @@ export function Vis3() {
     return html`<div>Loading data...</div>`;
   }
 
-  console.log("Rendering vis 3", { data, metric });
+  console.log("Rendering vis 3", { data, metric, filteredData });
 
   // dimensions
   const visContainer = document.querySelector("#vis-3");
@@ -91,14 +101,14 @@ export function Vis3() {
   const innerHeight = height - margin.top - margin.bottom;
 
   // scales
-  const allApps = data.map((d) => d.appNumber);
+  const allApps = filteredData.map((d) => d.appNumber);
   const yScale = d3
     .scaleBand()
     .domain(allApps)
     .range([0, innerHeight])
     .paddingInner(0.2)
     .paddingOuter(0.5);
-  const absMaxMetricValue = d3.max(data, (d) => Math.abs(d[metric]));
+  const absMaxMetricValue = d3.max(filteredData, (d) => Math.abs(d[metric]));
   const xScale = d3
     .scaleLinear()
     .domain([-absMaxMetricValue, absMaxMetricValue])
@@ -109,7 +119,7 @@ export function Vis3() {
   const xTicks = xScale.ticks(5);
 
   // find out first app number with negative metric value
-  const firstNegativeApp = data.find((d) => d[metric] < 0);
+  const firstNegativeApp = filteredData.find((d) => d[metric] < 0);
   const yZero =
     yScale(firstNegativeApp.appNumber - 1) +
     yScale.bandwidth() +
@@ -137,7 +147,7 @@ export function Vis3() {
 
             // get value for hoveredItem
             const datapoint =
-              data.find((d) => d.appNumber === hoveredAppNumber) || {};
+              filteredData.find((d) => d.appNumber === hoveredAppNumber) || {};
             setHoveredItem({
               x:
                 xScale(datapoint[metric]) < xScale(0)
@@ -158,20 +168,6 @@ export function Vis3() {
       }}"
     >
       <g transform="translate(${margin.left}, ${margin.top})">
-        <g>
-          ${data.map(
-            (d) => html`
-              <text
-                x="${-margin.left}"
-                y="${yScale(d.appNumber) + yScale.bandwidth() / 2}"
-                class="charts-text-body"
-                dominant-baseline="middle"
-                fill="#04033A"
-                >App #${d.appNumber}</text
-              >
-            `
-          )}
-        </g>
         <rect
           x="0"
           y="0"
@@ -209,11 +205,18 @@ export function Vis3() {
         </g>
 
         <g>
-          ${data.map((d) => {
+          ${filteredData.map((d, i) => {
             return html` <g
               transform="translate(0, ${yScale(d.appNumber) +
               yScale.bandwidth() / 2})"
             >
+              <text
+                x="${-margin.left}"
+                class="charts-text-body"
+                dominant-baseline="middle"
+                fill="#04033A"
+                >App #${i + 1}</text
+              >
               <line
                 x1="${xScale(0)}"
                 y1="0"
