@@ -134,7 +134,7 @@ export function Vis2() {
     top: 10,
     right: 1,
     bottom: 30,
-    left: 45,
+    left: 50,
   };
   const innerWidth = width - margin.left - margin.right;
   const innerHeight = height - margin.top - margin.bottom;
@@ -145,6 +145,7 @@ export function Vis2() {
     .scaleLinear()
     .domain([0, d3.max(filteredData, (d) => d.inactivityDays) || 30])
     .range([0, innerWidth]);
+  const dayZeroSpace = xScale(1) - xScale(0);
 
   const lineGen = d3
     .line()
@@ -217,9 +218,9 @@ export function Vis2() {
     >
       <g transform="translate(${margin.left}, ${margin.top})">
         <rect
-          width="${innerWidth}"
-          height="${innerHeight}"
-          fill="none"
+          width="${dayZeroSpace}"
+          height="${innerHeight + margin.bottom}"
+          fill="#D9D9D94D"
           stroke="none"
         />
         <g>
@@ -248,7 +249,7 @@ export function Vis2() {
             stroke-width="0.75"
           />
           <text
-            x="-6"
+            x="-10"
             y="${yScale(0)}"
             dominant-baseline="middle"
             text-anchor="end"
@@ -257,7 +258,7 @@ export function Vis2() {
             0
           </text>
           <text
-            x="-6"
+            x="-10"
             y="${yScale(50)}"
             dominant-baseline="middle"
             text-anchor="end"
@@ -266,7 +267,7 @@ export function Vis2() {
             50
           </text>
           <text
-            x="-6"
+            x="-10"
             y="${yScale(100)}"
             dominant-baseline="middle"
             text-anchor="end"
@@ -276,7 +277,7 @@ export function Vis2() {
           </text>
           <g transform="translate(0, ${yScale(0) + 20})">
             <text
-              x="${xScale(0)}"
+              x="${xScale(0) + dayZeroSpace + 7}"
               dominant-baseline="middle"
               text-anchor="start"
               class="charts-text-body"
@@ -319,6 +320,17 @@ export function Vis2() {
         </g>
         <g>
           ${hoveredItem && highlightPayer
+            ? html` <line
+                y1="${yScale(highlightPayer ? highlightPayer.returnPerc : 0)}"
+                y2="${innerHeight}"
+                transform="translate(${xScale(hoveredItem.hoveredDay)}, 0)"
+                stroke="#D9D9D9"
+                stroke-width="1.2"
+                stroke-dasharray="2,2"
+                style="transition: all ease 0.3s"
+              />`
+            : null}
+          ${hoveredItem && highlightPayer
             ? html`<circle
                 cx="${xScale(hoveredItem.hoveredDay)}"
                 cy="${yScale(highlightPayer ? highlightPayer.returnPerc : 0)}"
@@ -339,10 +351,25 @@ export function Vis2() {
               />`
             : ""}
         </g>
+        <g transform="translate(15, 10)">
+          <${ReturningUsersLabel} />
+        </g>
       </g>
     </svg>
     <${Tooltip} hoveredItem=${hoveredItem} />
   </div>`;
+}
+
+function ReturningUsersLabel() {
+  return html`<svg width="200" height="33" fill="none" viewBox="0 0 200 33">
+    <path
+      fill="#04033A"
+      d="M.146 3.328a.5.5 0 0 0 0 .707l3.182 3.182a.5.5 0 1 0 .708-.707L1.207 3.682 4.036.853a.5.5 0 1 0-.708-.707L.146 3.328ZM52 16.682h.5v-5h-1v5h.5Zm-8-13v-.5H.5v1H44v-.5Zm16 21v.5h18v-1H60v.5Zm-8-13h.5a8.5 8.5 0 0 0-8.5-8.5v1a7.5 7.5 0 0 1 7.5 7.5h.5Zm0 5h-.5a8.5 8.5 0 0 0 8.5 8.5v-1a7.5 7.5 0 0 1-7.5-7.5H52Z"
+    />
+    <text x="89" y="29" fill="#04033A" class="charts-text-body">
+      Returning users
+    </text>
+  </svg> `;
 }
 
 function Tooltip({ hoveredItem }) {
