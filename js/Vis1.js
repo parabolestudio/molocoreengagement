@@ -167,7 +167,7 @@ export function Vis1() {
         stroke-width="2"
         rx="10"
         ry="10"
-        style="transition: width 0.5s ease;"
+        style="transition: all 0.5s ease;"
       />
       <rect
         x="0"
@@ -179,7 +179,7 @@ export function Vis1() {
         stroke-width="2"
         rx="10"
         ry="10"
-        style="transition: width 0.5s ease;"
+        style="transition: all 0.5s ease;"
       />
 
       <text
