@@ -11,7 +11,7 @@ import {
 } from "./utils/helpers.js";
 
 const defaultCategory = "consumer";
-const defaultVertical = "education";
+const defaultVertical = "all";
 
 export function Vis2() {
   const [data, setData] = useState(null);
@@ -434,7 +434,7 @@ function Vis2DropdownVerticals({
       console.log("Changing category to:", newCategory);
       setCategory(newCategory);
 
-      const newVertical = newCategory === "gaming" ? "midcore" : "education";
+      const newVertical = "all";
       console.log("Resetting vertical to ", newVertical);
       setVertical(newVertical);
 

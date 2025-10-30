@@ -1,10 +1,6 @@
-import {
-  html,
-  useEffect,
-  useState,
-  renderComponent,
-} from "./utils/preact-htm.js";
+import { html, useEffect, useState } from "./utils/preact-htm.js";
 import { REPO_BASE_URL, populateCountrySelectors } from "./utils/helpers.js";
+import { renderSwitcher } from "./Switcher.js";
 
 export function Vis1() {
   const [data, setData] = useState(null);
@@ -13,6 +9,23 @@ export function Vis1() {
   const [installType, setInstallType] = useState("non-organic");
 
   useEffect(() => {
+    // render category switcher
+    renderSwitcher(
+      [
+        { label: "Consumer", value: "consumer" },
+        { label: "Gaming", value: "gaming" },
+      ],
+      "vis-1-dropdown-categories"
+    );
+    // render install type switcher
+    renderSwitcher(
+      [
+        { label: "Paid", value: "non-organic" },
+        { label: "Organic", value: "organic" },
+      ],
+      "vis-1-dropdown-install-types"
+    );
+
     // Fetch data when the component mounts
     d3.csv(
       `${REPO_BASE_URL}/data/vis1_data.csv`
@@ -37,23 +50,6 @@ export function Vis1() {
       );
 
       populateCountrySelectors(uniqueCountries, "#vis-1-dropdown-countries");
-
-      // render category switcher
-      renderSwitcher(
-        [
-          { label: "Consumer", value: "consumer" },
-          { label: "Gaming", value: "gaming" },
-        ],
-        "vis-1-dropdown-categories"
-      );
-      // render install type switcher
-      renderSwitcher(
-        [
-          { label: "Paid", value: "non-organic" },
-          { label: "Organic", value: "organic" },
-        ],
-        "vis-1-dropdown-install-types"
-      );
     });
   }, []);
 
@@ -290,47 +286,3 @@ const TrashcanIcon = () => html`<svg
     <path fill="#fff" d="M0 0h9v44H0z" class="Rectangle 2536" />
   </g>
 </svg> `;
-
-function renderSwitcher(items, containerId) {
-  const containerElement = document.getElementById(containerId);
-  if (containerElement) {
-    containerElement.innerHTML = "";
-    (async () => {
-      renderComponent(
-        html`<${Switcher} items=${items} containerId=${containerId} />`,
-        containerElement
-      );
-    })();
-  } else {
-    console.error(`Could not find container element for ${containerId}`);
-  }
-}
-
-function Switcher({ items, containerId }) {
-  if (!items || items.length === 0) {
-    items = [
-      { label: "Consumer", value: "consumer" },
-      { label: "Gaming", value: "non-consumer" },
-    ];
-  }
-
-  const [activeItem, setActiveItem] = useState(items[0].value);
-
-  return html`<div class="vis-switcher-container">
-    ${items.map(
-      (item) => html`<div
-        class="vis-switcher-item ${item.value === activeItem ? "active" : ""}"
-        onclick=${() => {
-          setActiveItem(item.value);
-          document.dispatchEvent(
-            new CustomEvent(`${containerId}-switched`, {
-              detail: { activeItem: item.value },
-            })
-          );
-        }}
-      >
-        ${item.label}
-      </div>`
-    )}
-  </div>`;
-}
