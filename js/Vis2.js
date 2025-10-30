@@ -166,8 +166,6 @@ export function Vis2() {
   datapointsPayer.unshift({ inactivityDays: 0, returnPerc: 100 });
   datapointsNonPayer.unshift({ inactivityDays: 0, returnPerc: 100 });
 
-  console.log("Datapoints Payer:", datapointsPayer);
-
   const highlightPayer = hoveredItem
     ? datapointsPayer.find((d) => d.inactivityDays === hoveredItem.hoveredDay)
     : null;
@@ -323,23 +321,26 @@ export function Vis2() {
             </text>
           </g>
         </g>
-        <g>
-          <path
-            d="${lineGen(datapointsPayer)}"
-            stroke="#0280FB"
-            stroke-width="3"
-            fill="none"
-            style="transition: all ease 0.3s"
-          />
-          <path
-            d="${lineGen(datapointsNonPayer)}"
-            stroke="#C368F9"
-            stroke-width="3"
-            fill="none"
-            style="transition: all ease 0.3s"
-          />
-          ${datapointsPayer && datapointsPayer.length > 1
-            ? html`<text
+        ${datapointsPayer &&
+        datapointsPayer.length > 1 &&
+        datapointsNonPayer &&
+        datapointsNonPayer.length > 1
+          ? html` <g>
+              <path
+                d="${lineGen(datapointsPayer)}"
+                stroke="#0280FB"
+                stroke-width="3"
+                fill="none"
+                style="transition: all ease 0.3s"
+              />
+              <path
+                d="${lineGen(datapointsNonPayer)}"
+                stroke="#C368F9"
+                stroke-width="3"
+                fill="none"
+                style="transition: all ease 0.3s"
+              />
+              <text
                 transform="translate(${innerWidth}, ${day30Payer +
                 day30PayerOffset})"
                 text-anchor="end"
@@ -349,10 +350,9 @@ export function Vis2() {
                 style="transition: all ease 0.3s"
               >
                 Payers
-              </text>`
-            : null}
-          ${datapointsNonPayer && datapointsNonPayer.length > 1
-            ? html` <text
+              </text>
+
+              <text
                 transform="translate(${innerWidth}, ${day30NonPayer +
                 day30NonPayerOffset})"
                 text-anchor="end"
@@ -362,9 +362,9 @@ export function Vis2() {
                 style="transition: all ease 0.3s"
               >
                 Non-payers
-              </text>`
-            : null}
-        </g>
+              </text>
+            </g>`
+          : null}
         <g>
           ${hoveredItem && highlightPayer
             ? html` <line
