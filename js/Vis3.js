@@ -198,7 +198,13 @@ export function Vis3() {
                 stroke="#D9D9D9"
                 stroke-width="0.75"
               />
-              <text x="0" y="15" text-anchor="middle" class="charts-text-body">
+              <text
+                x="0"
+                y="15"
+                text-anchor="middle"
+                class="charts-text-body"
+                fill="#04033A"
+              >
                 ${tick}
               </text>
             </g>`

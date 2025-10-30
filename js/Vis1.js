@@ -150,9 +150,9 @@ export function Vis1() {
   const verticalRows = filteredData.map((d, i) => {
     return html`<g transform="translate(0, ${i * (rowHeight + rowPadding)})">
       <text
-        x="-16"
+        x="${-margin.left}"
         y="${rowHeight / 2 + 5}"
-        text-anchor="end"
+        text-anchor="start"
         class="charts-text-body"
         fill="#04033A"
       >

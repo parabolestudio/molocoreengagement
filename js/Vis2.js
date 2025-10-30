@@ -263,6 +263,7 @@ export function Vis2() {
             dominant-baseline="middle"
             text-anchor="end"
             class="charts-text-body"
+            fill="#04033A"
           >
             0
           </text>
@@ -272,6 +273,7 @@ export function Vis2() {
             dominant-baseline="middle"
             text-anchor="end"
             class="charts-text-body"
+            fill="#04033A"
           >
             50
           </text>
@@ -281,6 +283,7 @@ export function Vis2() {
             dominant-baseline="middle"
             text-anchor="end"
             class="charts-text-body"
+            fill="#04033A"
           >
             100%
           </text>
@@ -290,6 +293,7 @@ export function Vis2() {
               dominant-baseline="middle"
               text-anchor="start"
               class="charts-text-body"
+              fill="#04033A"
             >
               Day 1 of inactivity
             </text>
@@ -298,6 +302,7 @@ export function Vis2() {
               dominant-baseline="middle"
               text-anchor="middle"
               class="charts-text-body"
+              fill="#04033A"
             >
               Day 15
             </text>
@@ -306,6 +311,7 @@ export function Vis2() {
               dominant-baseline="middle"
               text-anchor="end"
               class="charts-text-body"
+              fill="#04033A"
             >
               Day 30
             </text>
