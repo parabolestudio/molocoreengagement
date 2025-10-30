@@ -129,7 +129,7 @@ export function Vis1() {
   const margin = {
     top: 1,
     right: 60,
-    bottom: 1,
+    bottom: 40,
     left: 150,
   };
   const numberOfRows = 8;
@@ -205,9 +205,6 @@ export function Vis1() {
       >
         ${(100 - d.uninstallRate).toFixed(0)}%
       </text>
-      <g transform="translate(${innerWidth - 10}, ${0})">
-        <${TrashcanIcon} />
-      </g>
     </g>`;
   });
 
@@ -220,66 +217,54 @@ export function Vis1() {
           fill="none"
           stroke="none"
         />
+        <g>
+          ${filteredData.map((d, i) => {
+            return html`<rect
+              x="${innerWidth - 10}"
+              y="${i * (rowHeight + rowPadding) + 5}"
+              width="40"
+              height="${rowHeight - 10}"
+              fill="#F2F2F2"
+            />`;
+          })}
+          <rect
+            x="${innerWidth - 10 + 30}"
+            y="${0 * (rowHeight + rowPadding) + 5}"
+            width="20"
+            height="${filteredData.length * (rowHeight + rowPadding)}"
+            fill="#F2F2F2"
+            rx="10"
+            ry="10"
+            style="transition: height 0.3s ease;"
+          />
+          <svg
+            width="47"
+            height="62"
+            fill="none"
+            viewBox="0 0 47 62"
+            transform="translate(${innerWidth -
+            10 +
+            20 +
+            5}, ${filteredData.length * (rowHeight + rowPadding) -
+            62 / 2 -
+            10})"
+            style="transition: transform 0.3s ease;"
+          >
+            <path
+              fill="#fff"
+              stroke="#737373"
+              stroke-width="1.5"
+              d="m36.604 7.612 1.695 1.626a3.946 3.946 0 0 1 .116 5.578 1.599 1.599 0 0 1-2.26.048l-5.083-4.876a1.599 1.599 0 0 1-.047-2.26 3.946 3.946 0 0 1 5.579-.116Zm-15.86-3.821L42.772 24.92a3.946 3.946 0 0 1 .116 5.578 1.599 1.599 0 0 1-2.26.048L15.213 6.167a1.598 1.598 0 0 1-.046-2.26 3.946 3.946 0 0 1 5.578-.116Zm9.027 28.437V57a4.25 4.25 0 0 1-4.25 4.25H5A4.25 4.25 0 0 1 .75 57V32.228h29.021Z"
+            />
+            <path
+              stroke="#737373"
+              stroke-width="1.5"
+              d="M7.922 55.69V38.083m7.344 17.607V38.083M22.89 55.69V38.083"
+            />
+          </svg>
+        </g>
         ${verticalRows}
       </g>
     </svg>
   </div>`;
 }
-
-const TrashcanIcon = () => html`<svg
-  width="60"
-  height="44"
-  fill="none"
-  viewBox="0 0 60 44"
->
-  <g class="Group 2217">
-    <g class="Group 2216">
-      <path
-        fill="#F2F2F2"
-        stroke="#fff"
-        stroke-width="2"
-        d="M49.77 1a9 9 0 0 1 9 9v24a9 9 0 0 1-9 9H10V1h39.77Z"
-        class="Rectangle 2535"
-      />
-      <g class="Group 2161">
-        <path
-          stroke="#737373"
-          stroke-width="1.5"
-          d="M41.001 18.107v12.995a4.25 4.25 0 0 1-4.25 4.25h-8.745a4.25 4.25 0 0 1-4.25-4.25V18.108H41Z"
-          class="Rectangle 975"
-        />
-        <path
-          stroke="#737373"
-          stroke-width="1.5"
-          d="M23.001 11.858h18.746a2.374 2.374 0 0 1 2.374 2.374.813.813 0 0 1-.812.813h-21.87a.813.813 0 0 1-.812-.813c0-1.229.934-2.24 2.132-2.36l.242-.014Z"
-          class="Rectangle 976"
-        />
-        <path
-          stroke="#737373"
-          stroke-width="1.5"
-          d="M32.378 6.39h.781a2.374 2.374 0 0 1 2.374 2.375.812.812 0 0 1-.811.812h-3.906a.813.813 0 0 1-.812-.812 2.374 2.374 0 0 1 2.374-2.374Z"
-          class="Rectangle 977"
-        />
-        <path
-          stroke="#737373"
-          stroke-width="1.5"
-          d="M27.686 32.197V21.262"
-          class="Vector 314"
-        />
-        <path
-          stroke="#737373"
-          stroke-width="1.5"
-          d="M32.375 32.197V21.262"
-          class="Vector 315"
-        />
-        <path
-          stroke="#737373"
-          stroke-width="1.5"
-          d="M37.065 32.197V21.262"
-          class="Vector 316"
-        />
-      </g>
-    </g>
-    <path fill="#fff" d="M0 0h9v44H0z" class="Rectangle 2536" />
-  </g>
-</svg> `;
