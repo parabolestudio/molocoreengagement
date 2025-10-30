@@ -314,7 +314,7 @@ function Tooltip({ hoveredItem }) {
     </div>
 
     <div>
-      <p class="tooltip-label">Improvement</p>
+      <p class="tooltip-label">${hoveredItem.metric.toUpperCase()} change</p>
       <p class="tooltip-value">
         ${hoveredItem.datapoint[hoveredItem.metric]
           ? hoveredItem.datapoint[hoveredItem.metric].toFixed(1)
