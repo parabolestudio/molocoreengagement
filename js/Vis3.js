@@ -166,6 +166,7 @@ export function Vis3() {
           setHoveredItem(null);
         }
       }}"
+      onmouseleave="${() => setHoveredItem(null)}"
     >
       <g transform="translate(${margin.left}, ${margin.top})">
         <rect
