@@ -1,10 +1,11 @@
 import { html, useState, useEffect } from "./utils/preact-htm.js";
-import { REPO_BASE_URL } from "./utils/helpers.js";
+import { REPO_BASE_URL, countryLabels } from "./utils/helpers.js";
 import { renderSwitcher } from "./Switcher.js";
 
 export function Vis3() {
   const [data, setData] = useState(null);
   const [metric, setMetric] = useState("cpa");
+  const [hoveredItem, setHoveredItem] = useState(null);
 
   useEffect(() => {
     // render category switcher
@@ -35,7 +36,7 @@ export function Vis3() {
           d["roas_ratio"] && d["roas_ratio"] !== "" ? +d["roas_ratio"] : null;
       });
 
-      fetchedData.sort((a, b) => a.appNumber - b.appNumber);
+      fetchedData.sort((a, b) => b[metric] - a[metric]);
 
       setData(fetchedData);
     });
@@ -43,7 +44,9 @@ export function Vis3() {
 
   // listen to metric change events
   useEffect(() => {
-    const handleMetricChange = (e) => setMetric(e.detail.activeItem);
+    const handleMetricChange = (e) => {
+      setMetric(e.detail.activeItem);
+    };
     document.addEventListener(
       `vis-3-dropdown-metrics-switched`,
       handleMetricChange
@@ -55,6 +58,17 @@ export function Vis3() {
       );
     };
   }, []);
+
+  useEffect(() => {
+    // reset hovered item when metric changes
+    setHoveredItem(null);
+
+    // sort data based on new metric
+    if (data) {
+      const sortedData = [...data].sort((a, b) => b[metric] - a[metric]);
+      setData(sortedData);
+    }
+  }, [metric]);
 
   if (!data) {
     return html`<div>Loading data...</div>`;
@@ -101,8 +115,48 @@ export function Vis3() {
     yScale.bandwidth() +
     (yScale.paddingInner() * yScale.bandwidth()) / 2;
 
-  return html`<div>
-    <svg viewBox="0 0 ${width} ${height}">
+  return html`<div style="position: relative;">
+    <svg
+      viewBox="0 0 ${width} ${height}"
+      onmousemove="${(event) => {
+        const pointer = d3.pointer(event);
+
+        const topSide = margin.top;
+        const bottomSide = topSide + innerHeight;
+
+        if (pointer[1] >= topSide && pointer[1] <= bottomSide) {
+          const innerY = pointer[1] - margin.top;
+
+          const step = yScale.step();
+          const bandIndex = Math.floor(innerY / step);
+          const domain = yScale.domain();
+
+          // Make sure we're within bounds
+          if (bandIndex >= 0 && bandIndex < domain.length) {
+            const hoveredAppNumber = domain[bandIndex];
+
+            // get value for hoveredItem
+            const datapoint =
+              data.find((d) => d.appNumber === hoveredAppNumber) || {};
+            setHoveredItem({
+              x:
+                xScale(datapoint[metric]) < xScale(0)
+                  ? xScale(0) + margin.left + 20
+                  : xScale(0) + 20,
+              y: margin.top + yScale(hoveredAppNumber),
+              appNumber: hoveredAppNumber,
+              datapoint: datapoint || null,
+              metric,
+              align: xScale(datapoint[metric]) < xScale(0) ? "left" : "right",
+            });
+          } else {
+            setHoveredItem(null);
+          }
+        } else {
+          setHoveredItem(null);
+        }
+      }}"
+    >
       <g transform="translate(${margin.left}, ${margin.top})">
         <g>
           ${data.map(
@@ -156,9 +210,6 @@ export function Vis3() {
 
         <g>
           ${data.map((d) => {
-            if (d[metric] === null) {
-              return null;
-            }
             return html` <g
               transform="translate(0, ${yScale(d.appNumber) +
               yScale.bandwidth() / 2})"
@@ -166,15 +217,26 @@ export function Vis3() {
               <line
                 x1="${xScale(0)}"
                 y1="0"
-                x2="${xScale(d[metric])}"
+                x2="${d[metric] === null ? xScale(0) : xScale(d[metric])}"
                 y2="0"
-                stroke="${d[metric] < 0 ? "#040078" : "#C368F9"}"
+                stroke="${hoveredItem && hoveredItem.appNumber === d.appNumber
+                  ? "#04033A"
+                  : d[metric] < 0
+                  ? "#040078"
+                  : "#C368F9"}"
                 stroke-width="2"
+                style="transition: all 0.3s ease;"
               />
               <circle
-                cx="${xScale(d[metric])}"
+                cx="${d[metric] === null ? xScale(0) : xScale(d[metric])}"
                 r="5"
-                fill="${d[metric] < 0 ? "#040078" : "#C368F9"}"
+                fill="${hoveredItem && hoveredItem.appNumber === d.appNumber
+                  ? "#04033A"
+                  : d[metric] < 0
+                  ? "#040078"
+                  : "#C368F9"}"
+                opacity="${d[metric] === null ? 0 : 1}"
+                style="transition: all 0.3s ease;"
               />
             </g>`;
           })}
@@ -210,5 +272,44 @@ export function Vis3() {
         </g>
       </g>
     </svg>
+    <${Tooltip} hoveredItem=${hoveredItem} />
+  </div>`;
+}
+
+function Tooltip({ hoveredItem }) {
+  if (!hoveredItem || hoveredItem.datapoint[hoveredItem.metric] === null)
+    return null;
+
+  return html`<div
+    class="tooltip"
+    style="${hoveredItem.align}: ${hoveredItem.x}px; top: ${hoveredItem.y}px; ${hoveredItem.align ===
+    "right"
+      ? "left: unset;"
+      : ""}"
+  >
+    <div>
+      <p class="tooltip-label">App type</p>
+      <p class="tooltip-value">
+        ${hoveredItem.datapoint.appType ? hoveredItem.datapoint.appType : "N/A"}
+      </p>
+    </div>
+
+    <div>
+      <p class="tooltip-label">Country</p>
+      <p class="tooltip-value">
+        ${hoveredItem.datapoint.country
+          ? countryLabels[hoveredItem.datapoint.country]
+          : "N/A"}
+      </p>
+    </div>
+
+    <div>
+      <p class="tooltip-label">Improvement</p>
+      <p class="tooltip-value">
+        ${hoveredItem.datapoint[hoveredItem.metric]
+          ? hoveredItem.datapoint[hoveredItem.metric].toFixed(1)
+          : null}
+      </p>
+    </div>
   </div>`;
 }

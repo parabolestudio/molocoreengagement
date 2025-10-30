@@ -1,22 +1,26 @@
 export const REPO_BASE_URL =
   "https://raw.githubusercontent.com/parabolestudio/molocoreengagement/refs/heads/main/";
 
-export function populateCountrySelectors(countries, containerId) {
-  const countryLabels = {
-    AUS: "Australia",
-    BRA: "Brazil",
-    CAN: "Canada",
-    FRA: "France",
-    DEU: "Germany",
-    WW: "Global",
-    IDN: "Indonesia",
-    IND: "India",
-    JPN: "Japan",
-    KOR: "South Korea",
-    GBR: "U.K.",
-    USA: "U.S.",
-  };
+export const countryLabels = {
+  AUS: "Australia",
+  BRA: "Brazil",
+  CAN: "Canada",
+  FRA: "France",
+  DEU: "Germany",
+  WW: "Global",
+  IDN: "Indonesia",
+  IND: "India",
+  JPN: "Japan",
+  KOR: "South Korea",
+  GBR: "U.K.",
+  USA: "U.S.",
+  TUR: "Turkey",
+  ARG: "Argentina",
+  MEX: "Mexico",
+  VNM: "Vietnam",
+};
 
+export function populateCountrySelectors(countries, containerId) {
   const countriesArray = countries
     .map((country) => ({
       value: country,
