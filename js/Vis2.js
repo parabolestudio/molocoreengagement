@@ -173,6 +173,15 @@ export function Vis2() {
       )
     : null;
 
+  const day30Payer = yScale(
+    datapointsPayer[datapointsPayer.length - 1].returnPerc
+  );
+  const day30NonPayer = yScale(
+    datapointsNonPayer[datapointsNonPayer.length - 1].returnPerc
+  );
+  const day30PayerOffset = day30Payer < day30NonPayer ? -12 : 12;
+  const day30NonPayerOffset = day30Payer < day30NonPayer ? 12 : -12;
+
   return html`<div style="position: relative">
     <svg
       viewBox="0 0 ${width} ${height}"
@@ -205,7 +214,7 @@ export function Vis2() {
                 )
               ) -
               170 -
-              15,
+              20,
             hoveredDay,
             variablePayer: datapointPayer.returnPerc || null,
             variableNonPayer: datapointNonPayer.returnPerc || null,
@@ -275,7 +284,7 @@ export function Vis2() {
           >
             100%
           </text>
-          <g transform="translate(0, ${yScale(0) + 20})">
+          <g transform="translate(0, ${yScale(0) + 25})">
             <text
               x="${xScale(0) + dayZeroSpace + 7}"
               dominant-baseline="middle"
@@ -317,6 +326,28 @@ export function Vis2() {
             fill="none"
             style="transition: all ease 0.3s"
           />
+          <text
+            transform="translate(${innerWidth}, ${day30Payer +
+            day30PayerOffset})"
+            text-anchor="end"
+            dominant-baseline="middle"
+            fill="#0280FB"
+            class="charts-text-body-bold"
+            style="transition: all ease 0.3s"
+          >
+            Payers
+          </text>
+          <text
+            transform="translate(${innerWidth}, ${day30NonPayer +
+            day30NonPayerOffset})"
+            text-anchor="end"
+            dominant-baseline="middle"
+            fill="#C368F9"
+            class="charts-text-body-bold"
+            style="transition: all ease 0.3s"
+          >
+            Non-payers
+          </text>
         </g>
         <g>
           ${hoveredItem && highlightPayer
@@ -381,7 +412,7 @@ function Tooltip({ hoveredItem }) {
   >
     <p class="tooltip-title">Day ${hoveredItem.hoveredDay}</p>
     <div>
-      <p class="tooltip-label">Paid</p>
+      <p class="tooltip-label" style="white-space: nowrap">Returning payers</p>
       <p class="tooltip-value">
         ${hoveredItem.variablePayer
           ? hoveredItem.variablePayer.toFixed(0) + "%"
@@ -391,7 +422,9 @@ function Tooltip({ hoveredItem }) {
 
     <div style="border-top: 1px solid #D9D9D9; width: 100%;" />
     <div>
-      <p class="tooltip-label">Organic</p>
+      <p class="tooltip-label" style="white-space: nowrap">
+        Returning non-payers
+      </p>
       <p class="tooltip-value">
         ${hoveredItem.variableNonPayer
           ? hoveredItem.variableNonPayer.toFixed(0) + "%"
