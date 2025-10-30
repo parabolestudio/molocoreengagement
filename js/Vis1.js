@@ -1,5 +1,9 @@
 import { html, useEffect, useState } from "./utils/preact-htm.js";
-import { REPO_BASE_URL, populateCountrySelectors } from "./utils/helpers.js";
+import {
+  REPO_BASE_URL,
+  populateCountrySelectors,
+  formatText,
+} from "./utils/helpers.js";
 import { renderSwitcher } from "./Switcher.js";
 
 export function Vis1() {
@@ -139,13 +143,6 @@ export function Vis1() {
 
   // scales
   const xScale = d3.scaleLinear().domain([0, 100]).range([0, innerWidth]);
-
-  function formatText(text) {
-    return text
-      .split(" ")
-      .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
-      .join(" ");
-  }
 
   const verticalRows = filteredData.map((d, i) => {
     return html`<g transform="translate(0, ${i * (rowHeight + rowPadding)})">

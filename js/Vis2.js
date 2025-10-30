@@ -9,6 +9,7 @@ import {
   populateCountrySelectors,
   verticalsMap,
   isMobile,
+  formatText,
 } from "./utils/helpers.js";
 
 const defaultCategory = "consumer";
@@ -337,28 +338,32 @@ export function Vis2() {
             fill="none"
             style="transition: all ease 0.3s"
           />
-          <text
-            transform="translate(${innerWidth}, ${day30Payer +
-            day30PayerOffset})"
-            text-anchor="end"
-            dominant-baseline="middle"
-            fill="#0280FB"
-            class="charts-text-body-bold"
-            style="transition: all ease 0.3s"
-          >
-            Payers
-          </text>
-          <text
-            transform="translate(${innerWidth}, ${day30NonPayer +
-            day30NonPayerOffset})"
-            text-anchor="end"
-            dominant-baseline="middle"
-            fill="#C368F9"
-            class="charts-text-body-bold"
-            style="transition: all ease 0.3s"
-          >
-            Non-payers
-          </text>
+          ${datapointsPayer && datapointsPayer.length > 1
+            ? html`<text
+                transform="translate(${innerWidth}, ${day30Payer +
+                day30PayerOffset})"
+                text-anchor="end"
+                dominant-baseline="middle"
+                fill="#0280FB"
+                class="charts-text-body-bold"
+                style="transition: all ease 0.3s"
+              >
+                Payers
+              </text>`
+            : null}
+          ${datapointsNonPayer && datapointsNonPayer.length > 1
+            ? html` <text
+                transform="translate(${innerWidth}, ${day30NonPayer +
+                day30NonPayerOffset})"
+                text-anchor="end"
+                dominant-baseline="middle"
+                fill="#C368F9"
+                class="charts-text-body-bold"
+                style="transition: all ease 0.3s"
+              >
+                Non-payers
+              </text>`
+            : null}
         </g>
         <g>
           ${hoveredItem && highlightPayer
@@ -393,12 +398,28 @@ export function Vis2() {
               />`
             : ""}
         </g>
-        <g transform="translate(15, 10)">
-          <${ReturningUsersLabel} />
-        </g>
+        ${datapointsNonPayer &&
+        datapointsNonPayer.length > 1 &&
+        datapointsPayer &&
+        datapointsPayer.length > 1
+          ? html` <g transform="translate(15, 10)">
+              <${ReturningUsersLabel} />
+            </g>`
+          : null}
       </g>
     </svg>
     <${Tooltip} hoveredItem=${hoveredItem} />
+    ${datapointsNonPayer &&
+    datapointsNonPayer.length > 1 &&
+    datapointsPayer &&
+    datapointsPayer.length > 1
+      ? null
+      : html` <div
+          style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background: #FFFFFF; color: #04033A; text-align: center; max-width: 80%; margin-left: ${margin.left}px; margin-top: ${-margin.top}px; text-wrap-style: balance; padding: 8px;"
+          class="charts-text-body"
+        >
+          No sufficient data for ${formatText(vertical)} in selected country
+        </div>`}
   </div>`;
 }
 

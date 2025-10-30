@@ -52,6 +52,15 @@ export function populateCountrySelectors(countries, containerId) {
   }
 }
 
+export function formatText(text) {
+  if (text === "rmg") return "RMG";
+
+  return text
+    .split(" ")
+    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+    .join(" ");
+}
+
 export const verticalsMap = [
   {
     label: "All",
