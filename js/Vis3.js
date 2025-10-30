@@ -10,8 +10,8 @@ export function Vis3() {
     // render category switcher
     renderSwitcher(
       [
-        { label: "ROAS", value: "roas" },
         { label: "CPA", value: "cpa" },
+        { label: "ROAS", value: "roas" },
       ],
       "vis-3-dropdown-metrics"
     );
@@ -60,6 +60,8 @@ export function Vis3() {
     return html`<div>Loading data...</div>`;
   }
 
+  console.log("Rendering vis 3", { data, metric });
+
   // dimensions
   const visContainer = document.querySelector("#vis-3");
   const width =
@@ -89,7 +91,15 @@ export function Vis3() {
     .range([0, innerWidth])
     .nice();
 
-  console.log("Rendering vis 3", { data, metric });
+  // ticks
+  const xTicks = xScale.ticks(5);
+
+  // find out first app number with negative metric value
+  const firstNegativeApp = data.find((d) => d[metric] < 0);
+  const yZero =
+    yScale(firstNegativeApp.appNumber - 1) +
+    yScale.bandwidth() +
+    (yScale.paddingInner() * yScale.bandwidth()) / 2;
 
   return html`<div>
     <svg viewBox="0 0 ${width} ${height}">
@@ -119,31 +129,37 @@ export function Vis3() {
         <rect
           x="${xScale(0)}"
           y="0"
-          width="${xScale(absMaxMetricValue) - xScale(0)}"
+          width="${xScale(xScale.domain()[1]) - xScale(0)}"
           height="${innerHeight}"
           fill="#DBA4FB"
           fill-opacity="0.1"
         />
-        <line
-          x1="${xScale(0)}"
-          y1="0"
-          x2="${xScale(0)}"
-          y2="${innerHeight}"
-          stroke="#D9D9D9"
-          stroke-width="0.75"
-        />
-        <text
-          x="${xScale(0)}"
-          y="${innerHeight + 20}"
-          text-anchor="middle"
-          class="charts-text-body"
-        >
-          0
-        </text>
+        <g>
+          ${xTicks.map(
+            (tick) => html` <g
+              transform="translate(${xScale(tick)}, ${innerHeight})"
+            >
+              <line
+                x1="0"
+                y1="0"
+                x2="0"
+                y2="-${innerHeight}"
+                stroke="#D9D9D9"
+                stroke-width="0.75"
+              />
+              <text x="0" y="15" text-anchor="middle" class="charts-text-body">
+                ${tick}
+              </text>
+            </g>`
+          )}
+        </g>
 
         <g>
-          ${data.map(
-            (d) => html` <g
+          ${data.map((d) => {
+            if (d[metric] === null) {
+              return null;
+            }
+            return html` <g
               transform="translate(0, ${yScale(d.appNumber) +
               yScale.bandwidth() / 2})"
             >
@@ -160,8 +176,37 @@ export function Vis3() {
                 r="5"
                 fill="${d[metric] < 0 ? "#040078" : "#C368F9"}"
               />
-            </g>`
-          )}
+            </g>`;
+          })}
+
+          <line
+            x1="0"
+            y1="${yZero}"
+            x2="${innerWidth}"
+            y2="${yZero}"
+            stroke="#D9D9D9"
+            stroke-width="0.75"
+          />
+          <text
+            x="${innerWidth - 20}"
+            y="${yZero - 20}"
+            text-anchor="end"
+            dominant-baseline="middle"
+            class="charts-text-body-bold"
+            fill="#C368F9"
+          >
+            RE more efficient →
+          </text>
+          <text
+            x="${0 + 20}"
+            y="${yZero + 20}"
+            text-anchor="start"
+            dominant-baseline="middle"
+            class="charts-text-body-bold"
+            fill="#040078"
+          >
+            ← RE less efficient
+          </text>
         </g>
       </g>
     </svg>
