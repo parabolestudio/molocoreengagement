@@ -121,23 +121,28 @@ export function Vis1() {
   });
 
   // dimensions
+  const rowHeight = 44;
+  const rowPadding = 15;
   const visContainer = document.querySelector("#vis-1");
   const width =
     visContainer && visContainer.offsetWidth ? visContainer.offsetWidth : 600;
-  const height = 600;
   const margin = {
-    top: 10,
+    top: 1,
     right: 60,
-    bottom: 30,
+    bottom: 1,
     left: 150,
   };
+  const numberOfRows = 8;
+  const height =
+    rowHeight * numberOfRows +
+    rowPadding * (numberOfRows - 1) +
+    margin.top +
+    margin.bottom;
   const innerWidth = width - margin.left - margin.right;
   const innerHeight = height - margin.top - margin.bottom;
 
   // scales
   const xScale = d3.scaleLinear().domain([0, 100]).range([0, innerWidth]);
-  const rowHeight = 44;
-  const rowPadding = 15;
 
   function formatText(text) {
     return text
