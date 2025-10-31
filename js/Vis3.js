@@ -251,14 +251,6 @@ export function Vis3() {
             </g>`;
           })}
 
-          <line
-            x1="0"
-            y1="${yZero}"
-            x2="${innerWidth}"
-            y2="${yZero}"
-            stroke="#D9D9D9"
-            stroke-width="0.75"
-          />
           <text
             x="${isMobile ? innerWidth - 5 : innerWidth - 20}"
             y="${yZero - 20}"
@@ -278,6 +270,16 @@ export function Vis3() {
             fill="#040078"
           >
             ← RE less efficient
+          </text>
+          <text
+            x="${xScale(0)}"
+            y="${innerHeight + 30}"
+            text-anchor="middle"
+            dominant-baseline="middle"
+            class="charts-text-body"
+            fill="#04033A"
+          >
+            Change in ${metric.toUpperCase()} (Log2 Scale)
           </text>
         </g>
       </g>
