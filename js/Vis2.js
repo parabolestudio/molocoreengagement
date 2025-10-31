@@ -31,8 +31,8 @@ export function Vis2() {
         //   `./data/vis2_data.csv`
       ),
       d3.csv(
-        // `${REPO_BASE_URL}/data/vis2_verticals.csv`
-        `./data/vis2_verticals.csv`
+        `${REPO_BASE_URL}/data/vis2_verticals.csv`
+        // `./data/vis2_verticals.csv`
       ),
     ]).then(([fetchedData, verticalsData]) => {
       fetchedData.forEach((d) => {
