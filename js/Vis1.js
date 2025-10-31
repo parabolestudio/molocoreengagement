@@ -3,6 +3,7 @@ import {
   REPO_BASE_URL,
   populateCountrySelectors,
   formatText,
+  isMobile,
 } from "./utils/helpers.js";
 import { renderSwitcher } from "./Switcher.js";
 
@@ -127,15 +128,15 @@ export function Vis1() {
 
   // dimensions
   const rowHeight = 44;
-  const rowPadding = 15;
+  const rowPadding = isMobile ? 35 : 15;
   const visContainer = document.querySelector("#vis-1");
   const width =
     visContainer && visContainer.offsetWidth ? visContainer.offsetWidth : 600;
   const margin = {
-    top: 1,
+    top: isMobile ? 25 : 1,
     right: 60,
     bottom: 40,
-    left: 150,
+    left: isMobile ? 1 : 125,
   };
   const numberOfRows = 7;
   const height =
@@ -152,9 +153,11 @@ export function Vis1() {
   const verticalRows = filteredData.map((d, i) => {
     return html`<g transform="translate(0, ${i * (rowHeight + rowPadding)})">
       <text
-        x="${-margin.left}"
-        y="${rowHeight / 2 + 5}"
+        x="${isMobile ? 1 : -margin.left}"
+        y="${isMobile ? 0 : rowHeight / 2 + 5}"
+        dy="${isMobile ? -12 : 0}"
         text-anchor="start"
+        dominant-baseline="middle"
         class="charts-text-body"
         fill="#04033A"
       >
@@ -223,7 +226,7 @@ export function Vis1() {
           stroke="none"
         />
         <g>
-          ${filteredData.map((d, i) => {
+          ${filteredData.map((_, i) => {
             return html`<rect
               x="${innerWidth - 10}"
               y="${i * (rowHeight + rowPadding) + 15}"
