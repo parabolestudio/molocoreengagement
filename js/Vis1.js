@@ -47,6 +47,11 @@ export function Vis1() {
         d["installType"] = d["install_type"].toLowerCase();
       });
 
+      // filter out rows for vertical "news & magazines"
+      fetchedData = fetchedData.filter(
+        (d) => d["vertical"] !== "news & magazines"
+      );
+
       setData(fetchedData);
 
       const uniqueCountries = Array.from(
@@ -132,7 +137,7 @@ export function Vis1() {
     bottom: 40,
     left: 150,
   };
-  const numberOfRows = 8;
+  const numberOfRows = 7;
   const height =
     rowHeight * numberOfRows +
     rowPadding * (numberOfRows - 1) +
