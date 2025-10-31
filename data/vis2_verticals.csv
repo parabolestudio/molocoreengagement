@@ -1,0 +1,131 @@
+country,vertical,os
+CAN,Dating,ANDROID
+CAN,Generative AI,ANDROID
+CAN,Match,ANDROID
+CAN,Strategy,ANDROID
+DEU,Casino,ANDROID
+DEU,Dating,ANDROID
+DEU,Generative AI,ANDROID
+DEU,Match,ANDROID
+DEU,Puzzle,ANDROID
+DEU,RPG,ANDROID
+DEU,Simulation,ANDROID
+DEU,Social,ANDROID
+DEU,Strategy,ANDROID
+FRA,Dating,ANDROID
+FRA,Generative AI,ANDROID
+FRA,Match,ANDROID
+FRA,Puzzle,ANDROID
+FRA,RPG,ANDROID
+FRA,Social,ANDROID
+FRA,Strategy,ANDROID
+GBR,Casino,ANDROID
+GBR,Dating,ANDROID
+GBR,Generative AI,ANDROID
+GBR,Match,ANDROID
+GBR,Puzzle,ANDROID
+GBR,Simulation,ANDROID
+GBR,Social,ANDROID
+GBR,Strategy,ANDROID
+GBR,Utility & Productivity,ANDROID
+IND,Dating,ANDROID
+IND,Finance (Trading & Investing),ANDROID
+IND,Social,ANDROID
+JPN,Dating,ANDROID
+JPN,Match,ANDROID
+JPN,RPG,ANDROID
+JPN,Social,ANDROID
+JPN,Strategy,ANDROID
+KOR,Match,ANDROID
+KOR,RPG,ANDROID
+KOR,Simulation,ANDROID
+KOR,Strategy,ANDROID
+KOR,Social,ANDROID
+USA,Casino,ANDROID
+USA,Dating,ANDROID
+USA,Generative AI,ANDROID
+USA,Loyalty,ANDROID
+USA,Match,ANDROID
+USA,Puzzle,ANDROID
+USA,RMG,ANDROID
+USA,RPG,ANDROID
+USA,Simulation,ANDROID
+USA,Social,ANDROID
+USA,Strategy,ANDROID
+USA,Utility & Productivity,ANDROID
+CAN,Casino,IOS
+CAN,Match,IOS
+CAN,Puzzle,IOS
+CAN,Simulation,IOS
+CAN,Strategy,IOS
+CAN,Utility & Productivity,IOS
+DEU,Casino,IOS
+DEU,Match,IOS
+DEU,Puzzle,IOS
+DEU,Simulation,IOS
+DEU,Strategy,IOS
+FRA,Match,IOS
+FRA,Strategy,IOS
+FRA,Utility & Production,IOS
+GBR,Casino,IOS
+GBR,Match,IOS
+GBR,Puzzle,IOS
+GBR,RMG,IOS
+GBR,Simulation,IOS
+GBR,Strategy,IOS
+GBR,Utility & Productivity,IOS
+JPN,Casino,IOS
+JPN,Dating,IOS
+JPN,Match,IOS
+JPN,RPG,IOS
+JPN,Simulation,IOS
+JPN,Social,IOS
+JPN,Strategy,IOS
+KOR,Dating,IOS
+KOR,Match,IOS
+KOR,RPG,IOS
+KOR,Simulation,IOS
+KOR,Strategy,IOS
+USA,Casino,IOS
+USA,Dating,IOS
+USA,Entertainment,IOS
+USA,Generative AI,IOS
+USA,Health & Fitness,IOS
+USA,Loyalty,IOS
+USA,Match,IOS
+USA,Puzzle,IOS
+USA,RMG,IOS
+USA,RPG,IOS
+USA,Simulation,IOS
+USA,Social,IOS
+USA,Strategy,IOS
+USA,Utility & Productivity,IOS
+WW,Casino,ANDROID
+WW,Dating,ANDROID
+WW,Entertainment,ANDROID
+WW,Generative AI,ANDROID
+WW,Health & Fitness,ANDROID
+WW,Loyalty,ANDROID
+WW,Match,ANDROID
+WW,Puzzle,ANDROID
+WW,RMG,ANDROID
+WW,RPG,ANDROID
+WW,Simulation,ANDROID
+WW,Social,ANDROID
+WW,Strategy,ANDROID
+WW,Utility & Productivity,ANDROID
+WW,Finance (Trading & Investing),ANDROID
+WW,Casino,IOS
+WW,Dating,IOS
+WW,Entertainment,IOS
+WW,Generative AI,IOS
+WW,Health & Fitness,IOS
+WW,Loyalty,IOS
+WW,Match,IOS
+WW,Puzzle,IOS
+WW,RMG,IOS
+WW,RPG,IOS
+WW,Simulation,IOS
+WW,Social,IOS
+WW,Strategy,IOS
+WW,Utility & Productivity,IOS

@@ -17,6 +17,7 @@ const defaultVertical = "all";
 
 export function Vis2() {
   const [data, setData] = useState(null);
+  const [includedVerticals, setIncludedVerticals] = useState(null);
   const [country, setCountry] = useState("USA");
   const [category, setCategory] = useState(defaultCategory);
   const [vertical, setVertical] = useState(defaultVertical);
@@ -24,10 +25,16 @@ export function Vis2() {
 
   useEffect(() => {
     // Fetch data when the component mounts
-    d3.csv(
-      `${REPO_BASE_URL}/data/vis2_data.csv`
-      //   `./data/vis2_data.csv`
-    ).then((fetchedData) => {
+    Promise.all([
+      d3.csv(
+        `${REPO_BASE_URL}/data/vis2_data.csv`
+        //   `./data/vis2_data.csv`
+      ),
+      d3.csv(
+        // `${REPO_BASE_URL}/data/vis2_verticals.csv`
+        `./data/vis2_verticals.csv`
+      ),
+    ]).then(([fetchedData, verticalsData]) => {
       fetchedData.forEach((d) => {
         d["inactivityDays"] = +d["inactivity_days"];
         d["returnPerc"] = +d["return_rate_percentage"];
@@ -43,6 +50,7 @@ export function Vis2() {
       fetchedData = fetchedData.filter((d) => d["vertical"] !== "unclassified");
 
       setData(fetchedData);
+      setIncludedVerticals(verticalsData);
 
       const uniqueCountries = Array.from(
         new Set(fetchedData.map((d) => d.country))
@@ -111,12 +119,28 @@ export function Vis2() {
     };
   }, []);
 
-  const filteredData = data.filter(
+  let filteredData = data.filter(
     (d) =>
       d.country === country &&
       d.category === category &&
       d.vertical === vertical
   );
+
+  // apply vertical-country inclusion list for filtering data
+  const useInclusionList = false; // TODO: remove this flag when inclusion list is ready
+  if (useInclusionList && includedVerticals && includedVerticals.length > 0) {
+    filteredData = filteredData.filter((d) => {
+      const verticalEntry = includedVerticals.find(
+        (v) =>
+          v.vertical.toLowerCase() === d.vertical.toLowerCase() &&
+          v.country.toLowerCase() === d.country.toLowerCase()
+      );
+      if (!verticalEntry && d.vertical !== "all") {
+        return false;
+      }
+      return true;
+    });
+  }
 
   console.log("Render in Vis2:", {
     country,
@@ -125,6 +149,7 @@ export function Vis2() {
     data,
     filteredData,
     hoveredItem,
+    includedVerticals,
   });
 
   // dimensions
@@ -190,6 +215,7 @@ export function Vis2() {
     <svg
       viewBox="0 0 ${width} ${height}"
       onmousemove="${(event) => {
+        if (!filteredData || filteredData.length === 0) return;
         const pointer = d3.pointer(event);
 
         const leftSide = margin.left;
@@ -408,7 +434,9 @@ export function Vis2() {
           : null}
       </g>
     </svg>
-    <${Tooltip} hoveredItem=${hoveredItem} />
+    ${filteredData && filteredData.length > 0
+      ? html`<${Tooltip} hoveredItem=${hoveredItem} />`
+      : null}
     ${datapointsNonPayer &&
     datapointsNonPayer.length > 1 &&
     datapointsPayer &&
