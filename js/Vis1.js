@@ -221,15 +221,15 @@ export function Vis1() {
           ${filteredData.map((d, i) => {
             return html`<rect
               x="${innerWidth - 10}"
-              y="${i * (rowHeight + rowPadding) + 5}"
+              y="${i * (rowHeight + rowPadding) + 15}"
               width="40"
-              height="${rowHeight - 10}"
+              height="20"
               fill="#F2F2F2"
             />`;
           })}
           <rect
             x="${innerWidth - 10 + 30}"
-            y="${0 * (rowHeight + rowPadding) + 5}"
+            y="${0 * (rowHeight + rowPadding) + 15}"
             width="20"
             height="${filteredData.length * (rowHeight + rowPadding)}"
             fill="#F2F2F2"
