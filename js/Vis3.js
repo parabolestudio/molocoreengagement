@@ -255,7 +255,10 @@ export function Vis3() {
             class="charts-text-body-bold"
             fill="#C368F9"
           >
-            RE more efficient →
+            ${isMobile
+              ? html`<tspan x="${innerWidth - 5}" dy="-16">RE more</tspan
+                  ><tspan x="${innerWidth - 5}" dy="16">efficient →</tspan>`
+              : html`<tspan>RE more efficient →</tspan>`}
           </text>
           <text
             x="${isMobile ? 5 : 20}"
@@ -265,7 +268,10 @@ export function Vis3() {
             class="charts-text-body-bold"
             fill="#040078"
           >
-            ← RE less efficient
+            ${isMobile
+              ? html`<tspan x="${5}" dy="-16">← RE less</tspan
+                  ><tspan x="${5}" dy="16">efficient</tspan>`
+              : html`<tspan>← RE less efficient</tspan>`}
           </text>
           <text
             x="${xScale(0)}"
