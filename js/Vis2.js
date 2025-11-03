@@ -217,6 +217,13 @@ export function Vis2() {
     day30Payer < day30NonPayer ? (isMobile ? -(offset + 3) : -offset) : offset;
   const day30NonPayerOffset = day30Payer < day30NonPayer ? offset : -offset;
 
+  // current formatted vertical for display
+  const currentVerticalItem = verticalsMap.find((v) => v.value === vertical);
+  let currentVerticalLabel = vertical;
+  if (currentVerticalItem) {
+    currentVerticalLabel = currentVerticalItem.label;
+  }
+
   return html`<div style="position: relative">
     <svg
       viewBox="0 0 ${width} ${height}"
@@ -452,7 +459,7 @@ export function Vis2() {
           style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background: #FFFFFF; color: #04033A; text-align: center; max-width: 80%; margin-left: ${margin.left}px; margin-top: ${-margin.top}px; text-wrap-style: balance; padding: 8px;"
           class="charts-text-body"
         >
-          No sufficient data for ${formatText(vertical)} in selected country
+          No sufficient data for ${currentVerticalLabel} in selected country
         </div>`}
   </div>`;
 }
