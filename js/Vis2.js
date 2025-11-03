@@ -26,14 +26,8 @@ export function Vis2() {
   useEffect(() => {
     // Fetch data when the component mounts
     Promise.all([
-      d3.csv(
-        `${REPO_BASE_URL}/data/vis2_data.csv`
-        //   `./data/vis2_data.csv`
-      ),
-      d3.csv(
-        `${REPO_BASE_URL}/data/vis2_verticals.csv`
-        // `./data/vis2_verticals.csv`
-      ),
+      d3.csv(`${REPO_BASE_URL}/data/vis2_data.csv`),
+      d3.csv(`${REPO_BASE_URL}/data/vis2_verticals_inclusion.csv`),
     ]).then(([fetchedData, verticalsData]) => {
       fetchedData.forEach((d) => {
         d["inactivityDays"] = +d["inactivity_days"];
@@ -48,8 +42,21 @@ export function Vis2() {
         d["installType"] = d["is_payer"].toLowerCase();
       });
       fetchedData = fetchedData.filter((d) => d["vertical"] !== "unclassified");
-
       setData(fetchedData);
+
+      verticalsData.forEach((d) => {
+        d["vertical"] =
+          d["vertical"] && d["vertical"] !== ""
+            ? d["vertical"].toLowerCase()
+            : null;
+        d["category"] =
+          d["category"] && d["category"].toLowerCase() === "gaming"
+            ? "gaming"
+            : d["category"] && d["category"].toLowerCase() === "non-gaming"
+            ? "consumer"
+            : null;
+        d["country"] = d["country"];
+      });
       setIncludedVerticals(verticalsData);
 
       const uniqueCountries = Array.from(
@@ -57,17 +64,17 @@ export function Vis2() {
       );
       populateCountrySelectors(uniqueCountries, "#vis-2-dropdown-countries");
 
-      // get unique verticals for gaming and consumer category
+      // get unique verticals for gaming and consumer category from inclusion list
       const gamingVerticals = Array.from(
         new Set(
-          fetchedData
+          verticalsData
             .filter((d) => d.category === "gaming")
             .map((d) => d.vertical)
         )
       );
       const consumerVerticals = Array.from(
         new Set(
-          fetchedData
+          verticalsData
             .filter((d) => d.category === "consumer")
             .map((d) => d.vertical)
         )
@@ -127,30 +134,29 @@ export function Vis2() {
   );
 
   // apply vertical-country inclusion list for filtering data
-  const useInclusionList = false; // TODO: remove this flag when inclusion list is ready
-  if (useInclusionList && includedVerticals && includedVerticals.length > 0) {
+  if (includedVerticals && includedVerticals.length > 0) {
     filteredData = filteredData.filter((d) => {
       const verticalEntry = includedVerticals.find(
         (v) =>
           v.vertical.toLowerCase() === d.vertical.toLowerCase() &&
           v.country.toLowerCase() === d.country.toLowerCase()
       );
-      if (!verticalEntry && d.vertical !== "all") {
+      if (!verticalEntry) {
         return false;
       }
       return true;
     });
   }
 
-  console.log("Render in Vis2:", {
-    country,
-    category,
-    vertical,
-    data,
-    filteredData,
-    hoveredItem,
-    includedVerticals,
-  });
+  // console.log("Render in Vis2:", {
+  //   country,
+  //   category,
+  //   vertical,
+  //   data,
+  //   filteredData,
+  //   hoveredItem,
+  //   includedVerticals,
+  // });
 
   // dimensions
   const visContainer = document.querySelector("#vis-2");

@@ -6,7 +6,7 @@ import { Vis2 } from "./js/Vis2.js";
 import { Vis3 } from "./js/Vis3.js";
 
 const Vis = async (props) => {
-  console.log("Rendering Vis component with props:", props);
+  // console.log("Rendering Vis component with props:", props);
 
   return html` <${props.component} ...${props} /> `;
 };

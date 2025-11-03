@@ -118,13 +118,13 @@ export function Vis1() {
       d.installType === installType
   );
 
-  console.log("Rendering vis 1 with ", {
-    country,
-    category,
-    installType,
-    data,
-    filteredData,
-  });
+  // console.log("Rendering vis 1 with ", {
+  //   country,
+  //   category,
+  //   installType,
+  //   data,
+  //   filteredData,
+  // });
 
   // dimensions
   const rowHeight = 44;

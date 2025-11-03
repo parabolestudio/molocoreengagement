@@ -68,10 +68,6 @@ export function Vis3() {
 
     // sort data based on new metric
     if (filteredData) {
-      console.log("Sorting filtered data for metric change", {
-        filteredData,
-        metric,
-      });
       let newFilteredData = data.filter((d) => d[metric] !== null);
       newFilteredData = [...newFilteredData].sort(
         (a, b) => b[metric] - a[metric]
@@ -84,7 +80,7 @@ export function Vis3() {
     return html`<div>Loading data...</div>`;
   }
 
-  console.log("Rendering vis 3", { data, metric, filteredData });
+  // console.log("Rendering vis 3", { data, metric, filteredData });
 
   // dimensions
   const visContainer = document.querySelector("#vis-3");
