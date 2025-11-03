@@ -166,7 +166,7 @@ export function Vis2() {
   const margin = {
     top: 10,
     right: 1,
-    bottom: 30,
+    bottom: isMobile ? 50 : 30,
     left: 50,
   };
   const innerWidth = width - margin.left - margin.right;
@@ -338,7 +338,12 @@ export function Vis2() {
               class="charts-text-body"
               fill="#04033A"
             >
-              Day 1 of inactivity
+              ${isMobile
+                ? html`<tspan x="${xScale(0) + dayZeroSpace + 7}">Day 1</tspan
+                    ><tspan x="${xScale(0) + dayZeroSpace + 7}" dy="16"
+                      >of inactivity</tspan
+                    >`
+                : html`Day 1 of inactivity`}
             </text>
             <text
               x="${xScale(15)}"
