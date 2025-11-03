@@ -138,7 +138,7 @@ export function Vis1() {
     bottom: 40,
     left: isMobile ? 1 : 125,
   };
-  const numberOfRows = 7;
+  const numberOfRows = filteredData.length; // 7
   const height =
     rowHeight * numberOfRows +
     rowPadding * (numberOfRows - 1) +
