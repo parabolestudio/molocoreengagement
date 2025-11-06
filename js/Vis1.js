@@ -180,7 +180,7 @@ export function Vis1() {
         y="0"
         width="${xScale(d.uninstallRate)}"
         height="${rowHeight}"
-        fill="#60E2B7"
+        fill="#0280FB"
         stroke="white"
         stroke-width="2"
         rx="10"
