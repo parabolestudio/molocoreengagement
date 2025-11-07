@@ -194,7 +194,7 @@ export function Vis1() {
         font-size="18"
         font-weight="700"
         font-family="Spacegrotesk, Space Grotesk, sans-serif"
-        fill="#04033A"
+        fill="#fff"
         transform="translate(${xScale(d.uninstallRate) - 12}, ${rowHeight / 2 +
         2.5})"
         style="transition: transform 0.5s ease;"
