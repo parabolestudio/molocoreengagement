@@ -1,83 +1,61 @@
 country,category,vertical
 AUS,non-gaming,Dating
 AUS,non-gaming,Entertainment
-AUS,non-gaming,Finance (Trading & Investing)
 AUS,non-gaming,Generative AI
-AUS,non-gaming,Health & Fitness
 AUS,non-gaming,Loyalty
-AUS,non-gaming,Other Consumer
 AUS,non-gaming,Social
 AUS,non-gaming,Utility & Productivity
 BRA,non-gaming,Dating
 BRA,non-gaming,E-Commerce
 BRA,non-gaming,Entertainment
-BRA,non-gaming,Finance (Financial Health & Banking)
-BRA,non-gaming,Finance (Trading & Investing)
-BRA,non-gaming,Other Consumer
+BRA,non-gaming,On-Demand
 BRA,non-gaming,Social
 BRA,non-gaming,Utility & Productivity
 CAN,non-gaming,Dating
-CAN,non-gaming,Entertainment
 CAN,non-gaming,Finance (Trading & Investing)
-CAN,non-gaming,Generative AI
-CAN,non-gaming,Health & Fitness
 CAN,non-gaming,Loyalty
-CAN,non-gaming,Other Consumer
-CAN,non-gaming,RMG
 CAN,non-gaming,Social
 CAN,non-gaming,Utility & Productivity
 DEU,non-gaming,Dating
-DEU,non-gaming,E-Commerce
-DEU,non-gaming,Entertainment
-DEU,non-gaming,Finance (Financial Health & Banking)
 DEU,non-gaming,Finance (Trading & Investing)
 DEU,non-gaming,Generative AI
-DEU,non-gaming,Health & Fitness
 DEU,non-gaming,Loyalty
 DEU,non-gaming,On-Demand
-DEU,non-gaming,Other Consumer
 DEU,non-gaming,Social
+DEU,non-gaming,Travel
 DEU,non-gaming,Utility & Productivity
-FRA,non-gaming,Dating
+FRA,non-gaming,E-Commerce
 FRA,non-gaming,Entertainment
-FRA,non-gaming,Finance (Financial Health & Banking)
-FRA,non-gaming,Finance (Trading & Investing)
 FRA,non-gaming,Generative AI
-FRA,non-gaming,Health & Fitness
 FRA,non-gaming,Loyalty
-FRA,non-gaming,Other Consumer
 FRA,non-gaming,Social
 FRA,non-gaming,Utility & Productivity
+GBR,non-gaming,Dating
+GBR,non-gaming,Finance (Financial Health & Banking)
+GBR,non-gaming,Generative AI
+GBR,non-gaming,Loyalty
+GBR,non-gaming,On-Demand
 IDN,non-gaming,Dating
-IDN,non-gaming,E-Commerce
+IDN,non-gaming,Education
 IDN,non-gaming,Entertainment
 IDN,non-gaming,Finance (Financial Health & Banking)
-IDN,non-gaming,Finance (Trading & Investing)
-IDN,non-gaming,Other Consumer
 IDN,non-gaming,Social
 IDN,non-gaming,Utility & Productivity
-IND,non-gaming,Dating
-IND,non-gaming,E-Commerce
-IND,non-gaming,Education
 IND,non-gaming,Entertainment
-IND,non-gaming,Finance (Financial Health & Banking)
-IND,non-gaming,Finance (Trading & Investing)
-IND,non-gaming,Loyalty
-IND,non-gaming,On-Demand
-IND,non-gaming,Other Consumer
-IND,non-gaming,RMG
 IND,non-gaming,Social
 IND,non-gaming,Utility & Productivity
-KOR,non-gaming,Dating
+JPN,non-gaming,Dating
+JPN,non-gaming,Entertainment
+JPN,non-gaming,Health & Fitness
+JPN,non-gaming,Social
+JPN,non-gaming,Utility & Productivity
 KOR,non-gaming,E-Commerce
 KOR,non-gaming,Education
 KOR,non-gaming,Entertainment
 KOR,non-gaming,Finance (Financial Health & Banking)
-KOR,non-gaming,Finance (Trading & Investing)
-KOR,non-gaming,Generative AI
 KOR,non-gaming,Health & Fitness
+KOR,non-gaming,Loyalty
 KOR,non-gaming,On-Demand
-KOR,non-gaming,Other Consumer
 KOR,non-gaming,Social
 KOR,non-gaming,Travel
 KOR,non-gaming,Utility & Productivity
@@ -91,88 +69,69 @@ USA,non-gaming,Generative AI
 USA,non-gaming,Health & Fitness
 USA,non-gaming,Loyalty
 USA,non-gaming,On-Demand
-USA,non-gaming,Other Consumer
 USA,non-gaming,RMG
 USA,non-gaming,Social
 USA,non-gaming,Utility & Productivity
-AUS,gaming,Midcore
 AUS,gaming,Casino
+AUS,gaming,MidCore
+AUS,gaming,Other
 AUS,gaming,Hypercasual
-AUS,gaming,Other Gaming
-AUS,gaming,Hypercasual
-AUS,gaming,all
-BRA,gaming,Midcore
 BRA,gaming,Casino
+BRA,gaming,MidCore
+BRA,gaming,Other
 BRA,gaming,Hypercasual
-BRA,gaming,Other Gaming
-BRA,gaming,Hypercasual
-BRA,gaming,all
-CAN,gaming,Midcore
 CAN,gaming,Casino
+CAN,gaming,MidCore
+CAN,gaming,Other
 CAN,gaming,Hypercasual
-CAN,gaming,Other Gaming
-CAN,gaming,Hypercasual
-CAN,gaming,all
-DEU,gaming,Midcore
 DEU,gaming,Casino
+DEU,gaming,MidCore
+DEU,gaming,Other
 DEU,gaming,Hypercasual
-DEU,gaming,Other Gaming
-DEU,gaming,Hypercasual
-DEU,gaming,all
-FRA,gaming,Midcore
 FRA,gaming,Casino
+FRA,gaming,MidCore
+FRA,gaming,Other
 FRA,gaming,Hypercasual
-FRA,gaming,Other Gaming
-FRA,gaming,Hypercasual
-FRA,gaming,all
-IDN,gaming,Midcore
+GBR,gaming,Casino
+GBR,gaming,MidCore
+GBR,gaming,Other
+GBR,gaming,Hypercasual
 IDN,gaming,Casino
-IDN,gaming,Hypercasual
-IDN,gaming,Other Gaming
-IDN,gaming,Hypercasual
-IDN,gaming,all
-IND,gaming,Midcore
+IDN,gaming,MidCore
+IDN,gaming,Other
 IND,gaming,Casino
+IND,gaming,MidCore
+IND,gaming,Other
 IND,gaming,Hypercasual
-IND,gaming,Other Gaming
-IND,gaming,Hypercasual
-IND,gaming,all
-KOR,gaming,Midcore
+JPN,gaming,MidCore
+JPN,gaming,Hypercasual
 KOR,gaming,Casino
+KOR,gaming,MidCore
+KOR,gaming,Other
 KOR,gaming,Hypercasual
-KOR,gaming,Other Gaming
-KOR,gaming,Hypercasual
-KOR,gaming,all
-USA,gaming,Midcore
 USA,gaming,Casino
+USA,gaming,MidCore
+USA,gaming,Other
 USA,gaming,Hypercasual
-USA,gaming,Other Gaming
-USA,gaming,Hypercasual
-USA,gaming,all
 AUS,non-gaming,all
 BRA,non-gaming,all
 CAN,non-gaming,all
+DEU,non-gaming,all
+FRA,non-gaming,all
+GBR,non-gaming,all
 IDN,non-gaming,all
 IND,non-gaming,all
-FRA,non-gaming,all
-DEU,non-gaming,all
+JPN,non-gaming,all
 KOR,non-gaming,all
 USA,non-gaming,all
-JPN,non-gaming,all
-JPN,gaming,Midcore
-JPN,gaming,Casino
-JPN,gaming,Hypercasual
-JPN,gaming,Other Gaming
-JPN,gaming,Hypercasual
+AUS,gaming,all
+BRA,gaming,all
+CAN,gaming,all
+DEU,gaming,all
+FRA,gaming,all
+GBR,gaming,all
+IDN,gaming,all
+IND,gaming,all
 JPN,gaming,all
-JPN,non-gaming,Dating
-JPN,non-gaming,E-Commerce
-JPN,non-gaming,Education
-JPN,non-gaming,Entertainment
-JPN,non-gaming,Finance (Financial Health & Banking)
-JPN,non-gaming,Finance (Trading & Investing)
-JPN,non-gaming,Health & Fitness
-JPN,non-gaming,Loyalty
-JPN,non-gaming,Other Consumer
-JPN,non-gaming,RMG
-JPN,non-gaming,Social
+KOR,gaming,all
+USA,gaming,all
