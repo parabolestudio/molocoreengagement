@@ -35,6 +35,15 @@ export function Vis3() {
             : null;
         d["roas"] =
           d["roas_ratio"] && d["roas_ratio"] !== "" ? +d["roas_ratio"] : null;
+
+        d["roasDelta"] =
+          d["roas delta"] && d["roas delta"] !== ""
+            ? +d["roas delta"].replace("%", "")
+            : null;
+        d["cpaDelta"] =
+          d["cpa delta"] && d["cpa delta"] !== ""
+            ? +d["cpa delta"].replace("%", "")
+            : null;
       });
 
       setData(fetchedData);
@@ -80,7 +89,7 @@ export function Vis3() {
     return html`<div>Loading data...</div>`;
   }
 
-  // console.log("Rendering vis 3", { data, metric, filteredData });
+  console.log("Rendering vis 3", { data, metric, filteredData });
 
   // dimensions
   const visContainer = document.querySelector("#vis-3");
@@ -281,7 +290,7 @@ export function Vis3() {
             class="charts-text-body"
             fill="#04033A"
           >
-            Change in ${metric.toUpperCase()} (Log2 Scale)
+            Impact on ${metric.toUpperCase()} (Log2 Scale)
           </text>
         </g>
       </g>
@@ -293,6 +302,19 @@ export function Vis3() {
 function Tooltip({ hoveredItem }) {
   if (!hoveredItem || hoveredItem.datapoint[hoveredItem.metric] === null)
     return null;
+
+  console.log("Rendering tooltip", { hoveredItem });
+
+  let deltaLabel = `${
+    hoveredItem.datapoint[hoveredItem.metric + "Delta"] > 0 ? "+" : ""
+  }${hoveredItem.datapoint[hoveredItem.metric + "Delta"].toFixed(0)}%`;
+
+  if (
+    hoveredItem.metric === "cpa" &&
+    hoveredItem.datapoint[hoveredItem.metric + "Delta"] > 500
+  ) {
+    deltaLabel = ">+500%";
+  }
 
   return html`<div
     class="tooltip"
@@ -309,21 +331,17 @@ function Tooltip({ hoveredItem }) {
     </div>
 
     <div>
-      <p class="tooltip-label">Country</p>
-      <p class="tooltip-value">
-        ${hoveredItem.datapoint.country
-          ? countryLabels[hoveredItem.datapoint.country]
-          : "N/A"}
-      </p>
-    </div>
-
-    <div>
-      <p class="tooltip-label">${hoveredItem.metric.toUpperCase()} change</p>
+      <p class="tooltip-label">Impact on ${hoveredItem.metric.toUpperCase()}</p>
       <p class="tooltip-value">
         ${hoveredItem.datapoint[hoveredItem.metric]
           ? hoveredItem.datapoint[hoveredItem.metric].toFixed(1)
           : null}
       </p>
+    </div>
+
+    <div>
+      <p class="tooltip-label">${hoveredItem.metric.toUpperCase()} delta</p>
+      <p class="tooltip-value">${deltaLabel}</p>
     </div>
   </div>`;
 }
