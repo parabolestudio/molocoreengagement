@@ -7,6 +7,7 @@ export function Vis3() {
   const [filteredData, setFilteredData] = useState(null);
   const [metric, setMetric] = useState("cpa");
   const [hoveredItem, setHoveredItem] = useState(null);
+  const [hoveredInfoTooltip, setHoveredInfoTooltip] = useState(false);
 
   useEffect(() => {
     // render category switcher
@@ -292,10 +293,40 @@ export function Vis3() {
           >
             Impact on ${metric.toUpperCase()} (Log2 Scale)
           </text>
+          <image
+            x="${xScale(0) + 100}"
+            y="${innerHeight + 20}"
+            xlink:href="${REPO_BASE_URL}/assets/info_icon.svg"
+            width="20"
+            height="20"
+            style="cursor: pointer;"
+            onmouseenter="${() => {
+              setHoveredInfoTooltip({
+                x: xScale(0) + margin.left + 100 + 20,
+                y: innerHeight + margin.top + 20 + 20,
+                align: isMobile ? "right" : "left",
+              });
+            }}"
+            onmouseleave="${() => {
+              setHoveredInfoTooltip(null);
+            }}"
+          />
         </g>
       </g>
     </svg>
+    ${hoveredInfoTooltip
+      ? html`<${InfoTooltip} hoveredItem="${hoveredInfoTooltip}" />`
+      : null}
     <${Tooltip} hoveredItem=${hoveredItem} />
+  </div>`;
+}
+
+function InfoTooltip({ hoveredItem }) {
+  return html`<div
+    class="tooltip"
+    style="${hoveredItem.align}: ${hoveredItem.x}px; top: ${hoveredItem.y}px;"
+  >
+    <p class="">A one unit shift equals a<br />twofold change in metric</p>
   </div>`;
 }
 
@@ -303,12 +334,9 @@ function Tooltip({ hoveredItem }) {
   if (!hoveredItem || hoveredItem.datapoint[hoveredItem.metric] === null)
     return null;
 
-  console.log("Rendering tooltip", { hoveredItem });
-
   let deltaLabel = `${
     hoveredItem.datapoint[hoveredItem.metric + "Delta"] > 0 ? "+" : ""
   }${hoveredItem.datapoint[hoveredItem.metric + "Delta"].toFixed(0)}%`;
-
   if (
     hoveredItem.metric === "cpa" &&
     hoveredItem.datapoint[hoveredItem.metric + "Delta"] > 500
