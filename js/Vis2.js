@@ -372,14 +372,14 @@ export function Vis2() {
           ? html` <g>
               <path
                 d="${lineGen(datapointsPayer)}"
-                stroke="#0280FB"
+                stroke="#60E2B7"
                 stroke-width="3"
                 fill="none"
                 style="transition: all ease 0.3s"
               />
               <path
                 d="${lineGen(datapointsNonPayer)}"
-                stroke="#C368F9"
+                stroke="#876AFF"
                 stroke-width="3"
                 fill="none"
                 style="transition: all ease 0.3s"
@@ -389,7 +389,7 @@ export function Vis2() {
                 day30PayerOffset})"
                 text-anchor="end"
                 dominant-baseline="middle"
-                fill="#0280FB"
+                fill="#60E2B7"
                 class="charts-text-body-bold"
                 style="transition: all ease 0.3s"
               >
@@ -401,7 +401,7 @@ export function Vis2() {
                 day30NonPayerOffset})"
                 text-anchor="end"
                 dominant-baseline="middle"
-                fill="#C368F9"
+                fill="#876AFF"
                 class="charts-text-body-bold"
                 style="transition: all ease 0.3s"
               >
@@ -426,7 +426,7 @@ export function Vis2() {
                 cx="${xScale(hoveredItem.hoveredDay)}"
                 cy="${yScale(highlightPayer ? highlightPayer.returnPerc : 0)}"
                 r="5"
-                fill="#0280FB"
+                fill="#60E2B7"
                 style="transition: all ease 0.3s"
               />`
             : ""}
@@ -437,7 +437,7 @@ export function Vis2() {
                   highlightNonPayer ? highlightNonPayer.returnPerc : 0
                 )}"
                 r="5"
-                fill="#C368F9"
+                fill="#876AFF"
                 style="transition: all ease 0.3s"
               />`
             : ""}
