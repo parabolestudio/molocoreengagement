@@ -302,7 +302,9 @@ export function Vis3() {
             style="cursor: pointer;"
             onmouseenter="${() => {
               setHoveredInfoTooltip({
-                x: xScale(0) + margin.left + 100 + 20,
+                x: isMobile
+                  ? xScale(0) + margin.left + 100 + 20 - 233 - 20
+                  : xScale(0) + margin.left + 100 + 20,
                 y: innerHeight + margin.top + 20 + 20,
                 align: isMobile ? "right" : "left",
               });
@@ -324,7 +326,7 @@ export function Vis3() {
 function InfoTooltip({ hoveredItem }) {
   return html`<div
     class="tooltip"
-    style="${hoveredItem.align}: ${hoveredItem.x}px; top: ${hoveredItem.y}px;"
+    style="left: ${hoveredItem.x}px; top: ${hoveredItem.y}px;"
   >
     <p class="">A one unit shift equals a<br />twofold change in metric</p>
   </div>`;
