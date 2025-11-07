@@ -56,6 +56,13 @@ export function Vis2() {
             ? "consumer"
             : null;
         d["country"] = d["country"];
+
+        if (d["vertical"] === "other" && d["category"] === "gaming") {
+          d["vertical"] = "other gaming";
+        }
+        if (d["vertical"] === "other" && d["category"] === "consumer") {
+          d["vertical"] = "other consumer";
+        }
       });
       setIncludedVerticals(verticalsData);
 
