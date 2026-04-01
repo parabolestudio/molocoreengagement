@@ -20,7 +20,7 @@ export function Vis1() {
         { label: "Consumer", value: "consumer" },
         { label: "Gaming", value: "gaming" },
       ],
-      "vis-1-dropdown-categories"
+      "vis-1-dropdown-categories",
     );
     // render install type switcher
     renderSwitcher(
@@ -28,12 +28,12 @@ export function Vis1() {
         { label: "Paid", value: "non-organic" },
         { label: "Organic", value: "organic" },
       ],
-      "vis-1-dropdown-install-types"
+      "vis-1-dropdown-install-types",
     );
 
     // Fetch data when the component mounts
     d3.csv(
-      `${REPO_BASE_URL}/data/vis1_data.csv`
+      `${REPO_BASE_URL}/data/vis1_data.csv`,
       //   `./data/vis1_data.csv`
     ).then((fetchedData) => {
       fetchedData.forEach((d) => {
@@ -42,21 +42,21 @@ export function Vis1() {
           d["vertical"].toLowerCase() === "gaming"
             ? "gaming"
             : d["vertical"].toLowerCase() === "non-gaming"
-            ? "consumer"
-            : null;
+              ? "consumer"
+              : null;
         d["vertical"] = d["subvertical"].toLowerCase();
         d["installType"] = d["install_type"].toLowerCase();
       });
 
       // filter out rows for vertical "news & magazines"
       fetchedData = fetchedData.filter(
-        (d) => d["vertical"] !== "news & magazines"
+        (d) => d["vertical"] !== "news & magazines",
       );
 
       setData(fetchedData);
 
       const uniqueCountries = Array.from(
-        new Set(fetchedData.map((d) => d.country))
+        new Set(fetchedData.map((d) => d.country)),
       );
 
       populateCountrySelectors(uniqueCountries, "#vis-1-dropdown-countries");
@@ -68,12 +68,12 @@ export function Vis1() {
     const handleCountryChange = (e) => setCountry(e.detail.selected);
     document.addEventListener(
       `#vis-1-dropdown-countries-changed`,
-      handleCountryChange
+      handleCountryChange,
     );
     return () => {
       document.removeEventListener(
         `#vis-1-dropdown-countries-changed`,
-        handleCountryChange
+        handleCountryChange,
       );
     };
   }, []);
@@ -83,12 +83,12 @@ export function Vis1() {
     const handleCategoryChange = (e) => setCategory(e.detail.activeItem);
     document.addEventListener(
       `vis-1-dropdown-categories-switched`,
-      handleCategoryChange
+      handleCategoryChange,
     );
     return () => {
       document.removeEventListener(
         `vis-1-dropdown-categories-switched`,
-        handleCategoryChange
+        handleCategoryChange,
       );
     };
   }, []);
@@ -98,12 +98,12 @@ export function Vis1() {
     const handleInstallTypeChange = (e) => setInstallType(e.detail.activeItem);
     document.addEventListener(
       "vis-1-dropdown-install-types-switched",
-      handleInstallTypeChange
+      handleInstallTypeChange,
     );
     return () => {
       document.removeEventListener(
         "vis-1-dropdown-install-types-switched",
-        handleInstallTypeChange
+        handleInstallTypeChange,
       );
     };
   }, []);
@@ -115,7 +115,7 @@ export function Vis1() {
     (d) =>
       d.country === country &&
       d.category === category &&
-      d.installType === installType
+      d.installType === installType,
   );
 
   // console.log("Rendering vis 1 with ", {
@@ -159,7 +159,7 @@ export function Vis1() {
         text-anchor="start"
         dominant-baseline="middle"
         class="charts-text-body"
-        fill="#04033A"
+        fill="#fff"
       >
         ${formatText(d.vertical)}
       </text>
@@ -168,9 +168,9 @@ export function Vis1() {
         y="0"
         width="${innerWidth - xScale(d.uninstallRate)}"
         height="${rowHeight}"
-        fill="#F2F2F2"
-        stroke="white"
-        stroke-width="2"
+        fill="#F2F2F1"
+        stroke="#040078"
+        stroke-width="3"
         rx="10"
         ry="10"
         style="transition: all 0.5s ease;"
@@ -181,8 +181,8 @@ export function Vis1() {
         width="${xScale(d.uninstallRate)}"
         height="${rowHeight}"
         fill="#0280FB"
-        stroke="white"
-        stroke-width="2"
+        stroke="#040078"
+        stroke-width="3"
         rx="10"
         ry="10"
         style="transition: all 0.5s ease;"
@@ -210,6 +210,7 @@ export function Vis1() {
         font-weight="700"
         font-family="Spacegrotesk, Space Grotesk, sans-serif"
         fill="#04033A"
+        class="vis-1-remain-rate"
       >
         ${(100 - d.uninstallRate).toFixed(0)}%
       </text>
@@ -232,7 +233,7 @@ export function Vis1() {
               y="${i * (rowHeight + rowPadding) + 15}"
               width="40"
               height="20"
-              fill="#F2F2F2"
+              fill="#F2F2F1"
             />`;
           })}
           <rect
@@ -240,7 +241,7 @@ export function Vis1() {
             y="${0 * (rowHeight + rowPadding) + 15}"
             width="20"
             height="${filteredData.length * (rowHeight + rowPadding)}"
-            fill="#F2F2F2"
+            fill="#F2F2F1"
             rx="10"
             ry="10"
             style="transition: height 0.3s ease;"
