@@ -27,6 +27,17 @@
 #vis-1 svg text.vis-1-remain-rate {
   fill: #04033a !important;
 }
+// temporarily pulled from manual override in Webflow
+#vis-3 {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+#vis-3 {
+  background-color: #040078 !important;
+  padding: 0px !important;
+}
 
 #vis-2-dropdown-verticals {
   .vis-filter-category-container {

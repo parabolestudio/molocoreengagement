@@ -16,7 +16,7 @@ export function Vis3() {
         { label: "CPA", value: "cpa" },
         { label: "ROAS", value: "roas" },
       ],
-      "vis-3-dropdown-metrics"
+      "vis-3-dropdown-metrics",
     );
 
     // Fetch data when the component mounts
@@ -62,12 +62,12 @@ export function Vis3() {
     };
     document.addEventListener(
       `vis-3-dropdown-metrics-switched`,
-      handleMetricChange
+      handleMetricChange,
     );
     return () => {
       document.removeEventListener(
         `vis-3-dropdown-metrics-switched`,
-        handleMetricChange
+        handleMetricChange,
       );
     };
   }, []);
@@ -80,7 +80,7 @@ export function Vis3() {
     if (filteredData) {
       let newFilteredData = data.filter((d) => d[metric] !== null);
       newFilteredData = [...newFilteredData].sort(
-        (a, b) => b[metric] - a[metric]
+        (a, b) => b[metric] - a[metric],
       );
       setFilteredData(newFilteredData);
     }
@@ -193,27 +193,26 @@ export function Vis3() {
         />
         <g>
           ${xTicks.map(
-            (tick) => html` <g
-              transform="translate(${xScale(tick)}, ${innerHeight})"
-            >
-              <line
-                x1="0"
-                y1="0"
-                x2="0"
-                y2="-${innerHeight}"
-                stroke="#D9D9D9"
-                stroke-width="0.75"
-              />
-              <text
-                x="0"
-                y="15"
-                text-anchor="middle"
-                class="charts-text-body"
-                fill="#04033A"
-              >
-                ${tick}
-              </text>
-            </g>`
+            (tick) =>
+              html` <g transform="translate(${xScale(tick)}, ${innerHeight})">
+                <line
+                  x1="0"
+                  y1="0"
+                  x2="0"
+                  y2="-${innerHeight}"
+                  stroke="#737373"
+                  stroke-width="0.75"
+                />
+                <text
+                  x="0"
+                  y="15"
+                  text-anchor="middle"
+                  class="charts-text-body"
+                  fill="#ffffff"
+                >
+                  ${tick}
+                </text>
+              </g>`,
           )}
         </g>
 
@@ -227,7 +226,7 @@ export function Vis3() {
                 x="${-margin.left}"
                 class="charts-text-body"
                 dominant-baseline="middle"
-                fill="#04033A"
+                fill="#ffffff"
                 >App #${i + 1}</text
               >
               <line
@@ -236,10 +235,10 @@ export function Vis3() {
                 x2="${d[metric] === null ? xScale(0) : xScale(d[metric])}"
                 y2="0"
                 stroke="${hoveredItem && hoveredItem.appNumber === d.appNumber
-                  ? "#04033A"
+                  ? "#737373"
                   : d[metric] < 0
-                  ? "#040078"
-                  : "#C368F9"}"
+                    ? "#ffffff"
+                    : "#C368F9"}"
                 stroke-width="2"
                 style="transition: all 0.3s ease;"
               />
@@ -247,10 +246,10 @@ export function Vis3() {
                 cx="${d[metric] === null ? xScale(0) : xScale(d[metric])}"
                 r="5"
                 fill="${hoveredItem && hoveredItem.appNumber === d.appNumber
-                  ? "#04033A"
+                  ? "#737373"
                   : d[metric] < 0
-                  ? "#040078"
-                  : "#C368F9"}"
+                    ? "#ffffff"
+                    : "#C368F9"}"
                 opacity="${d[metric] === null ? 0 : 1}"
                 style="transition: all 0.3s ease;"
               />
@@ -276,7 +275,7 @@ export function Vis3() {
             text-anchor="start"
             dominant-baseline="middle"
             class="charts-text-body-bold"
-            fill="#040078"
+            fill="#ffffff"
           >
             ${isMobile
               ? html`<tspan x="${5}" dy="-16">← RE less</tspan
@@ -289,7 +288,7 @@ export function Vis3() {
             text-anchor="middle"
             dominant-baseline="middle"
             class="charts-text-body"
-            fill="#04033A"
+            fill="#ffffff"
           >
             Impact on ${metric.toUpperCase()} (Log2 Scale)
           </text>
