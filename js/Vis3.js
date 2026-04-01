@@ -87,7 +87,7 @@ export function Vis3() {
   }, [metric]);
 
   if (!data) {
-    return html`<div>Loading data...</div>`;
+    return html`<div style="color: #fff;">Loading data...</div>`;
   }
 
   console.log("Rendering vis 3", { data, metric, filteredData });

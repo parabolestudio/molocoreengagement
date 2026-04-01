@@ -109,7 +109,7 @@ export function Vis1() {
   }, []);
 
   if (!data) {
-    return html`<div>Loading data...</div>`;
+    return html`<div style="color: #fff;">Loading data...</div>`;
   }
   const filteredData = data.filter(
     (d) =>
