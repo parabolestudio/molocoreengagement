@@ -293,7 +293,7 @@ export function Vis3() {
             Impact on ${metric.toUpperCase()} (Log2 Scale)
           </text>
           <image
-            x="${xScale(0) + 100}"
+            x="${xScale(0) + 100 + (metric === "roas" ? 5 : 0)}"
             y="${innerHeight + 20}"
             xlink:href="${REPO_BASE_URL}/assets/info_icon.svg"
             width="20"
