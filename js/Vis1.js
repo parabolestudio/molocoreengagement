@@ -82,15 +82,8 @@ export function Vis1({ locale: loc }) {
       "vis-1-dropdown-install-types",
     );
 
-    const dataURL = getDataURL("vis1_data", loc);
-    console.log("Fetching data from URL:", dataURL, loc);
-
     // Fetch data when the component mounts
-    d3.csv(
-      // `${REPO_BASE_URL}/data/vis1_data.csv`,
-      //   `./data/vis1_data.csv`
-      getDataURL("vis1_data", loc),
-    ).then((fetchedData) => {
+    d3.csv(getDataURL("vis1_data", loc)).then((fetchedData) => {
       fetchedData.forEach((d) => {
         d["uninstallRate"] = +d["uninstall_rate"].replace("%", "");
         d["category"] =

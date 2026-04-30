@@ -1,0 +1,29 @@
+id,en,ja
+,Aquisition,獲得
+,Activation,アクティベーション
+,Retention,リテンション
+,Select country,国を選択
+,Select vertical,業界を選択
+,Select install type,インストール方法を選択
+,User behavior,ユーザーアクション
+,Select vertical or sub-vertical,業界 / カテゴリーを選択
+t_consumer,Consumer,非ゲーム
+t_gaming,Gaming,ゲーム
+t_day1,Day 1 of inactivity,非アクティブ1日目
+t_day1_part1,Day 1,1日目
+t_day1_part2,of inactivity,
+t_day15,Day 15,15日目
+t_day30,Day 30,30日目
+t_day,Day,日
+t_returningUsers,Returning users,
+t_payers,Payers,
+t_nonPayers,Non-Payers,
+t_returningPayers,Returning payers,
+t_returningNonPayers,Returning non-payers,
+,Select metric,指標を選択
+t_REless,RE less efficient,リエンゲージメントの効率が低い
+t_REmore,RE more efficient,リエンゲージメントの効率が高い
+,Impact on CPA (Log2 Scale),CPAへの影響（Log2スケール）
+,Impact on ROAS (Log2 Scale),ROASへの影響（Log2スケール）
+,A one unit shift equals a twofold change in metric,1単位のシフトは、指標における2倍の変化に相当します
+,No sufficient data for [category] in selected country,

@@ -10,12 +10,22 @@ import {
   verticalsMap,
   isMobile,
   formatText,
+  getDataURL,
 } from "./utils/helpers.js";
+import { translations } from "./utils/translations.js";
 
-const defaultCategory = "consumer";
-const defaultVertical = "all";
+// Internal category key is always English ("gaming" | "consumer").
+// Use this constant wherever a default category is needed.
+const CATEGORY_DEFAULT = "consumer";
+const VERTICAL_DEFAULT = {
+  en: "all",
+  ja: "すべて",
+};
 
-export function Vis2() {
+export function Vis2({ locale: loc }) {
+  const defaultCategory = CATEGORY_DEFAULT;
+  const defaultVertical = VERTICAL_DEFAULT[loc] || VERTICAL_DEFAULT["en"];
+
   const [data, setData] = useState(null);
   const [includedVerticals, setIncludedVerticals] = useState(null);
   const [country, setCountry] = useState("USA");
@@ -26,20 +36,31 @@ export function Vis2() {
   useEffect(() => {
     // Fetch data when the component mounts
     Promise.all([
-      d3.csv(`${REPO_BASE_URL}/data/vis2_data.csv`),
-      d3.csv(`${REPO_BASE_URL}/data/vis2_verticals_inclusion.csv`),
+      d3.csv(getDataURL("vis2_data", loc)),
+      d3.csv(getDataURL("vis2_verticals_inclusion", loc)),
     ]).then(([fetchedData, verticalsData]) => {
       fetchedData.forEach((d) => {
         d["inactivityDays"] = +d["inactivity_days"];
         d["returnPerc"] = +d["return_rate_percentage"];
+        // Normalize category to English internal key regardless of locale.
+        // Japanese CSV duplicate columns cause d3 to keep the last (Japanese)
+        // value, so we must also handle Japanese category names.
+        const rawCat = d["vertical"] ? d["vertical"].toLowerCase() : "";
         d["category"] =
-          d["vertical"].toLowerCase() === "gaming"
+          rawCat === "gaming" || rawCat === "ゲーム"
             ? "gaming"
-            : d["vertical"].toLowerCase() === "non-gaming"
-            ? "consumer"
-            : null;
+            : rawCat === "non-gaming" || rawCat === "非ゲーム"
+              ? "consumer"
+              : null;
         d["vertical"] = d["subvertical"].toLowerCase();
-        d["installType"] = d["is_payer"].toLowerCase();
+        // Normalize is_payer to English internal key (same duplicate-column issue).
+        const rawPayer = d["is_payer"] ? d["is_payer"].toLowerCase() : "";
+        d["installType"] =
+          rawPayer === "payer" || rawPayer === "有料ユーザー"
+            ? "payer"
+            : rawPayer === "non-payer" || rawPayer === "無料ユーザー"
+              ? "non-payer"
+              : rawPayer;
       });
       fetchedData = fetchedData.filter((d) => d["vertical"] !== "unclassified");
       setData(fetchedData);
@@ -49,12 +70,15 @@ export function Vis2() {
           d["vertical"] && d["vertical"] !== ""
             ? d["vertical"].toLowerCase()
             : null;
+        // Normalize category to English internal key, handling Japanese CSV
+        // duplicate columns where the last (Japanese) value wins.
+        const rawCat = d["category"] ? d["category"].toLowerCase() : "";
         d["category"] =
-          d["category"] && d["category"].toLowerCase() === "gaming"
+          rawCat === "gaming" || rawCat === "ゲーム"
             ? "gaming"
-            : d["category"] && d["category"].toLowerCase() === "non-gaming"
-            ? "consumer"
-            : null;
+            : rawCat === "non-gaming" || rawCat === "非ゲーム"
+              ? "consumer"
+              : null;
         d["country"] = d["country"];
 
         if (d["vertical"] === "other" && d["category"] === "gaming") {
@@ -67,26 +91,30 @@ export function Vis2() {
       setIncludedVerticals(verticalsData);
 
       const uniqueCountries = Array.from(
-        new Set(fetchedData.map((d) => d.country))
+        new Set(fetchedData.map((d) => d.country)),
       );
-      populateCountrySelectors(uniqueCountries, "#vis-2-dropdown-countries");
+      populateCountrySelectors(
+        uniqueCountries,
+        "#vis-2-dropdown-countries",
+        loc,
+      );
 
       // get unique verticals for gaming and consumer category from inclusion list
       const gamingVerticals = Array.from(
         new Set(
           verticalsData
             .filter((d) => d.category === "gaming")
-            .map((d) => d.vertical)
-        )
+            .map((d) => d.vertical),
+        ),
       );
       const consumerVerticals = Array.from(
         new Set(
           verticalsData
             .filter((d) => d.category === "consumer")
-            .map((d) => d.vertical)
-        )
+            .map((d) => d.vertical),
+        ),
       );
-      renderVerticalSelector(gamingVerticals, consumerVerticals);
+      renderVerticalSelector(gamingVerticals, consumerVerticals, loc);
     });
   }, []);
 
@@ -99,12 +127,12 @@ export function Vis2() {
     const handleCountryChange = (e) => setCountry(e.detail.selected);
     document.addEventListener(
       `#vis-2-dropdown-countries-changed`,
-      handleCountryChange
+      handleCountryChange,
     );
     return () => {
       document.removeEventListener(
         `#vis-2-dropdown-countries-changed`,
-        handleCountryChange
+        handleCountryChange,
       );
     };
   }, []);
@@ -116,7 +144,7 @@ export function Vis2() {
     return () => {
       document.removeEventListener(
         `vis-2-vertical-changed`,
-        handleVerticalChange
+        handleVerticalChange,
       );
     };
   }, []);
@@ -128,7 +156,7 @@ export function Vis2() {
     return () => {
       document.removeEventListener(
         `vis-2-category-changed`,
-        handleCategoryChange
+        handleCategoryChange,
       );
     };
   }, []);
@@ -137,7 +165,7 @@ export function Vis2() {
     (d) =>
       d.country === country &&
       d.category === category &&
-      d.vertical === vertical
+      d.vertical === vertical,
   );
 
   // apply vertical-country inclusion list for filtering data
@@ -146,7 +174,7 @@ export function Vis2() {
       const verticalEntry = includedVerticals.find(
         (v) =>
           v.vertical.toLowerCase() === d.vertical.toLowerCase() &&
-          v.country.toLowerCase() === d.country.toLowerCase()
+          v.country.toLowerCase() === d.country.toLowerCase(),
       );
       if (!verticalEntry) {
         return false;
@@ -209,15 +237,15 @@ export function Vis2() {
     : null;
   const highlightNonPayer = hoveredItem
     ? datapointsNonPayer.find(
-        (d) => d.inactivityDays === hoveredItem.hoveredDay
+        (d) => d.inactivityDays === hoveredItem.hoveredDay,
       )
     : null;
 
   const day30Payer = yScale(
-    datapointsPayer[datapointsPayer.length - 1].returnPerc
+    datapointsPayer[datapointsPayer.length - 1].returnPerc,
   );
   const day30NonPayer = yScale(
-    datapointsNonPayer[datapointsNonPayer.length - 1].returnPerc
+    datapointsNonPayer[datapointsNonPayer.length - 1].returnPerc,
   );
   const offset = 12;
   const day30PayerOffset =
@@ -260,8 +288,8 @@ export function Vis2() {
               yScale(
                 Math.max(
                   datapointPayer.returnPerc || 0,
-                  datapointNonPayer.returnPerc || 0
-                )
+                  datapointNonPayer.returnPerc || 0,
+                ),
               ) -
               170 -
               20,
@@ -350,7 +378,8 @@ export function Vis2() {
                     ><tspan x="${xScale(0) + dayZeroSpace + 7}" dy="16"
                       >of inactivity</tspan
                     >`
-                : html`Day 1 of inactivity`}
+                : html`${translations.find((t) => t.id === "t_day1")?.[loc] ||
+                  "Day 1 of inactivity"}`}
             </text>
             <text
               x="${xScale(15)}"
@@ -359,7 +388,7 @@ export function Vis2() {
               class="charts-text-body"
               fill="#04033A"
             >
-              Day 15
+              ${translations.find((t) => t.id === "t_day15")?.[loc] || "Day 15"}
             </text>
             <text
               x="${xScale(30)}"
@@ -368,7 +397,7 @@ export function Vis2() {
               class="charts-text-body"
               fill="#04033A"
             >
-              Day 30
+              ${translations.find((t) => t.id === "t_day30")?.[loc] || "Day 30"}
             </text>
           </g>
         </g>
@@ -400,7 +429,8 @@ export function Vis2() {
                 class="charts-text-body-bold"
                 style="transition: all ease 0.3s"
               >
-                Payers
+                ${translations.find((t) => t.id === "t_payers")?.[loc] ||
+                "Payers"}
               </text>
 
               <text
@@ -412,7 +442,8 @@ export function Vis2() {
                 class="charts-text-body-bold"
                 style="transition: all ease 0.3s"
               >
-                Non-payers
+                ${translations.find((t) => t.id === "t_nonPayers")?.[loc] ||
+                "Non-Payers"}
               </text>
             </g>`
           : null}
@@ -441,7 +472,7 @@ export function Vis2() {
             ? html`<circle
                 cx="${xScale(hoveredItem.hoveredDay)}"
                 cy="${yScale(
-                  highlightNonPayer ? highlightNonPayer.returnPerc : 0
+                  highlightNonPayer ? highlightNonPayer.returnPerc : 0,
                 )}"
                 r="5"
                 fill="#876AFF"
@@ -454,13 +485,13 @@ export function Vis2() {
         datapointsPayer &&
         datapointsPayer.length > 1
           ? html` <g transform="translate(15, 10)">
-              <${ReturningUsersLabel} />
+              <${ReturningUsersLabel} loc=${loc} />
             </g>`
           : null}
       </g>
     </svg>
     ${filteredData && filteredData.length > 0
-      ? html`<${Tooltip} hoveredItem=${hoveredItem} />`
+      ? html`<${Tooltip} hoveredItem=${hoveredItem} loc=${loc} />`
       : null}
     ${datapointsNonPayer &&
     datapointsNonPayer.length > 1 &&
@@ -476,28 +507,35 @@ export function Vis2() {
   </div>`;
 }
 
-function ReturningUsersLabel() {
+function ReturningUsersLabel({ loc }) {
   return html`<svg width="200" height="33" fill="none" viewBox="0 0 200 33">
     <path
       fill="#04033A"
       d="M.146 3.328a.5.5 0 0 0 0 .707l3.182 3.182a.5.5 0 1 0 .708-.707L1.207 3.682 4.036.853a.5.5 0 1 0-.708-.707L.146 3.328ZM52 16.682h.5v-5h-1v5h.5Zm-8-13v-.5H.5v1H44v-.5Zm16 21v.5h18v-1H60v.5Zm-8-13h.5a8.5 8.5 0 0 0-8.5-8.5v1a7.5 7.5 0 0 1 7.5 7.5h.5Zm0 5h-.5a8.5 8.5 0 0 0 8.5 8.5v-1a7.5 7.5 0 0 1-7.5-7.5H52Z"
     />
     <text x="89" y="29" fill="#04033A" class="charts-text-body">
-      Returning users
+      ${translations.find((t) => t.id === "t_returningUsers")?.[loc] ||
+      "Returning users"}
     </text>
   </svg> `;
 }
 
-function Tooltip({ hoveredItem }) {
+function Tooltip({ hoveredItem, loc }) {
   if (!hoveredItem) return null;
 
   return html`<div
     class="tooltip"
     style="left: ${hoveredItem.x}px; top: ${hoveredItem.y}px;"
   >
-    <p class="tooltip-title">Day ${hoveredItem.hoveredDay}</p>
+    <p class="tooltip-title">
+      ${translations.find((t) => t.id === "t_day")?.[loc] || "Day"}
+      ${hoveredItem.hoveredDay}
+    </p>
     <div>
-      <p class="tooltip-label" style="white-space: nowrap">Returning payers</p>
+      <p class="tooltip-label" style="white-space: nowrap">
+        ${translations.find((t) => t.id === "t_returningPayers")?.[loc] ||
+        "Returning payers"}
+      </p>
       <p class="tooltip-value">
         ${hoveredItem.variablePayer
           ? hoveredItem.variablePayer.toFixed(0) + "%"
@@ -508,7 +546,8 @@ function Tooltip({ hoveredItem }) {
     <div style="border-top: 1px solid #D9D9D9; width: 100%;" />
     <div>
       <p class="tooltip-label" style="white-space: nowrap">
-        Returning non-payers
+        ${translations.find((t) => t.id === "t_returningNonPayers")?.[loc] ||
+        "Returning non-payers"}
       </p>
       <p class="tooltip-value">
         ${hoveredItem.variableNonPayer
@@ -519,7 +558,7 @@ function Tooltip({ hoveredItem }) {
   </div>`;
 }
 
-function renderVerticalSelector(gamingVerticals, consumerVerticals) {
+function renderVerticalSelector(gamingVerticals, consumerVerticals, loc) {
   const containerElement = document.getElementById("vis-2-dropdown-verticals");
   if (containerElement) {
     containerElement.innerHTML = "";
@@ -528,13 +567,14 @@ function renderVerticalSelector(gamingVerticals, consumerVerticals) {
         html`<${Vis2DropdownVerticals}
           gamingVerticals=${gamingVerticals}
           consumerVerticals=${consumerVerticals}
+          loc=${loc}
         />`,
-        containerElement
+        containerElement,
       );
     })();
   } else {
     console.error(
-      `Could not find container element for vis-2-dropdown-verticals`
+      `Could not find container element for vis-2-dropdown-verticals`,
     );
   }
 }
@@ -542,7 +582,11 @@ function renderVerticalSelector(gamingVerticals, consumerVerticals) {
 function Vis2DropdownVerticals({
   gamingVerticals = [],
   consumerVerticals = [],
+  loc = "en",
 }) {
+  const defaultCategory = CATEGORY_DEFAULT;
+  const defaultVertical = VERTICAL_DEFAULT[loc] || VERTICAL_DEFAULT["en"];
+
   const [category, setCategory] = useState(defaultCategory);
   const [vertical, setVertical] = useState(defaultVertical);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -552,7 +596,7 @@ function Vis2DropdownVerticals({
       console.log("Changing category to:", newCategory);
       setCategory(newCategory);
 
-      const newVertical = "all";
+      const newVertical = VERTICAL_DEFAULT[loc] || VERTICAL_DEFAULT["en"];
       console.log("Resetting vertical to ", newVertical);
       setVertical(newVertical);
 
@@ -561,12 +605,12 @@ function Vis2DropdownVerticals({
       document.dispatchEvent(
         new CustomEvent(`vis-2-category-changed`, {
           detail: { selectedCategory: newCategory },
-        })
+        }),
       );
       document.dispatchEvent(
         new CustomEvent(`vis-2-vertical-changed`, {
           detail: { selectedVertical: newVertical },
-        })
+        }),
       );
     } else {
       // click on same category - toggle menu for the clicked position
@@ -589,7 +633,10 @@ function Vis2DropdownVerticals({
     const verticalSet =
       category === "gaming" ? gamingVerticals : consumerVerticals;
 
-    // enrich verticalSet with labels from verticalsMap
+    // Enrich verticalSet with labels from verticalsMap (English locale).
+    // For other locales the vertical value IS the display label, so we
+    // fall back to the raw value without any prefix.
+    const allValue = VERTICAL_DEFAULT[loc] || VERTICAL_DEFAULT["en"];
     const enrichedVerticalSet = verticalSet
       .map((item) => {
         const el = verticalsMap.find((v) => v.value === item);
@@ -597,13 +644,13 @@ function Vis2DropdownVerticals({
           return el;
         }
         return {
-          label: "!" + item,
+          label: item,
           value: item,
         };
       })
       .sort((a, b) => {
-        if (a.value === "all") return -1;
-        if (b.value === "all") return 1;
+        if (a.value === allValue) return -1;
+        if (b.value === allValue) return 1;
         return a.label.localeCompare(b.label);
       });
 
@@ -621,7 +668,7 @@ function Vis2DropdownVerticals({
           document.dispatchEvent(
             new CustomEvent(`vis-2-vertical-changed`, {
               detail: { selectedVertical: item.value },
-            })
+            }),
           );
         }}"
       >
@@ -630,13 +677,18 @@ function Vis2DropdownVerticals({
     });
   };
 
+  // console.log("Rendering Vis2DropdownVerticals with:", translations.find((t) => t.id === "t_consumer"))}
+
   return html`<div class="vis-filter-container">
     <div class="vis-filter-category-container">
       <div
         class=${`vis-filter-item ${category === "consumer" ? "selected" : ""}`}
         onclick=${() => handleCategoryChange("consumer")}
       >
-        <p class="charts-text-big-bold">Consumer</p>
+        <p class="charts-text-big-bold">
+          ${translations.find((t) => t.id === "t_consumer")?.[loc] ||
+          "Consumer"}
+        </p>
         <svg
           width="23"
           height="22"
@@ -659,7 +711,9 @@ function Vis2DropdownVerticals({
         class=${`vis-filter-item ${category === "gaming" ? "selected" : ""}`}
         onclick=${() => handleCategoryChange("gaming")}
       >
-        <p class="charts-text-big-bold">Gaming</p>
+        <p class="charts-text-big-bold">
+          ${translations.find((t) => t.id === "t_gaming")?.[loc] || "Gaming"}
+        </p>
         <svg
           width="23"
           height="22"
