@@ -1,0 +1,250 @@
+country,install_type,install_type,vertical,vertical,subvertical,subvertical,uninstall_rate
+AUS,Non-Organic,非オーガニック,Gaming,ゲーム,Casino,カジノ,65.78%
+AUS,Non-Organic,非オーガニック,Gaming,ゲーム,Casual,カジュアル,43.94%
+AUS,Non-Organic,非オーガニック,Non-Gaming,非ゲーム,Dating,マッチング,67.56%
+AUS,Non-Organic,非オーガニック,Non-Gaming,非ゲーム,Entertainment,エンターテインメント,58.55%
+AUS,Non-Organic,非オーガニック,Non-Gaming,非ゲーム,Finance,ファイナンス,67.51%
+AUS,Non-Organic,非オーガニック,Non-Gaming,非ゲーム,Food & Drink,フード＆ドリンク,62.42%
+AUS,Non-Organic,非オーガニック,Gaming,ゲーム,Hypercasual,ハイパーカジュアル,53.98%
+AUS,Non-Organic,非オーガニック,Non-Gaming,非ゲーム,Lifestyle,ライフスタイル,72.66%
+AUS,Non-Organic,非オーガニック,Gaming,ゲーム,Midcore,ミッドコア,65.57%
+AUS,Non-Organic,非オーガニック,Non-Gaming,非ゲーム,Shopping,ショッピング,63.24%
+AUS,Non-Organic,非オーガニック,Non-Gaming,非ゲーム,Travel,旅行,41.66%
+AUS,Organic,オーガニック,Gaming,ゲーム,Casino,カジノ,60.91%
+AUS,Organic,オーガニック,Gaming,ゲーム,Casual,カジュアル,34.02%
+AUS,Organic,オーガニック,Non-Gaming,非ゲーム,Dating,マッチング,64.67%
+AUS,Organic,オーガニック,Non-Gaming,非ゲーム,Entertainment,エンターテインメント,34.68%
+AUS,Organic,オーガニック,Non-Gaming,非ゲーム,Finance,ファイナンス,32.43%
+AUS,Organic,オーガニック,Non-Gaming,非ゲーム,Food & Drink,フード＆ドリンク,32.60%
+AUS,Organic,オーガニック,Gaming,ゲーム,Hypercasual,ハイパーカジュアル,29.86%
+AUS,Organic,オーガニック,Non-Gaming,非ゲーム,Lifestyle,ライフスタイル,53.80%
+AUS,Organic,オーガニック,Gaming,ゲーム,Midcore,ミッドコア,58.41%
+AUS,Organic,オーガニック,Non-Gaming,非ゲーム,News & Magazines,ニュース・雑誌,19.55%
+AUS,Organic,オーガニック,Non-Gaming,非ゲーム,Shopping,ショッピング,32.23%
+AUS,Organic,オーガニック,Non-Gaming,非ゲーム,Travel,旅行,25.58%
+BRA,Non-Organic,非オーガニック,Gaming,ゲーム,Casino,カジノ,83.84%
+BRA,Non-Organic,非オーガニック,Gaming,ゲーム,Casual,カジュアル,61.86%
+BRA,Non-Organic,非オーガニック,Non-Gaming,非ゲーム,Dating,マッチング,79.98%
+BRA,Non-Organic,非オーガニック,Non-Gaming,非ゲーム,Entertainment,エンターテインメント,73.12%
+BRA,Non-Organic,非オーガニック,Non-Gaming,非ゲーム,Finance,ファイナンス,71.13%
+BRA,Non-Organic,非オーガニック,Non-Gaming,非ゲーム,Food & Drink,フード＆ドリンク,66.23%
+BRA,Non-Organic,非オーガニック,Gaming,ゲーム,Hypercasual,ハイパーカジュアル,72.91%
+BRA,Non-Organic,非オーガニック,Non-Gaming,非ゲーム,Lifestyle,ライフスタイル,60.95%
+BRA,Non-Organic,非オーガニック,Gaming,ゲーム,Midcore,ミッドコア,79.43%
+BRA,Non-Organic,非オーガニック,Non-Gaming,非ゲーム,Shopping,ショッピング,52.68%
+BRA,Non-Organic,非オーガニック,Non-Gaming,非ゲーム,Travel,旅行,53.41%
+BRA,Organic,オーガニック,Gaming,ゲーム,Casino,カジノ,78.45%
+BRA,Organic,オーガニック,Gaming,ゲーム,Casual,カジュアル,56.16%
+BRA,Organic,オーガニック,Non-Gaming,非ゲーム,Dating,マッチング,61.68%
+BRA,Organic,オーガニック,Non-Gaming,非ゲーム,Entertainment,エンターテインメント,54.77%
+BRA,Organic,オーガニック,Non-Gaming,非ゲーム,Finance,ファイナンス,47.65%
+BRA,Organic,オーガニック,Non-Gaming,非ゲーム,Food & Drink,フード＆ドリンク,45.36%
+BRA,Organic,オーガニック,Gaming,ゲーム,Hypercasual,ハイパーカジュアル,50.58%
+BRA,Organic,オーガニック,Non-Gaming,非ゲーム,Lifestyle,ライフスタイル,37.35%
+BRA,Organic,オーガニック,Gaming,ゲーム,Midcore,ミッドコア,78.03%
+BRA,Organic,オーガニック,Non-Gaming,非ゲーム,Shopping,ショッピング,44.28%
+BRA,Organic,オーガニック,Non-Gaming,非ゲーム,Travel,旅行,37.58%
+CAN,Non-Organic,非オーガニック,Gaming,ゲーム,Casino,カジノ,64.48%
+CAN,Non-Organic,非オーガニック,Gaming,ゲーム,Casual,カジュアル,48.70%
+CAN,Non-Organic,非オーガニック,Non-Gaming,非ゲーム,Dating,マッチング,56.41%
+CAN,Non-Organic,非オーガニック,Non-Gaming,非ゲーム,Entertainment,エンターテインメント,54.65%
+CAN,Non-Organic,非オーガニック,Non-Gaming,非ゲーム,Finance,ファイナンス,68.15%
+CAN,Non-Organic,非オーガニック,Non-Gaming,非ゲーム,Food & Drink,フード＆ドリンク,63.74%
+CAN,Non-Organic,非オーガニック,Gaming,ゲーム,Hypercasual,ハイパーカジュアル,56.54%
+CAN,Non-Organic,非オーガニック,Non-Gaming,非ゲーム,Lifestyle,ライフスタイル,44.37%
+CAN,Non-Organic,非オーガニック,Gaming,ゲーム,Midcore,ミッドコア,69.57%
+CAN,Non-Organic,非オーガニック,Non-Gaming,非ゲーム,Shopping,ショッピング,59.61%
+CAN,Non-Organic,非オーガニック,Non-Gaming,非ゲーム,Travel,旅行,55.29%
+CAN,Organic,オーガニック,Gaming,ゲーム,Casino,カジノ,55.47%
+CAN,Organic,オーガニック,Gaming,ゲーム,Casual,カジュアル,38.15%
+CAN,Organic,オーガニック,Non-Gaming,非ゲーム,Dating,マッチング,64.58%
+CAN,Organic,オーガニック,Non-Gaming,非ゲーム,Entertainment,エンターテインメント,40.15%
+CAN,Organic,オーガニック,Non-Gaming,非ゲーム,Finance,ファイナンス,36.07%
+CAN,Organic,オーガニック,Non-Gaming,非ゲーム,Food & Drink,フード＆ドリンク,44.94%
+CAN,Organic,オーガニック,Gaming,ゲーム,Hypercasual,ハイパーカジュアル,32.02%
+CAN,Organic,オーガニック,Non-Gaming,非ゲーム,Lifestyle,ライフスタイル,35.40%
+CAN,Organic,オーガニック,Gaming,ゲーム,Midcore,ミッドコア,61.01%
+CAN,Organic,オーガニック,Non-Gaming,非ゲーム,News & Magazines,ニュース・雑誌,17.65%
+CAN,Organic,オーガニック,Non-Gaming,非ゲーム,Shopping,ショッピング,30.67%
+CAN,Organic,オーガニック,Non-Gaming,非ゲーム,Travel,旅行,27.87%
+FRA,Non-Organic,非オーガニック,Gaming,ゲーム,Casino,カジノ,70.54%
+FRA,Non-Organic,非オーガニック,Gaming,ゲーム,Casual,カジュアル,52.15%
+FRA,Non-Organic,非オーガニック,Non-Gaming,非ゲーム,Dating,マッチング,62.18%
+FRA,Non-Organic,非オーガニック,Non-Gaming,非ゲーム,Entertainment,エンターテインメント,51.99%
+FRA,Non-Organic,非オーガニック,Non-Gaming,非ゲーム,Finance,ファイナンス,68.76%
+FRA,Non-Organic,非オーガニック,Non-Gaming,非ゲーム,Food & Drink,フード＆ドリンク,59.72%
+FRA,Non-Organic,非オーガニック,Gaming,ゲーム,Hypercasual,ハイパーカジュアル,60.04%
+FRA,Non-Organic,非オーガニック,Non-Gaming,非ゲーム,Lifestyle,ライフスタイル,56.62%
+FRA,Non-Organic,非オーガニック,Gaming,ゲーム,Midcore,ミッドコア,72.67%
+FRA,Non-Organic,非オーガニック,Non-Gaming,非ゲーム,Shopping,ショッピング,50.74%
+FRA,Non-Organic,非オーガニック,Non-Gaming,非ゲーム,Travel,旅行,39.89%
+FRA,Organic,オーガニック,Gaming,ゲーム,Casino,カジノ,61.59%
+FRA,Organic,オーガニック,Gaming,ゲーム,Casual,カジュアル,44.38%
+FRA,Organic,オーガニック,Non-Gaming,非ゲーム,Dating,マッチング,55.86%
+FRA,Organic,オーガニック,Non-Gaming,非ゲーム,Entertainment,エンターテインメント,38.21%
+FRA,Organic,オーガニック,Non-Gaming,非ゲーム,Finance,ファイナンス,46.96%
+FRA,Organic,オーガニック,Non-Gaming,非ゲーム,Food & Drink,フード＆ドリンク,29.21%
+FRA,Organic,オーガニック,Gaming,ゲーム,Hypercasual,ハイパーカジュアル,35.61%
+FRA,Organic,オーガニック,Non-Gaming,非ゲーム,Lifestyle,ライフスタイル,41.62%
+FRA,Organic,オーガニック,Gaming,ゲーム,Midcore,ミッドコア,67.10%
+FRA,Organic,オーガニック,Non-Gaming,非ゲーム,News & Magazines,ニュース・雑誌,20.02%
+FRA,Organic,オーガニック,Non-Gaming,非ゲーム,Shopping,ショッピング,29.11%
+FRA,Organic,オーガニック,Non-Gaming,非ゲーム,Travel,旅行,30.81%
+DEU,Non-Organic,非オーガニック,Gaming,ゲーム,Casino,カジノ,77.07%
+DEU,Non-Organic,非オーガニック,Gaming,ゲーム,Casual,カジュアル,53.21%
+DEU,Non-Organic,非オーガニック,Non-Gaming,非ゲーム,Dating,マッチング,62.02%
+DEU,Non-Organic,非オーガニック,Non-Gaming,非ゲーム,Entertainment,エンターテインメント,50.29%
+DEU,Non-Organic,非オーガニック,Non-Gaming,非ゲーム,Finance,ファイナンス,69.37%
+DEU,Non-Organic,非オーガニック,Non-Gaming,非ゲーム,Food & Drink,フード＆ドリンク,52.91%
+DEU,Non-Organic,非オーガニック,Gaming,ゲーム,Hypercasual,ハイパーカジュアル,60.95%
+DEU,Non-Organic,非オーガニック,Non-Gaming,非ゲーム,Lifestyle,ライフスタイル,49.42%
+DEU,Non-Organic,非オーガニック,Gaming,ゲーム,Midcore,ミッドコア,69.55%
+DEU,Non-Organic,非オーガニック,Non-Gaming,非ゲーム,News & Magazines,ニュース・雑誌,54.06%
+DEU,Non-Organic,非オーガニック,Non-Gaming,非ゲーム,Shopping,ショッピング,51.49%
+DEU,Non-Organic,非オーガニック,Non-Gaming,非ゲーム,Travel,旅行,41.74%
+DEU,Organic,オーガニック,Gaming,ゲーム,Casino,カジノ,61.23%
+DEU,Organic,オーガニック,Gaming,ゲーム,Casual,カジュアル,43.81%
+DEU,Organic,オーガニック,Non-Gaming,非ゲーム,Dating,マッチング,50.02%
+DEU,Organic,オーガニック,Non-Gaming,非ゲーム,Entertainment,エンターテインメント,38.08%
+DEU,Organic,オーガニック,Non-Gaming,非ゲーム,Finance,ファイナンス,39.75%
+DEU,Organic,オーガニック,Non-Gaming,非ゲーム,Food & Drink,フード＆ドリンク,32.56%
+DEU,Organic,オーガニック,Gaming,ゲーム,Hypercasual,ハイパーカジュアル,33.36%
+DEU,Organic,オーガニック,Non-Gaming,非ゲーム,Lifestyle,ライフスタイル,41.34%
+DEU,Organic,オーガニック,Gaming,ゲーム,Midcore,ミッドコア,58.59%
+DEU,Organic,オーガニック,Non-Gaming,非ゲーム,News & Magazines,ニュース・雑誌,22.82%
+DEU,Organic,オーガニック,Non-Gaming,非ゲーム,Shopping,ショッピング,28.05%
+DEU,Organic,オーガニック,Non-Gaming,非ゲーム,Travel,旅行,30.53%
+IND,Non-Organic,非オーガニック,Gaming,ゲーム,Casino,カジノ,82.18%
+IND,Non-Organic,非オーガニック,Gaming,ゲーム,Casual,カジュアル,63.84%
+IND,Non-Organic,非オーガニック,Non-Gaming,非ゲーム,Dating,マッチング,85.27%
+IND,Non-Organic,非オーガニック,Non-Gaming,非ゲーム,Entertainment,エンターテインメント,64.47%
+IND,Non-Organic,非オーガニック,Non-Gaming,非ゲーム,Finance,ファイナンス,66.19%
+IND,Non-Organic,非オーガニック,Non-Gaming,非ゲーム,Food & Drink,フード＆ドリンク,66.18%
+IND,Non-Organic,非オーガニック,Gaming,ゲーム,Hypercasual,ハイパーカジュアル,75.67%
+IND,Non-Organic,非オーガニック,Non-Gaming,非ゲーム,Lifestyle,ライフスタイル,73.63%
+IND,Non-Organic,非オーガニック,Gaming,ゲーム,Midcore,ミッドコア,82.82%
+IND,Non-Organic,非オーガニック,Non-Gaming,非ゲーム,Shopping,ショッピング,64.83%
+IND,Non-Organic,非オーガニック,Non-Gaming,非ゲーム,Travel,旅行,62.07%
+IND,Organic,オーガニック,Gaming,ゲーム,Casino,カジノ,75.12%
+IND,Organic,オーガニック,Gaming,ゲーム,Casual,カジュアル,52.78%
+IND,Organic,オーガニック,Non-Gaming,非ゲーム,Dating,マッチング,71.66%
+IND,Organic,オーガニック,Non-Gaming,非ゲーム,Entertainment,エンターテインメント,49.44%
+IND,Organic,オーガニック,Non-Gaming,非ゲーム,Finance,ファイナンス,43.12%
+IND,Organic,オーガニック,Non-Gaming,非ゲーム,Food & Drink,フード＆ドリンク,47.18%
+IND,Organic,オーガニック,Gaming,ゲーム,Hypercasual,ハイパーカジュアル,51.23%
+IND,Organic,オーガニック,Non-Gaming,非ゲーム,Lifestyle,ライフスタイル,48.51%
+IND,Organic,オーガニック,Gaming,ゲーム,Midcore,ミッドコア,81.87%
+IND,Organic,オーガニック,Non-Gaming,非ゲーム,News & Magazines,ニュース・雑誌,31.98%
+IND,Organic,オーガニック,Non-Gaming,非ゲーム,Shopping,ショッピング,43.54%
+IND,Organic,オーガニック,Non-Gaming,非ゲーム,Travel,旅行,43.42%
+IDN,Non-Organic,非オーガニック,Gaming,ゲーム,Casino,カジノ,85.96%
+IDN,Non-Organic,非オーガニック,Gaming,ゲーム,Casual,カジュアル,63.11%
+IDN,Non-Organic,非オーガニック,Non-Gaming,非ゲーム,Dating,マッチング,83.74%
+IDN,Non-Organic,非オーガニック,Non-Gaming,非ゲーム,Entertainment,エンターテインメント,70.18%
+IDN,Non-Organic,非オーガニック,Non-Gaming,非ゲーム,Finance,ファイナンス,65.17%
+IDN,Non-Organic,非オーガニック,Non-Gaming,非ゲーム,Food & Drink,フード＆ドリンク,63.35%
+IDN,Non-Organic,非オーガニック,Gaming,ゲーム,Hypercasual,ハイパーカジュアル,67.28%
+IDN,Non-Organic,非オーガニック,Gaming,ゲーム,Midcore,ミッドコア,80.79%
+IDN,Non-Organic,非オーガニック,Non-Gaming,非ゲーム,Shopping,ショッピング,70.56%
+IDN,Non-Organic,非オーガニック,Non-Gaming,非ゲーム,Travel,旅行,62.63%
+IDN,Organic,オーガニック,Gaming,ゲーム,Casino,カジノ,84.86%
+IDN,Organic,オーガニック,Gaming,ゲーム,Casual,カジュアル,57.05%
+IDN,Organic,オーガニック,Non-Gaming,非ゲーム,Dating,マッチング,62.81%
+IDN,Organic,オーガニック,Non-Gaming,非ゲーム,Entertainment,エンターテインメント,51.08%
+IDN,Organic,オーガニック,Non-Gaming,非ゲーム,Finance,ファイナンス,37.65%
+IDN,Organic,オーガニック,Non-Gaming,非ゲーム,Food & Drink,フード＆ドリンク,37.85%
+IDN,Organic,オーガニック,Gaming,ゲーム,Hypercasual,ハイパーカジュアル,50.64%
+IDN,Organic,オーガニック,Non-Gaming,非ゲーム,Lifestyle,ライフスタイル,63.23%
+IDN,Organic,オーガニック,Gaming,ゲーム,Midcore,ミッドコア,77.78%
+IDN,Organic,オーガニック,Non-Gaming,非ゲーム,Shopping,ショッピング,54.25%
+IDN,Organic,オーガニック,Non-Gaming,非ゲーム,Travel,旅行,37.21%
+JPN,Non-Organic,非オーガニック,Gaming,ゲーム,Casino,カジノ,85.51%
+JPN,Non-Organic,非オーガニック,Gaming,ゲーム,Casual,カジュアル,64.10%
+JPN,Non-Organic,非オーガニック,Non-Gaming,非ゲーム,Dating,マッチング,68.20%
+JPN,Non-Organic,非オーガニック,Non-Gaming,非ゲーム,Entertainment,エンターテインメント,66.16%
+JPN,Non-Organic,非オーガニック,Non-Gaming,非ゲーム,Finance,ファイナンス,69.78%
+JPN,Non-Organic,非オーガニック,Non-Gaming,非ゲーム,Food & Drink,フード＆ドリンク,57.63%
+JPN,Non-Organic,非オーガニック,Gaming,ゲーム,Hypercasual,ハイパーカジュアル,74.76%
+JPN,Non-Organic,非オーガニック,Non-Gaming,非ゲーム,Lifestyle,ライフスタイル,53.31%
+JPN,Non-Organic,非オーガニック,Gaming,ゲーム,Midcore,ミッドコア,76.35%
+JPN,Non-Organic,非オーガニック,Non-Gaming,非ゲーム,Shopping,ショッピング,65.41%
+JPN,Non-Organic,非オーガニック,Non-Gaming,非ゲーム,Travel,旅行,57.01%
+JPN,Organic,オーガニック,Gaming,ゲーム,Casino,カジノ,70.83%
+JPN,Organic,オーガニック,Gaming,ゲーム,Casual,カジュアル,53.54%
+JPN,Organic,オーガニック,Non-Gaming,非ゲーム,Dating,マッチング,57.95%
+JPN,Organic,オーガニック,Non-Gaming,非ゲーム,Entertainment,エンターテインメント,43.64%
+JPN,Organic,オーガニック,Non-Gaming,非ゲーム,Finance,ファイナンス,40.59%
+JPN,Organic,オーガニック,Non-Gaming,非ゲーム,Food & Drink,フード＆ドリンク,42.19%
+JPN,Organic,オーガニック,Gaming,ゲーム,Hypercasual,ハイパーカジュアル,54.70%
+JPN,Organic,オーガニック,Non-Gaming,非ゲーム,Lifestyle,ライフスタイル,39.75%
+JPN,Organic,オーガニック,Gaming,ゲーム,Midcore,ミッドコア,68.64%
+JPN,Organic,オーガニック,Non-Gaming,非ゲーム,Shopping,ショッピング,44.35%
+JPN,Organic,オーガニック,Non-Gaming,非ゲーム,Travel,旅行,27.01%
+KOR,Non-Organic,非オーガニック,Gaming,ゲーム,Casino,カジノ,54.93%
+KOR,Non-Organic,非オーガニック,Gaming,ゲーム,Casual,カジュアル,64.65%
+KOR,Non-Organic,非オーガニック,Non-Gaming,非ゲーム,Dating,マッチング,82.27%
+KOR,Non-Organic,非オーガニック,Non-Gaming,非ゲーム,Entertainment,エンターテインメント,65.59%
+KOR,Non-Organic,非オーガニック,Non-Gaming,非ゲーム,Finance,ファイナンス,69.90%
+KOR,Non-Organic,非オーガニック,Non-Gaming,非ゲーム,Food & Drink,フード＆ドリンク,37.20%
+KOR,Non-Organic,非オーガニック,Gaming,ゲーム,Hypercasual,ハイパーカジュアル,61.96%
+KOR,Non-Organic,非オーガニック,Gaming,ゲーム,Midcore,ミッドコア,73.51%
+KOR,Non-Organic,非オーガニック,Non-Gaming,非ゲーム,Shopping,ショッピング,57.62%
+KOR,Non-Organic,非オーガニック,Non-Gaming,非ゲーム,Travel,旅行,49.84%
+KOR,Organic,オーガニック,Gaming,ゲーム,Casino,カジノ,60.05%
+KOR,Organic,オーガニック,Gaming,ゲーム,Casual,カジュアル,51.38%
+KOR,Organic,オーガニック,Non-Gaming,非ゲーム,Dating,マッチング,67.43%
+KOR,Organic,オーガニック,Non-Gaming,非ゲーム,Entertainment,エンターテインメント,40.48%
+KOR,Organic,オーガニック,Non-Gaming,非ゲーム,Finance,ファイナンス,46.12%
+KOR,Organic,オーガニック,Non-Gaming,非ゲーム,Food & Drink,フード＆ドリンク,35.51%
+KOR,Organic,オーガニック,Gaming,ゲーム,Hypercasual,ハイパーカジュアル,45.48%
+KOR,Organic,オーガニック,Non-Gaming,非ゲーム,Lifestyle,ライフスタイル,52.17%
+KOR,Organic,オーガニック,Gaming,ゲーム,Midcore,ミッドコア,65.55%
+KOR,Organic,オーガニック,Non-Gaming,非ゲーム,Shopping,ショッピング,45.31%
+KOR,Organic,オーガニック,Non-Gaming,非ゲーム,Travel,旅行,30.24%
+GBR,Non-Organic,非オーガニック,Gaming,ゲーム,Casino,カジノ,61.64%
+GBR,Non-Organic,非オーガニック,Gaming,ゲーム,Casual,カジュアル,48.57%
+GBR,Non-Organic,非オーガニック,Non-Gaming,非ゲーム,Dating,マッチング,62.38%
+GBR,Non-Organic,非オーガニック,Non-Gaming,非ゲーム,Entertainment,エンターテインメント,51.69%
+GBR,Non-Organic,非オーガニック,Non-Gaming,非ゲーム,Finance,ファイナンス,66.58%
+GBR,Non-Organic,非オーガニック,Non-Gaming,非ゲーム,Food & Drink,フード＆ドリンク,56.62%
+GBR,Non-Organic,非オーガニック,Gaming,ゲーム,Hypercasual,ハイパーカジュアル,56.21%
+GBR,Non-Organic,非オーガニック,Non-Gaming,非ゲーム,Lifestyle,ライフスタイル,60.34%
+GBR,Non-Organic,非オーガニック,Gaming,ゲーム,Midcore,ミッドコア,68.63%
+GBR,Non-Organic,非オーガニック,Non-Gaming,非ゲーム,News & Magazines,ニュース・雑誌,53.94%
+GBR,Non-Organic,非オーガニック,Non-Gaming,非ゲーム,Shopping,ショッピング,51.06%
+GBR,Non-Organic,非オーガニック,Non-Gaming,非ゲーム,Travel,旅行,47.26%
+GBR,Organic,オーガニック,Gaming,ゲーム,Casino,カジノ,61.02%
+GBR,Organic,オーガニック,Gaming,ゲーム,Casual,カジュアル,38.50%
+GBR,Organic,オーガニック,Non-Gaming,非ゲーム,Dating,マッチング,51.67%
+GBR,Organic,オーガニック,Non-Gaming,非ゲーム,Entertainment,エンターテインメント,39.61%
+GBR,Organic,オーガニック,Non-Gaming,非ゲーム,Finance,ファイナンス,35.94%
+GBR,Organic,オーガニック,Non-Gaming,非ゲーム,Food & Drink,フード＆ドリンク,28.07%
+GBR,Organic,オーガニック,Gaming,ゲーム,Hypercasual,ハイパーカジュアル,30.13%
+GBR,Organic,オーガニック,Non-Gaming,非ゲーム,Lifestyle,ライフスタイル,38.19%
+GBR,Organic,オーガニック,Gaming,ゲーム,Midcore,ミッドコア,62.42%
+GBR,Organic,オーガニック,Non-Gaming,非ゲーム,News & Magazines,ニュース・雑誌,16.09%
+GBR,Organic,オーガニック,Non-Gaming,非ゲーム,Shopping,ショッピング,26.24%
+GBR,Organic,オーガニック,Non-Gaming,非ゲーム,Travel,旅行,25.91%
+USA,Non-Organic,非オーガニック,Gaming,ゲーム,Casino,カジノ,55.97%
+USA,Non-Organic,非オーガニック,Gaming,ゲーム,Casual,カジュアル,48.07%
+USA,Non-Organic,非オーガニック,Non-Gaming,非ゲーム,Dating,マッチング,57.77%
+USA,Non-Organic,非オーガニック,Non-Gaming,非ゲーム,Entertainment,エンターテインメント,50.18%
+USA,Non-Organic,非オーガニック,Non-Gaming,非ゲーム,Finance,ファイナンス,53.50%
+USA,Non-Organic,非オーガニック,Non-Gaming,非ゲーム,Food & Drink,フード＆ドリンク,47.21%
+USA,Non-Organic,非オーガニック,Gaming,ゲーム,Hypercasual,ハイパーカジュアル,57.44%
+USA,Non-Organic,非オーガニック,Non-Gaming,非ゲーム,Lifestyle,ライフスタイル,40.09%
+USA,Non-Organic,非オーガニック,Gaming,ゲーム,Midcore,ミッドコア,69.58%
+USA,Non-Organic,非オーガニック,Non-Gaming,非ゲーム,Shopping,ショッピング,39.82%
+USA,Non-Organic,非オーガニック,Non-Gaming,非ゲーム,Travel,旅行,41.93%
+USA,Organic,オーガニック,Gaming,ゲーム,Casino,カジノ,48.87%
+USA,Organic,オーガニック,Gaming,ゲーム,Casual,カジュアル,40.09%
+USA,Organic,オーガニック,Non-Gaming,非ゲーム,Dating,マッチング,45.48%
+USA,Organic,オーガニック,Non-Gaming,非ゲーム,Entertainment,エンターテインメント,44.99%
+USA,Organic,オーガニック,Non-Gaming,非ゲーム,Finance,ファイナンス,45.83%
+USA,Organic,オーガニック,Non-Gaming,非ゲーム,Food & Drink,フード＆ドリンク,44.68%
+USA,Organic,オーガニック,Gaming,ゲーム,Hypercasual,ハイパーカジュアル,33.55%
+USA,Organic,オーガニック,Non-Gaming,非ゲーム,Lifestyle,ライフスタイル,29.34%
+USA,Organic,オーガニック,Gaming,ゲーム,Midcore,ミッドコア,67.23%
+USA,Organic,オーガニック,Non-Gaming,非ゲーム,News & Magazines,ニュース・雑誌,22.23%
+USA,Organic,オーガニック,Non-Gaming,非ゲーム,Shopping,ショッピング,47.59%
+USA,Organic,オーガニック,Non-Gaming,非ゲーム,Travel,旅行,46.20%

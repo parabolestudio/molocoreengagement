@@ -1,0 +1,137 @@
+country,category,category,vertical,vertical
+AUS,non-gaming,非ゲーム,Dating,マッチング
+AUS,non-gaming,非ゲーム,Entertainment,エンターテインメント
+AUS,non-gaming,非ゲーム,Generative AI,生成AI
+AUS,non-gaming,非ゲーム,Loyalty,ロイヤルティ
+AUS,non-gaming,非ゲーム,Social,SNS
+AUS,non-gaming,非ゲーム,Utility & Productivity,生産性ツール
+BRA,non-gaming,非ゲーム,Dating,マッチング
+BRA,non-gaming,非ゲーム,E-Commerce,Eコマース
+BRA,non-gaming,非ゲーム,Entertainment,エンターテインメント
+BRA,non-gaming,非ゲーム,On-Demand,オンデマンド
+BRA,non-gaming,非ゲーム,Social,SNS
+BRA,non-gaming,非ゲーム,Utility & Productivity,生産性ツール
+CAN,non-gaming,非ゲーム,Dating,マッチング
+CAN,non-gaming,非ゲーム,Finance (Trading & Investing),ファイナンス（トレーディング・投資）
+CAN,non-gaming,非ゲーム,Loyalty,ロイヤルティ
+CAN,non-gaming,非ゲーム,Social,SNS
+CAN,non-gaming,非ゲーム,Utility & Productivity,生産性ツール
+DEU,non-gaming,非ゲーム,Dating,マッチング
+DEU,non-gaming,非ゲーム,Finance (Trading & Investing),ファイナンス（トレーディング・投資）
+DEU,non-gaming,非ゲーム,Generative AI,生成AI
+DEU,non-gaming,非ゲーム,Loyalty,ロイヤルティ
+DEU,non-gaming,非ゲーム,On-Demand,オンデマンド
+DEU,non-gaming,非ゲーム,Social,SNS
+DEU,non-gaming,非ゲーム,Travel,旅行
+DEU,non-gaming,非ゲーム,Utility & Productivity,生産性ツール
+FRA,non-gaming,非ゲーム,E-Commerce,Eコマース
+FRA,non-gaming,非ゲーム,Entertainment,エンターテインメント
+FRA,non-gaming,非ゲーム,Generative AI,生成AI
+FRA,non-gaming,非ゲーム,Loyalty,ロイヤルティ
+FRA,non-gaming,非ゲーム,Social,SNS
+FRA,non-gaming,非ゲーム,Utility & Productivity,生産性ツール
+GBR,non-gaming,非ゲーム,Dating,マッチング
+GBR,non-gaming,非ゲーム,Finance (Financial Health & Banking),ファイナンス（保険・銀行）
+GBR,non-gaming,非ゲーム,Generative AI,生成AI
+GBR,non-gaming,非ゲーム,Loyalty,ロイヤルティ
+GBR,non-gaming,非ゲーム,On-Demand,オンデマンド
+IDN,non-gaming,非ゲーム,Dating,マッチング
+IDN,non-gaming,非ゲーム,Education,教育
+IDN,non-gaming,非ゲーム,Entertainment,エンターテインメント
+IDN,non-gaming,非ゲーム,Finance (Financial Health & Banking),ファイナンス（保険・銀行）
+IDN,non-gaming,非ゲーム,Social,SNS
+IDN,non-gaming,非ゲーム,Utility & Productivity,生産性ツール
+IND,non-gaming,非ゲーム,Entertainment,エンターテインメント
+IND,non-gaming,非ゲーム,Social,SNS
+IND,non-gaming,非ゲーム,Utility & Productivity,生産性ツール
+JPN,non-gaming,非ゲーム,Dating,マッチング
+JPN,non-gaming,非ゲーム,Entertainment,エンターテインメント
+JPN,non-gaming,非ゲーム,Health & Fitness,ヘルス＆フィットネス
+JPN,non-gaming,非ゲーム,Social,SNS
+JPN,non-gaming,非ゲーム,Utility & Productivity,生産性ツール
+KOR,non-gaming,非ゲーム,E-Commerce,Eコマース
+KOR,non-gaming,非ゲーム,Education,教育
+KOR,non-gaming,非ゲーム,Entertainment,エンターテインメント
+KOR,non-gaming,非ゲーム,Finance (Financial Health & Banking),ファイナンス（保険・銀行）
+KOR,non-gaming,非ゲーム,Health & Fitness,ヘルス＆フィットネス
+KOR,non-gaming,非ゲーム,Loyalty,ロイヤルティ
+KOR,non-gaming,非ゲーム,On-Demand,オンデマンド
+KOR,non-gaming,非ゲーム,Social,SNS
+KOR,non-gaming,非ゲーム,Travel,旅行
+KOR,non-gaming,非ゲーム,Utility & Productivity,生産性ツール
+USA,non-gaming,非ゲーム,Dating,マッチング
+USA,non-gaming,非ゲーム,E-Commerce,Eコマース
+USA,non-gaming,非ゲーム,Education,教育
+USA,non-gaming,非ゲーム,Entertainment,エンターテインメント
+USA,non-gaming,非ゲーム,Finance (Financial Health & Banking),ファイナンス（保険・銀行）
+USA,non-gaming,非ゲーム,Finance (Trading & Investing),ファイナンス（トレーディング・投資）
+USA,non-gaming,非ゲーム,Generative AI,生成AI
+USA,non-gaming,非ゲーム,Health & Fitness,ヘルス＆フィットネス
+USA,non-gaming,非ゲーム,Loyalty,ロイヤルティ
+USA,non-gaming,非ゲーム,On-Demand,オンデマンド
+USA,non-gaming,非ゲーム,RMG,RMG
+USA,non-gaming,非ゲーム,Social,SNS
+USA,non-gaming,非ゲーム,Utility & Productivity,生産性ツール
+AUS,gaming,ゲーム,Casino,カジノ
+AUS,gaming,ゲーム,MidCore,ミッドコア
+AUS,gaming,ゲーム,Other,その他
+AUS,gaming,ゲーム,Hypercasual,ハイパーカジュアル
+BRA,gaming,ゲーム,Casino,カジノ
+BRA,gaming,ゲーム,MidCore,ミッドコア
+BRA,gaming,ゲーム,Other,その他
+BRA,gaming,ゲーム,Hypercasual,ハイパーカジュアル
+CAN,gaming,ゲーム,Casino,カジノ
+CAN,gaming,ゲーム,MidCore,ミッドコア
+CAN,gaming,ゲーム,Other,その他
+CAN,gaming,ゲーム,Hypercasual,ハイパーカジュアル
+DEU,gaming,ゲーム,Casino,カジノ
+DEU,gaming,ゲーム,MidCore,ミッドコア
+DEU,gaming,ゲーム,Other,その他
+DEU,gaming,ゲーム,Hypercasual,ハイパーカジュアル
+FRA,gaming,ゲーム,Casino,カジノ
+FRA,gaming,ゲーム,MidCore,ミッドコア
+FRA,gaming,ゲーム,Other,その他
+FRA,gaming,ゲーム,Hypercasual,ハイパーカジュアル
+GBR,gaming,ゲーム,Casino,カジノ
+GBR,gaming,ゲーム,MidCore,ミッドコア
+GBR,gaming,ゲーム,Other,その他
+GBR,gaming,ゲーム,Hypercasual,ハイパーカジュアル
+IDN,gaming,ゲーム,Casino,カジノ
+IDN,gaming,ゲーム,MidCore,ミッドコア
+IDN,gaming,ゲーム,Other,その他
+IND,gaming,ゲーム,Casino,カジノ
+IND,gaming,ゲーム,MidCore,ミッドコア
+IND,gaming,ゲーム,Other,その他
+IND,gaming,ゲーム,Hypercasual,ハイパーカジュアル
+JPN,gaming,ゲーム,MidCore,ミッドコア
+JPN,gaming,ゲーム,Hypercasual,ハイパーカジュアル
+KOR,gaming,ゲーム,Casino,カジノ
+KOR,gaming,ゲーム,MidCore,ミッドコア
+KOR,gaming,ゲーム,Other,その他
+KOR,gaming,ゲーム,Hypercasual,ハイパーカジュアル
+USA,gaming,ゲーム,Casino,カジノ
+USA,gaming,ゲーム,MidCore,ミッドコア
+USA,gaming,ゲーム,Other,その他
+USA,gaming,ゲーム,Hypercasual,ハイパーカジュアル
+AUS,non-gaming,非ゲーム,all,すべて
+BRA,non-gaming,非ゲーム,all,すべて
+CAN,non-gaming,非ゲーム,all,すべて
+DEU,non-gaming,非ゲーム,all,すべて
+FRA,non-gaming,非ゲーム,all,すべて
+GBR,non-gaming,非ゲーム,all,すべて
+IDN,non-gaming,非ゲーム,all,すべて
+IND,non-gaming,非ゲーム,all,すべて
+JPN,non-gaming,非ゲーム,all,すべて
+KOR,non-gaming,非ゲーム,all,すべて
+USA,non-gaming,非ゲーム,all,すべて
+AUS,gaming,ゲーム,all,すべて
+BRA,gaming,ゲーム,all,すべて
+CAN,gaming,ゲーム,all,すべて
+DEU,gaming,ゲーム,all,すべて
+FRA,gaming,ゲーム,all,すべて
+GBR,gaming,ゲーム,all,すべて
+IDN,gaming,ゲーム,all,すべて
+IND,gaming,ゲーム,all,すべて
+JPN,gaming,ゲーム,all,すべて
+KOR,gaming,ゲーム,all,すべて
+USA,gaming,ゲーム,all,すべて

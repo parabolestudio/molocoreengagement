@@ -90,7 +90,7 @@ export function Vis3() {
     return html`<div style="color: #fff;">Loading data...</div>`;
   }
 
-  console.log("Rendering vis 3", { data, metric, filteredData });
+  // console.log("Rendering vis 3", { data, metric, filteredData });
 
   // dimensions
   const visContainer = document.querySelector("#vis-3");

@@ -4,6 +4,7 @@ import { html, renderComponent } from "./js/utils/preact-htm.js";
 import { Vis1 } from "./js/Vis1.js";
 import { Vis2 } from "./js/Vis2.js";
 import { Vis3 } from "./js/Vis3.js";
+import { getLocale } from "./js/utils/helpers.js";
 
 const Vis = async (props) => {
   // console.log("Rendering Vis component with props:", props);
@@ -18,6 +19,7 @@ function renderVis(vis) {
     containerElement.innerHTML = "";
 
     // wait for async Vis to resolve before rendering
+    vis = { ...vis, locale: getLocale() };
     (async () => {
       const rendered = await Vis(vis);
       renderComponent(rendered, containerElement);

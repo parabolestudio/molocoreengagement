@@ -4,46 +4,103 @@ import {
   populateCountrySelectors,
   formatText,
   isMobile,
+  getDataURL,
 } from "./utils/helpers.js";
 import { renderSwitcher } from "./Switcher.js";
 
-export function Vis1() {
+const CATEGORY_SWITCHER_CATEGORIES = {
+  en: [
+    {
+      label: "Consumer",
+      value: "consumer",
+    },
+    {
+      label: "Gaming",
+      value: "gaming",
+    },
+  ],
+  ja: [
+    {
+      label: "非ゲーム",
+      value: "非ゲーム",
+    },
+    {
+      label: "ゲーム",
+      value: "ゲーム",
+    },
+  ],
+};
+const INSTALLTYPE_SWITCHER_CATEGORIES = {
+  en: [
+    {
+      label: "Paid",
+      value: "non-organic",
+    },
+    {
+      label: "Organic",
+      value: "organic",
+    },
+  ],
+  ja: [
+    { label: "非オーガニック", value: "非オーガニック" },
+    {
+      label: "オーガニック",
+      value: "オーガニック",
+    },
+  ],
+};
+
+const CATEGORY_DEFAULT = {
+  en: "consumer",
+  ja: "非ゲーム",
+};
+const INSTALLTYPE_DEFAULT = {
+  en: "non-organic",
+  ja: "非オーガニック",
+};
+
+export function Vis1({ locale: loc }) {
   const [data, setData] = useState(null);
   const [country, setCountry] = useState("USA");
-  const [category, setCategory] = useState("consumer");
-  const [installType, setInstallType] = useState("non-organic");
+  const [category, setCategory] = useState(
+    CATEGORY_DEFAULT[loc] || CATEGORY_DEFAULT["en"],
+  );
+  const [installType, setInstallType] = useState(
+    INSTALLTYPE_DEFAULT[loc] || INSTALLTYPE_DEFAULT["en"],
+  );
 
   useEffect(() => {
     // render category switcher
     renderSwitcher(
-      [
-        { label: "Consumer", value: "consumer" },
-        { label: "Gaming", value: "gaming" },
-      ],
+      CATEGORY_SWITCHER_CATEGORIES[loc] || CATEGORY_SWITCHER_CATEGORIES["en"],
       "vis-1-dropdown-categories",
     );
     // render install type switcher
     renderSwitcher(
-      [
-        { label: "Paid", value: "non-organic" },
-        { label: "Organic", value: "organic" },
-      ],
+      INSTALLTYPE_SWITCHER_CATEGORIES[loc] ||
+        INSTALLTYPE_SWITCHER_CATEGORIES["en"],
       "vis-1-dropdown-install-types",
     );
 
+    const dataURL = getDataURL("vis1_data", loc);
+    console.log("Fetching data from URL:", dataURL, loc);
+
     // Fetch data when the component mounts
     d3.csv(
-      `${REPO_BASE_URL}/data/vis1_data.csv`,
+      // `${REPO_BASE_URL}/data/vis1_data.csv`,
       //   `./data/vis1_data.csv`
+      getDataURL("vis1_data", loc),
     ).then((fetchedData) => {
       fetchedData.forEach((d) => {
         d["uninstallRate"] = +d["uninstall_rate"].replace("%", "");
         d["category"] =
-          d["vertical"].toLowerCase() === "gaming"
-            ? "gaming"
-            : d["vertical"].toLowerCase() === "non-gaming"
-              ? "consumer"
-              : null;
+          loc === "en"
+            ? d["vertical"].toLowerCase() === "gaming"
+              ? "gaming"
+              : d["vertical"].toLowerCase() === "non-gaming"
+                ? "consumer"
+                : null
+            : d["vertical"];
         d["vertical"] = d["subvertical"].toLowerCase();
         d["installType"] = d["install_type"].toLowerCase();
       });
@@ -59,7 +116,11 @@ export function Vis1() {
         new Set(fetchedData.map((d) => d.country)),
       );
 
-      populateCountrySelectors(uniqueCountries, "#vis-1-dropdown-countries");
+      populateCountrySelectors(
+        uniqueCountries,
+        "#vis-1-dropdown-countries",
+        loc,
+      );
     });
   }, []);
 
@@ -118,13 +179,13 @@ export function Vis1() {
       d.installType === installType,
   );
 
-  // console.log("Rendering vis 1 with ", {
-  //   country,
-  //   category,
-  //   installType,
-  //   data,
-  //   filteredData,
-  // });
+  console.log("Rendering vis 1 with ", {
+    country,
+    category,
+    installType,
+    data,
+    filteredData,
+  });
 
   // dimensions
   const rowHeight = 44;
