@@ -20,10 +20,22 @@ t_payers,Payers,
 t_nonPayers,Non-Payers,
 t_returningPayers,Returning payers,
 t_returningNonPayers,Returning non-payers,
+,No sufficient data for [category] in selected country,
 ,Select metric,指標を選択
 t_REless,RE less efficient,リエンゲージメントの効率が低い
+t_REless_part1,RE less,
+t_REless_part2,efficient,
 t_REmore,RE more efficient,リエンゲージメントの効率が高い
-,Impact on CPA (Log2 Scale),CPAへの影響（Log2スケール）
-,Impact on ROAS (Log2 Scale),ROASへの影響（Log2スケール）
-,A one unit shift equals a twofold change in metric,1単位のシフトは、指標における2倍の変化に相当します
-,No sufficient data for [category] in selected country,
+t_REmore_part1,RE more,
+t_REmore_part2,efficient,
+t_axislabel_cpa_scale,Impact on CPA (Log2 Scale),CPAへの影響（Log2スケール）
+t_axislabel_roas_scale,Impact on ROAS (Log2 Scale),ROASへの影響（Log2スケール）
+t_impact_log,Impact on [METRIC] (Log2 Scale),[METRIC]への影響（Log2スケール）
+t_axislabel_cpa,Impact on CPA,CPAへの影響
+t_axislabel_roas,Impact on ROAS,ROASへの影響
+t_impact_metric,Impact on [METRIC],[METRIC]への影響
+t_tooltip_text1,App Type,
+t_tooltip_text2,CPA Delta,
+t_tooltip_text3,ROAS Delta,
+t_delta_metric,[METRIC] Delta,
+t_tooltip_explanation,A one unit shift equals a twofold change in metric,1単位のシフトは、指標における2倍の変化に相当します

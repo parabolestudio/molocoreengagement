@@ -1,4 +1,4 @@
-app_number,app_number,app_and_country,app_and_country,app_type_and_country,app_type_and_country,country,cpa_improvement,roas_ratio,cpa delta,roas delta
+app_number_en,app_number,app_and_country_en,app_and_country,app_type_and_country_en,app_type_and_country,country,cpa_improvement,roas_ratio,cpa delta,roas delta
 App 1, アプリ1,App 1 (India), アプリ1 (インド),Financial Trading & Investing (India),金融トレーディング・投資 (インド),IND,4.744966713,5.73,-96.27%,5212.77%
 App 2, アプリ2,App 2 (Germany), アプリ2 (ドイツ),Financial Trading & Investing (Germany),金融トレーディング・投資 (ドイツ),DEU,3.611006152,,-91.82%,
 App 3, アプリ3,App 3 (USA), アプリ3 (アメリカ),Entertainment (USA),エンターテインメント (アメリカ),USA,2.222392421,,-78.57%,

@@ -106,6 +106,11 @@ export const translations = [
   },
   {
     id: "",
+    en: "No sufficient data for [category] in selected country",
+    ja: "",
+  },
+  {
+    id: "",
     en: "Select metric",
     ja: "指標を選択",
   },
@@ -115,28 +120,83 @@ export const translations = [
     ja: "リエンゲージメントの効率が低い",
   },
   {
+    id: "t_REless_part1",
+    en: "RE less",
+    ja: "",
+  },
+  {
+    id: "t_REless_part2",
+    en: "efficient",
+    ja: "",
+  },
+  {
     id: "t_REmore",
     en: "RE more efficient",
     ja: "リエンゲージメントの効率が高い",
   },
   {
-    id: "",
+    id: "t_REmore_part1",
+    en: "RE more",
+    ja: "",
+  },
+  {
+    id: "t_REmore_part2",
+    en: "efficient",
+    ja: "",
+  },
+  {
+    id: "t_axislabel_cpa_scale",
     en: "Impact on CPA (Log2 Scale)",
     ja: "CPAへの影響（Log2スケール）",
   },
   {
-    id: "",
+    id: "t_axislabel_roas_scale",
     en: "Impact on ROAS (Log2 Scale)",
     ja: "ROASへの影響（Log2スケール）",
   },
   {
-    id: "",
-    en: "A one unit shift equals a twofold change in metric",
-    ja: "1単位のシフトは、指標における2倍の変化に相当します",
+    id: "t_impact_log",
+    en: "Impact on [METRIC] (Log2 Scale)",
+    ja: "[METRIC]への影響（Log2スケール）",
   },
   {
-    id: "",
-    en: "No sufficient data for [category] in selected country",
+    id: "t_axislabel_cpa",
+    en: "Impact on CPA",
+    ja: "CPAへの影響",
+  },
+  {
+    id: "t_axislabel_roas",
+    en: "Impact on ROAS",
+    ja: "ROASへの影響",
+  },
+  {
+    id: "t_impact_metric",
+    en: "Impact on [METRIC]",
+    ja: "[METRIC]への影響",
+  },
+  {
+    id: "t_tooltip_text1",
+    en: "App Type",
     ja: "",
+  },
+  {
+    id: "t_tooltip_text2",
+    en: "CPA Delta",
+    ja: "",
+  },
+  {
+    id: "t_tooltip_text3",
+    en: "ROAS Delta",
+    ja: "",
+  },
+  {
+    id: "t_delta_metric",
+    en: "[METRIC] Delta",
+    ja: "",
+  },
+  {
+    id: "t_tooltip_explanation",
+    en: "A one unit shift equals a twofold change in metric",
+    ja: "1単位のシフトは、指標における2倍の変化に相当します",
   },
 ];

@@ -1,8 +1,37 @@
 import { html, useState, useEffect } from "./utils/preact-htm.js";
-import { REPO_BASE_URL, countryLabels, isMobile } from "./utils/helpers.js";
+import {
+  REPO_BASE_URL,
+  countryLabels,
+  isMobile,
+  getDataURL,
+} from "./utils/helpers.js";
 import { renderSwitcher } from "./Switcher.js";
+import { translations } from "./utils/translations.js";
 
-export function Vis3() {
+const METRICS_SWITCHER_CATEGORIES = {
+  en: [
+    {
+      label: "CPA",
+      value: "cpa",
+    },
+    {
+      label: "ROAS",
+      value: "roas",
+    },
+  ],
+  ja: [
+    {
+      label: "CPA",
+      value: "cpa",
+    },
+    {
+      label: "ROAS",
+      value: "roas",
+    },
+  ],
+};
+
+export function Vis3({ locale: loc }) {
   const [data, setData] = useState(null);
   const [filteredData, setFilteredData] = useState(null);
   const [metric, setMetric] = useState("cpa");
@@ -10,21 +39,22 @@ export function Vis3() {
   const [hoveredInfoTooltip, setHoveredInfoTooltip] = useState(false);
 
   useEffect(() => {
-    // render category switcher
+    // render metrics switcher
     renderSwitcher(
-      [
-        { label: "CPA", value: "cpa" },
-        { label: "ROAS", value: "roas" },
-      ],
+      METRICS_SWITCHER_CATEGORIES[loc] || METRICS_SWITCHER_CATEGORIES["en"],
       "vis-3-dropdown-metrics",
     );
 
     // Fetch data when the component mounts
-    d3.csv(`${REPO_BASE_URL}/data/vis3_data.csv`).then((fetchedData) => {
+    d3.csv(getDataURL("vis3_data", loc)).then((fetchedData) => {
       fetchedData.forEach((d) => {
         d["appNumber"] =
           d["app_number"] && d["app_number"] !== ""
-            ? +d["app_number"].split(" ")[1].trim()
+            ? loc === "en"
+              ? +d["app_number"].split(" ")[1].trim()
+              : loc === "ja"
+                ? +d["app_number"].split("アプリ")[1].trim()
+                : null
             : null;
         d["appType"] =
           d["app_type_and_country"] && d["app_type_and_country"] !== ""
@@ -267,7 +297,11 @@ export function Vis3() {
             ${isMobile
               ? html`<tspan x="${innerWidth - 5}" dy="-16">RE more</tspan
                   ><tspan x="${innerWidth - 5}" dy="16">efficient →</tspan>`
-              : html`<tspan>RE more efficient →</tspan>`}
+              : html`<tspan
+                  >${translations.find((t) => t.id === "t_REmore")?.[loc] ||
+                  "RE more efficient"}
+                  →</tspan
+                >`}
           </text>
           <text
             x="${isMobile ? 5 : 20}"
@@ -280,7 +314,11 @@ export function Vis3() {
             ${isMobile
               ? html`<tspan x="${5}" dy="-16">← RE less</tspan
                   ><tspan x="${5}" dy="16">efficient</tspan>`
-              : html`<tspan>← RE less efficient</tspan>`}
+              : html`<tspan
+                  >←
+                  ${translations.find((t) => t.id === "t_REless")?.[loc] ||
+                  "RE less efficient"}</tspan
+                >`}
           </text>
           <text
             x="${xScale(0)}"
@@ -290,7 +328,10 @@ export function Vis3() {
             class="charts-text-body"
             fill="#ffffff"
           >
-            Impact on ${metric.toUpperCase()} (Log2 Scale)
+            ${translations
+              .find((t) => t.id === "t_impact_log")
+              ?.[loc].replace("[METRIC]", metric.toUpperCase()) ||
+            `Impact on ${metric.toUpperCase()} (Log2 Scale)`}
           </text>
           <image
             x="${xScale(0) + 100 + (metric === "roas" ? 5 : 0)}"
@@ -308,9 +349,7 @@ export function Vis3() {
                 align: isMobile ? "right" : "left",
               });
             }}"
-            onmouseleave="${() => {
-              setHoveredInfoTooltip(null);
-            }}"
+            onmouseleave="${() => setHoveredInfoTooltip(null)}"
           />
         </g>
       </g>
@@ -318,7 +357,7 @@ export function Vis3() {
     ${hoveredInfoTooltip
       ? html`<${InfoTooltip} hoveredItem="${hoveredInfoTooltip}" />`
       : null}
-    <${Tooltip} hoveredItem=${hoveredItem} />
+    <${Tooltip} hoveredItem=${hoveredItem} loc=${loc} />
   </div>`;
 }
 
@@ -327,11 +366,14 @@ function InfoTooltip({ hoveredItem }) {
     class="tooltip"
     style="left: ${hoveredItem.x}px; top: ${hoveredItem.y}px;"
   >
-    <p class="">A one unit shift equals a<br />twofold change in metric</p>
+    <p class="">
+      ${translations.find((t) => t.id === "t_tooltip_explanation")?.[loc] ||
+      "A one unit shift equals a<br />twofold change in metric"}
+    </p>
   </div>`;
 }
 
-function Tooltip({ hoveredItem }) {
+function Tooltip({ hoveredItem, loc }) {
   if (!hoveredItem || hoveredItem.datapoint[hoveredItem.metric] === null)
     return null;
 
@@ -353,14 +395,22 @@ function Tooltip({ hoveredItem }) {
       : ""}"
   >
     <div>
-      <p class="tooltip-label">App type</p>
+      <p class="tooltip-label">
+        ${translations.find((t) => t.id === "t_tooltip_text1")?.[loc] ||
+        "App type"}
+      </p>
       <p class="tooltip-value">
         ${hoveredItem.datapoint.appType ? hoveredItem.datapoint.appType : "N/A"}
       </p>
     </div>
 
     <div>
-      <p class="tooltip-label">Impact on ${hoveredItem.metric.toUpperCase()}</p>
+      <p class="tooltip-label">
+        ${translations
+          .find((t) => t.id === "t_impact_metric")
+          ?.[loc].replace("[METRIC]", hoveredItem.metric.toUpperCase()) ||
+        `Impact on ${hoveredItem.metric.toUpperCase()} (Log2 Scale)`}
+      </p>
       <p class="tooltip-value">
         ${hoveredItem.datapoint[hoveredItem.metric]
           ? hoveredItem.datapoint[hoveredItem.metric].toFixed(1)
