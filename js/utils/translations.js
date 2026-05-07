@@ -62,7 +62,7 @@ export const translations = [
   {
     id: "t_day1_part2",
     en: "of inactivity",
-    ja: "",
+    ja: "非アクティブ",
   },
   {
     id: "t_day15",
@@ -82,32 +82,32 @@ export const translations = [
   {
     id: "t_returningUsers",
     en: "Returning users",
-    ja: "",
+    ja: "復帰ユーザー",
   },
   {
     id: "t_payers",
     en: "Payers",
-    ja: "",
+    ja: "有料ユーザー",
   },
   {
     id: "t_nonPayers",
     en: "Non-Payers",
-    ja: "",
+    ja: "無料ユーザー",
   },
   {
     id: "t_returningPayers",
     en: "Returning payers",
-    ja: "",
+    ja: "復帰有料ユーザー",
   },
   {
     id: "t_returningNonPayers",
     en: "Returning non-payers",
-    ja: "",
+    ja: "復帰無料ユーザー",
   },
   {
-    id: "",
+    id: "t_nodata",
     en: "No sufficient data for [category] in selected country",
-    ja: "",
+    ja: "選択した国において、[category] に関する十分なデータがありません",
   },
   {
     id: "",
@@ -122,12 +122,12 @@ export const translations = [
   {
     id: "t_REless_part1",
     en: "RE less",
-    ja: "",
+    ja: "リエンゲージメントの",
   },
   {
     id: "t_REless_part2",
     en: "efficient",
-    ja: "",
+    ja: "効率が低い",
   },
   {
     id: "t_REmore",
@@ -137,37 +137,17 @@ export const translations = [
   {
     id: "t_REmore_part1",
     en: "RE more",
-    ja: "",
+    ja: "リエンゲージメントの",
   },
   {
     id: "t_REmore_part2",
     en: "efficient",
-    ja: "",
-  },
-  {
-    id: "t_axislabel_cpa_scale",
-    en: "Impact on CPA (Log2 Scale)",
-    ja: "CPAへの影響（Log2スケール）",
-  },
-  {
-    id: "t_axislabel_roas_scale",
-    en: "Impact on ROAS (Log2 Scale)",
-    ja: "ROASへの影響（Log2スケール）",
+    ja: "効率が高い",
   },
   {
     id: "t_impact_log",
     en: "Impact on [METRIC] (Log2 Scale)",
     ja: "[METRIC]への影響（Log2スケール）",
-  },
-  {
-    id: "t_axislabel_cpa",
-    en: "Impact on CPA",
-    ja: "CPAへの影響",
-  },
-  {
-    id: "t_axislabel_roas",
-    en: "Impact on ROAS",
-    ja: "ROASへの影響",
   },
   {
     id: "t_impact_metric",
@@ -177,22 +157,22 @@ export const translations = [
   {
     id: "t_tooltip_text1",
     en: "App Type",
-    ja: "",
+    ja: "アプリの種類",
   },
   {
     id: "t_tooltip_text2",
     en: "CPA Delta",
-    ja: "",
+    ja: "CPAの変化率",
   },
   {
     id: "t_tooltip_text3",
     en: "ROAS Delta",
-    ja: "",
+    ja: "ROASの変化率",
   },
   {
     id: "t_delta_metric",
     en: "[METRIC] Delta",
-    ja: "",
+    ja: "[METRIC]の変化率",
   },
   {
     id: "t_tooltip_explanation",

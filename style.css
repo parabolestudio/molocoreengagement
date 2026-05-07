@@ -89,19 +89,26 @@
   }
   .vis-filter-menu-container {
     position: absolute;
-    top: 24px;
+    top: 19px;
+    left: 0;
     right: 0;
     background-color: #ffffff;
     z-index: 10;
     border-left: 1px solid #040078;
     border-right: 1px solid #040078;
     border-bottom: 1px solid #040078;
-    border-radius: 0px 0px 10px 10px;
+    border-radius: 10px 10px 10px 10px;
     width: 100%;
     padding: 40px 26px 26px 26px;
 
+    border-top: 1px solid #040078;
+    width: max-content;
+    max-width: 360px;
+
     @media (max-width: 590px) {
+      /* border-radius: 10px 0px 10px 10px; */
       padding: 30px 12px 12px 12px;
+      /* left: unset; */
     }
 
     p {

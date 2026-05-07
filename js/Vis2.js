@@ -52,7 +52,7 @@ export function Vis2({ locale: loc }) {
             : rawCat === "non-gaming" || rawCat === "非ゲーム"
               ? "consumer"
               : null;
-        d["vertical"] = d["subvertical"].toLowerCase();
+        d["vertical"] = d["subvertical"]; //.toLowerCase();
         // Normalize is_payer to English internal key (same duplicate-column issue).
         const rawPayer = d["is_payer"] ? d["is_payer"].toLowerCase() : "";
         d["installType"] =
@@ -68,7 +68,7 @@ export function Vis2({ locale: loc }) {
       verticalsData.forEach((d) => {
         d["vertical"] =
           d["vertical"] && d["vertical"] !== ""
-            ? d["vertical"].toLowerCase()
+            ? d["vertical"] //.toLowerCase()
             : null;
         // Normalize category to English internal key, handling Japanese CSV
         // duplicate columns where the last (Japanese) value wins.
@@ -374,9 +374,14 @@ export function Vis2({ locale: loc }) {
               fill="#04033A"
             >
               ${isMobile
-                ? html`<tspan x="${xScale(0) + dayZeroSpace + 7}">Day 1</tspan
+                ? html`<tspan x="${xScale(0) + dayZeroSpace + 7}"
+                      >${translations.find((t) => t.id === "t_day1_part1")?.[
+                        loc
+                      ] || "Day 1"}</tspan
                     ><tspan x="${xScale(0) + dayZeroSpace + 7}" dy="16"
-                      >of inactivity</tspan
+                      >${translations.find((t) => t.id === "t_day1_part2")?.[
+                        loc
+                      ] || "of inactivity"}</tspan
                     >`
                 : html`${translations.find((t) => t.id === "t_day1")?.[loc] ||
                   "Day 1 of inactivity"}`}
@@ -502,7 +507,9 @@ export function Vis2({ locale: loc }) {
           style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background: #FFFFFF; color: #04033A; text-align: center; max-width: 80%; margin-left: ${margin.left}px; margin-top: ${-margin.top}px; text-wrap-style: balance; padding: 8px;"
           class="charts-text-body"
         >
-          No sufficient data for ${currentVerticalLabel} in selected country
+          ${translations
+            .find((t) => t.id === "t_nodata")
+            ?.[loc]?.replace("[category]", currentVerticalLabel)}
         </div>`}
   </div>`;
 }

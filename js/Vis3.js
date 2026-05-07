@@ -295,8 +295,15 @@ export function Vis3({ locale: loc }) {
             fill="#C368F9"
           >
             ${isMobile
-              ? html`<tspan x="${innerWidth - 5}" dy="-16">RE more</tspan
-                  ><tspan x="${innerWidth - 5}" dy="16">efficient →</tspan>`
+              ? html`<tspan x="${innerWidth - 5}" dy="-16"
+                    >${translations.find((t) => t.id === "t_REmore_part1")?.[
+                      loc
+                    ] || "RE more"}</tspan
+                  ><tspan x="${innerWidth - 5}" dy="16"
+                    >${translations.find((t) => t.id === "t_REmore_part2")?.[
+                      loc
+                    ] || "efficient →"}</tspan
+                  >`
               : html`<tspan
                   >${translations.find((t) => t.id === "t_REmore")?.[loc] ||
                   "RE more efficient"}
@@ -312,8 +319,15 @@ export function Vis3({ locale: loc }) {
             fill="#ffffff"
           >
             ${isMobile
-              ? html`<tspan x="${5}" dy="-16">← RE less</tspan
-                  ><tspan x="${5}" dy="16">efficient</tspan>`
+              ? html`<tspan x="${5}" dy="-16"
+                    >${translations.find((t) => t.id === "t_REless_part1")?.[
+                      loc
+                    ] || "← RE less"}</tspan
+                  ><tspan x="${5}" dy="16"
+                    >${translations.find((t) => t.id === "t_REless_part2")?.[
+                      loc
+                    ] || "efficient"}</tspan
+                  >`
               : html`<tspan
                   >←
                   ${translations.find((t) => t.id === "t_REless")?.[loc] ||
@@ -355,13 +369,16 @@ export function Vis3({ locale: loc }) {
       </g>
     </svg>
     ${hoveredInfoTooltip
-      ? html`<${InfoTooltip} hoveredItem="${hoveredInfoTooltip}" />`
+      ? html`<${InfoTooltip}
+          hoveredItem="${hoveredInfoTooltip}"
+          loc="${loc}"
+        />`
       : null}
     <${Tooltip} hoveredItem=${hoveredItem} loc=${loc} />
   </div>`;
 }
 
-function InfoTooltip({ hoveredItem }) {
+function InfoTooltip({ hoveredItem, loc }) {
   return html`<div
     class="tooltip"
     style="left: ${hoveredItem.x}px; top: ${hoveredItem.y}px;"
@@ -419,7 +436,12 @@ function Tooltip({ hoveredItem, loc }) {
     </div>
 
     <div>
-      <p class="tooltip-label">${hoveredItem.metric.toUpperCase()} delta</p>
+      <p class="tooltip-label">
+        ${translations
+          .find((t) => t.id === "t_delta_metric")
+          ?.[loc].replace("[METRIC]", hoveredItem.metric.toUpperCase()) ||
+        "[METRIC] Delta"}
+      </p>
       <p class="tooltip-value">${deltaLabel}</p>
     </div>
   </div>`;
