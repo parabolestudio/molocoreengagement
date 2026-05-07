@@ -35,3 +35,4 @@ t_tooltip_text2,CPA Delta,CPAの変化率
 t_tooltip_text3,ROAS Delta,ROASの変化率
 t_delta_metric,[METRIC] Delta,[METRIC]の変化率
 t_tooltip_explanation,A one unit shift equals a twofold change in metric,1単位のシフトは、指標における2倍の変化に相当します
+t_app,App, アプリ

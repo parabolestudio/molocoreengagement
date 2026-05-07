@@ -179,4 +179,9 @@ export const translations = [
     en: "A one unit shift equals a twofold change in metric",
     ja: "1単位のシフトは、指標における2倍の変化に相当します",
   },
+  {
+    id: "t_app",
+    en: "App",
+    ja: " アプリ",
+  },
 ];

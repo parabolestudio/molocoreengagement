@@ -257,7 +257,8 @@ export function Vis3({ locale: loc }) {
                 class="charts-text-body"
                 dominant-baseline="middle"
                 fill="#ffffff"
-                >App #${i + 1}</text
+                >${translations.find((t) => t.id === "t_app")?.[loc] || "App"}
+                ${loc === "en" ? " #" : null}${i + 1}</text
               >
               <line
                 x1="${xScale(0)}"
