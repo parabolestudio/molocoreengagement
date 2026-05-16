@@ -190,7 +190,7 @@ export function Vis1({ locale: loc }) {
     top: isMobile ? 25 : 1,
     right: 60,
     bottom: 40,
-    left: isMobile ? 1 : 125,
+    left: isMobile ? 1 : loc === "en" ? 125 : 150,
   };
   const numberOfRows = filteredData.length; // 7
   const height =
