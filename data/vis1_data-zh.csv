@@ -1,0 +1,250 @@
+country,install_type,install_type,vertical,vertical,subvertical,subvertical,uninstall_rate
+AUS,Non-Organic,非自然流量,Gaming,游戏,Casino,赌场,65.78%
+AUS,Non-Organic,非自然流量,Gaming,游戏,Casual,休闲,43.94%
+AUS,Non-Organic,非自然流量,Non-Gaming,非游戏,Dating,约会,67.56%
+AUS,Non-Organic,非自然流量,Non-Gaming,非游戏,Entertainment,娱乐,58.55%
+AUS,Non-Organic,非自然流量,Non-Gaming,非游戏,Finance,金融,67.51%
+AUS,Non-Organic,非自然流量,Non-Gaming,非游戏,Food & Drink,食品与饮料,62.42%
+AUS,Non-Organic,非自然流量,Gaming,游戏,Hypercasual,超休闲,53.98%
+AUS,Non-Organic,非自然流量,Non-Gaming,非游戏,Lifestyle,生活方式,72.66%
+AUS,Non-Organic,非自然流量,Gaming,游戏,Midcore,中度游戏,65.57%
+AUS,Non-Organic,非自然流量,Non-Gaming,非游戏,Shopping,购物,63.24%
+AUS,Non-Organic,非自然流量,Non-Gaming,非游戏,Travel,旅行,41.66%
+AUS,Organic,自然流量,Gaming,游戏,Casino,赌场,60.91%
+AUS,Organic,自然流量,Gaming,游戏,Casual,休闲,34.02%
+AUS,Organic,自然流量,Non-Gaming,非游戏,Dating,约会,64.67%
+AUS,Organic,自然流量,Non-Gaming,非游戏,Entertainment,娱乐,34.68%
+AUS,Organic,自然流量,Non-Gaming,非游戏,Finance,金融,32.43%
+AUS,Organic,自然流量,Non-Gaming,非游戏,Food & Drink,食品与饮料,32.60%
+AUS,Organic,自然流量,Gaming,游戏,Hypercasual,超休闲,29.86%
+AUS,Organic,自然流量,Non-Gaming,非游戏,Lifestyle,生活方式,53.80%
+AUS,Organic,自然流量,Gaming,游戏,Midcore,中度游戏,58.41%
+AUS,Organic,自然流量,Non-Gaming,非游戏,News & Magazines,新闻和杂志,19.55%
+AUS,Organic,自然流量,Non-Gaming,非游戏,Shopping,购物,32.23%
+AUS,Organic,自然流量,Non-Gaming,非游戏,Travel,旅行,25.58%
+BRA,Non-Organic,非自然流量,Gaming,游戏,Casino,赌场,83.84%
+BRA,Non-Organic,非自然流量,Gaming,游戏,Casual,休闲,61.86%
+BRA,Non-Organic,非自然流量,Non-Gaming,非游戏,Dating,约会,79.98%
+BRA,Non-Organic,非自然流量,Non-Gaming,非游戏,Entertainment,娱乐,73.12%
+BRA,Non-Organic,非自然流量,Non-Gaming,非游戏,Finance,金融,71.13%
+BRA,Non-Organic,非自然流量,Non-Gaming,非游戏,Food & Drink,食品与饮料,66.23%
+BRA,Non-Organic,非自然流量,Gaming,游戏,Hypercasual,超休闲,72.91%
+BRA,Non-Organic,非自然流量,Non-Gaming,非游戏,Lifestyle,生活方式,60.95%
+BRA,Non-Organic,非自然流量,Gaming,游戏,Midcore,中度游戏,79.43%
+BRA,Non-Organic,非自然流量,Non-Gaming,非游戏,Shopping,购物,52.68%
+BRA,Non-Organic,非自然流量,Non-Gaming,非游戏,Travel,旅行,53.41%
+BRA,Organic,自然流量,Gaming,游戏,Casino,赌场,78.45%
+BRA,Organic,自然流量,Gaming,游戏,Casual,休闲,56.16%
+BRA,Organic,自然流量,Non-Gaming,非游戏,Dating,约会,61.68%
+BRA,Organic,自然流量,Non-Gaming,非游戏,Entertainment,娱乐,54.77%
+BRA,Organic,自然流量,Non-Gaming,非游戏,Finance,金融,47.65%
+BRA,Organic,自然流量,Non-Gaming,非游戏,Food & Drink,食品与饮料,45.36%
+BRA,Organic,自然流量,Gaming,游戏,Hypercasual,超休闲,50.58%
+BRA,Organic,自然流量,Non-Gaming,非游戏,Lifestyle,生活方式,37.35%
+BRA,Organic,自然流量,Gaming,游戏,Midcore,中度游戏,78.03%
+BRA,Organic,自然流量,Non-Gaming,非游戏,Shopping,购物,44.28%
+BRA,Organic,自然流量,Non-Gaming,非游戏,Travel,旅行,37.58%
+CAN,Non-Organic,非自然流量,Gaming,游戏,Casino,赌场,64.48%
+CAN,Non-Organic,非自然流量,Gaming,游戏,Casual,休闲,48.70%
+CAN,Non-Organic,非自然流量,Non-Gaming,非游戏,Dating,约会,56.41%
+CAN,Non-Organic,非自然流量,Non-Gaming,非游戏,Entertainment,娱乐,54.65%
+CAN,Non-Organic,非自然流量,Non-Gaming,非游戏,Finance,金融,68.15%
+CAN,Non-Organic,非自然流量,Non-Gaming,非游戏,Food & Drink,食品与饮料,63.74%
+CAN,Non-Organic,非自然流量,Gaming,游戏,Hypercasual,超休闲,56.54%
+CAN,Non-Organic,非自然流量,Non-Gaming,非游戏,Lifestyle,生活方式,44.37%
+CAN,Non-Organic,非自然流量,Gaming,游戏,Midcore,中度游戏,69.57%
+CAN,Non-Organic,非自然流量,Non-Gaming,非游戏,Shopping,购物,59.61%
+CAN,Non-Organic,非自然流量,Non-Gaming,非游戏,Travel,旅行,55.29%
+CAN,Organic,自然流量,Gaming,游戏,Casino,赌场,55.47%
+CAN,Organic,自然流量,Gaming,游戏,Casual,休闲,38.15%
+CAN,Organic,自然流量,Non-Gaming,非游戏,Dating,约会,64.58%
+CAN,Organic,自然流量,Non-Gaming,非游戏,Entertainment,娱乐,40.15%
+CAN,Organic,自然流量,Non-Gaming,非游戏,Finance,金融,36.07%
+CAN,Organic,自然流量,Non-Gaming,非游戏,Food & Drink,食品与饮料,44.94%
+CAN,Organic,自然流量,Gaming,游戏,Hypercasual,超休闲,32.02%
+CAN,Organic,自然流量,Non-Gaming,非游戏,Lifestyle,生活方式,35.40%
+CAN,Organic,自然流量,Gaming,游戏,Midcore,中度游戏,61.01%
+CAN,Organic,自然流量,Non-Gaming,非游戏,News & Magazines,新闻和杂志,17.65%
+CAN,Organic,自然流量,Non-Gaming,非游戏,Shopping,购物,30.67%
+CAN,Organic,自然流量,Non-Gaming,非游戏,Travel,旅行,27.87%
+FRA,Non-Organic,非自然流量,Gaming,游戏,Casino,赌场,70.54%
+FRA,Non-Organic,非自然流量,Gaming,游戏,Casual,休闲,52.15%
+FRA,Non-Organic,非自然流量,Non-Gaming,非游戏,Dating,约会,62.18%
+FRA,Non-Organic,非自然流量,Non-Gaming,非游戏,Entertainment,娱乐,51.99%
+FRA,Non-Organic,非自然流量,Non-Gaming,非游戏,Finance,金融,68.76%
+FRA,Non-Organic,非自然流量,Non-Gaming,非游戏,Food & Drink,食品与饮料,59.72%
+FRA,Non-Organic,非自然流量,Gaming,游戏,Hypercasual,超休闲,60.04%
+FRA,Non-Organic,非自然流量,Non-Gaming,非游戏,Lifestyle,生活方式,56.62%
+FRA,Non-Organic,非自然流量,Gaming,游戏,Midcore,中度游戏,72.67%
+FRA,Non-Organic,非自然流量,Non-Gaming,非游戏,Shopping,购物,50.74%
+FRA,Non-Organic,非自然流量,Non-Gaming,非游戏,Travel,旅行,39.89%
+FRA,Organic,自然流量,Gaming,游戏,Casino,赌场,61.59%
+FRA,Organic,自然流量,Gaming,游戏,Casual,休闲,44.38%
+FRA,Organic,自然流量,Non-Gaming,非游戏,Dating,约会,55.86%
+FRA,Organic,自然流量,Non-Gaming,非游戏,Entertainment,娱乐,38.21%
+FRA,Organic,自然流量,Non-Gaming,非游戏,Finance,金融,46.96%
+FRA,Organic,自然流量,Non-Gaming,非游戏,Food & Drink,食品与饮料,29.21%
+FRA,Organic,自然流量,Gaming,游戏,Hypercasual,超休闲,35.61%
+FRA,Organic,自然流量,Non-Gaming,非游戏,Lifestyle,生活方式,41.62%
+FRA,Organic,自然流量,Gaming,游戏,Midcore,中度游戏,67.10%
+FRA,Organic,自然流量,Non-Gaming,非游戏,News & Magazines,新闻和杂志,20.02%
+FRA,Organic,自然流量,Non-Gaming,非游戏,Shopping,购物,29.11%
+FRA,Organic,自然流量,Non-Gaming,非游戏,Travel,旅行,30.81%
+DEU,Non-Organic,非自然流量,Gaming,游戏,Casino,赌场,77.07%
+DEU,Non-Organic,非自然流量,Gaming,游戏,Casual,休闲,53.21%
+DEU,Non-Organic,非自然流量,Non-Gaming,非游戏,Dating,约会,62.02%
+DEU,Non-Organic,非自然流量,Non-Gaming,非游戏,Entertainment,娱乐,50.29%
+DEU,Non-Organic,非自然流量,Non-Gaming,非游戏,Finance,金融,69.37%
+DEU,Non-Organic,非自然流量,Non-Gaming,非游戏,Food & Drink,食品与饮料,52.91%
+DEU,Non-Organic,非自然流量,Gaming,游戏,Hypercasual,超休闲,60.95%
+DEU,Non-Organic,非自然流量,Non-Gaming,非游戏,Lifestyle,生活方式,49.42%
+DEU,Non-Organic,非自然流量,Gaming,游戏,Midcore,中度游戏,69.55%
+DEU,Non-Organic,非自然流量,Non-Gaming,非游戏,News & Magazines,新闻和杂志,54.06%
+DEU,Non-Organic,非自然流量,Non-Gaming,非游戏,Shopping,购物,51.49%
+DEU,Non-Organic,非自然流量,Non-Gaming,非游戏,Travel,旅行,41.74%
+DEU,Organic,自然流量,Gaming,游戏,Casino,赌场,61.23%
+DEU,Organic,自然流量,Gaming,游戏,Casual,休闲,43.81%
+DEU,Organic,自然流量,Non-Gaming,非游戏,Dating,约会,50.02%
+DEU,Organic,自然流量,Non-Gaming,非游戏,Entertainment,娱乐,38.08%
+DEU,Organic,自然流量,Non-Gaming,非游戏,Finance,金融,39.75%
+DEU,Organic,自然流量,Non-Gaming,非游戏,Food & Drink,食品与饮料,32.56%
+DEU,Organic,自然流量,Gaming,游戏,Hypercasual,超休闲,33.36%
+DEU,Organic,自然流量,Non-Gaming,非游戏,Lifestyle,生活方式,41.34%
+DEU,Organic,自然流量,Gaming,游戏,Midcore,中度游戏,58.59%
+DEU,Organic,自然流量,Non-Gaming,非游戏,News & Magazines,新闻和杂志,22.82%
+DEU,Organic,自然流量,Non-Gaming,非游戏,Shopping,购物,28.05%
+DEU,Organic,自然流量,Non-Gaming,非游戏,Travel,旅行,30.53%
+IND,Non-Organic,非自然流量,Gaming,游戏,Casino,赌场,82.18%
+IND,Non-Organic,非自然流量,Gaming,游戏,Casual,休闲,63.84%
+IND,Non-Organic,非自然流量,Non-Gaming,非游戏,Dating,约会,85.27%
+IND,Non-Organic,非自然流量,Non-Gaming,非游戏,Entertainment,娱乐,64.47%
+IND,Non-Organic,非自然流量,Non-Gaming,非游戏,Finance,金融,66.19%
+IND,Non-Organic,非自然流量,Non-Gaming,非游戏,Food & Drink,食品与饮料,66.18%
+IND,Non-Organic,非自然流量,Gaming,游戏,Hypercasual,超休闲,75.67%
+IND,Non-Organic,非自然流量,Non-Gaming,非游戏,Lifestyle,生活方式,73.63%
+IND,Non-Organic,非自然流量,Gaming,游戏,Midcore,中度游戏,82.82%
+IND,Non-Organic,非自然流量,Non-Gaming,非游戏,Shopping,购物,64.83%
+IND,Non-Organic,非自然流量,Non-Gaming,非游戏,Travel,旅行,62.07%
+IND,Organic,自然流量,Gaming,游戏,Casino,赌场,75.12%
+IND,Organic,自然流量,Gaming,游戏,Casual,休闲,52.78%
+IND,Organic,自然流量,Non-Gaming,非游戏,Dating,约会,71.66%
+IND,Organic,自然流量,Non-Gaming,非游戏,Entertainment,娱乐,49.44%
+IND,Organic,自然流量,Non-Gaming,非游戏,Finance,金融,43.12%
+IND,Organic,自然流量,Non-Gaming,非游戏,Food & Drink,食品与饮料,47.18%
+IND,Organic,自然流量,Gaming,游戏,Hypercasual,超休闲,51.23%
+IND,Organic,自然流量,Non-Gaming,非游戏,Lifestyle,生活方式,48.51%
+IND,Organic,自然流量,Gaming,游戏,Midcore,中度游戏,81.87%
+IND,Organic,自然流量,Non-Gaming,非游戏,News & Magazines,新闻和杂志,31.98%
+IND,Organic,自然流量,Non-Gaming,非游戏,Shopping,购物,43.54%
+IND,Organic,自然流量,Non-Gaming,非游戏,Travel,旅行,43.42%
+IDN,Non-Organic,非自然流量,Gaming,游戏,Casino,赌场,85.96%
+IDN,Non-Organic,非自然流量,Gaming,游戏,Casual,休闲,63.11%
+IDN,Non-Organic,非自然流量,Non-Gaming,非游戏,Dating,约会,83.74%
+IDN,Non-Organic,非自然流量,Non-Gaming,非游戏,Entertainment,娱乐,70.18%
+IDN,Non-Organic,非自然流量,Non-Gaming,非游戏,Finance,金融,65.17%
+IDN,Non-Organic,非自然流量,Non-Gaming,非游戏,Food & Drink,食品与饮料,63.35%
+IDN,Non-Organic,非自然流量,Gaming,游戏,Hypercasual,超休闲,67.28%
+IDN,Non-Organic,非自然流量,Gaming,游戏,Midcore,中度游戏,80.79%
+IDN,Non-Organic,非自然流量,Non-Gaming,非游戏,Shopping,购物,70.56%
+IDN,Non-Organic,非自然流量,Non-Gaming,非游戏,Travel,旅行,62.63%
+IDN,Organic,自然流量,Gaming,游戏,Casino,赌场,84.86%
+IDN,Organic,自然流量,Gaming,游戏,Casual,休闲,57.05%
+IDN,Organic,自然流量,Non-Gaming,非游戏,Dating,约会,62.81%
+IDN,Organic,自然流量,Non-Gaming,非游戏,Entertainment,娱乐,51.08%
+IDN,Organic,自然流量,Non-Gaming,非游戏,Finance,金融,37.65%
+IDN,Organic,自然流量,Non-Gaming,非游戏,Food & Drink,食品与饮料,37.85%
+IDN,Organic,自然流量,Gaming,游戏,Hypercasual,超休闲,50.64%
+IDN,Organic,自然流量,Non-Gaming,非游戏,Lifestyle,生活方式,63.23%
+IDN,Organic,自然流量,Gaming,游戏,Midcore,中度游戏,77.78%
+IDN,Organic,自然流量,Non-Gaming,非游戏,Shopping,购物,54.25%
+IDN,Organic,自然流量,Non-Gaming,非游戏,Travel,旅行,37.21%
+JPN,Non-Organic,非自然流量,Gaming,游戏,Casino,赌场,85.51%
+JPN,Non-Organic,非自然流量,Gaming,游戏,Casual,休闲,64.10%
+JPN,Non-Organic,非自然流量,Non-Gaming,非游戏,Dating,约会,68.20%
+JPN,Non-Organic,非自然流量,Non-Gaming,非游戏,Entertainment,娱乐,66.16%
+JPN,Non-Organic,非自然流量,Non-Gaming,非游戏,Finance,金融,69.78%
+JPN,Non-Organic,非自然流量,Non-Gaming,非游戏,Food & Drink,食品与饮料,57.63%
+JPN,Non-Organic,非自然流量,Gaming,游戏,Hypercasual,超休闲,74.76%
+JPN,Non-Organic,非自然流量,Non-Gaming,非游戏,Lifestyle,生活方式,53.31%
+JPN,Non-Organic,非自然流量,Gaming,游戏,Midcore,中度游戏,76.35%
+JPN,Non-Organic,非自然流量,Non-Gaming,非游戏,Shopping,购物,65.41%
+JPN,Non-Organic,非自然流量,Non-Gaming,非游戏,Travel,旅行,57.01%
+JPN,Organic,自然流量,Gaming,游戏,Casino,赌场,70.83%
+JPN,Organic,自然流量,Gaming,游戏,Casual,休闲,53.54%
+JPN,Organic,自然流量,Non-Gaming,非游戏,Dating,约会,57.95%
+JPN,Organic,自然流量,Non-Gaming,非游戏,Entertainment,娱乐,43.64%
+JPN,Organic,自然流量,Non-Gaming,非游戏,Finance,金融,40.59%
+JPN,Organic,自然流量,Non-Gaming,非游戏,Food & Drink,食品与饮料,42.19%
+JPN,Organic,自然流量,Gaming,游戏,Hypercasual,超休闲,54.70%
+JPN,Organic,自然流量,Non-Gaming,非游戏,Lifestyle,生活方式,39.75%
+JPN,Organic,自然流量,Gaming,游戏,Midcore,中度游戏,68.64%
+JPN,Organic,自然流量,Non-Gaming,非游戏,Shopping,购物,44.35%
+JPN,Organic,自然流量,Non-Gaming,非游戏,Travel,旅行,27.01%
+KOR,Non-Organic,非自然流量,Gaming,游戏,Casino,赌场,54.93%
+KOR,Non-Organic,非自然流量,Gaming,游戏,Casual,休闲,64.65%
+KOR,Non-Organic,非自然流量,Non-Gaming,非游戏,Dating,约会,82.27%
+KOR,Non-Organic,非自然流量,Non-Gaming,非游戏,Entertainment,娱乐,65.59%
+KOR,Non-Organic,非自然流量,Non-Gaming,非游戏,Finance,金融,69.90%
+KOR,Non-Organic,非自然流量,Non-Gaming,非游戏,Food & Drink,食品与饮料,37.20%
+KOR,Non-Organic,非自然流量,Gaming,游戏,Hypercasual,超休闲,61.96%
+KOR,Non-Organic,非自然流量,Gaming,游戏,Midcore,中度游戏,73.51%
+KOR,Non-Organic,非自然流量,Non-Gaming,非游戏,Shopping,购物,57.62%
+KOR,Non-Organic,非自然流量,Non-Gaming,非游戏,Travel,旅行,49.84%
+KOR,Organic,自然流量,Gaming,游戏,Casino,赌场,60.05%
+KOR,Organic,自然流量,Gaming,游戏,Casual,休闲,51.38%
+KOR,Organic,自然流量,Non-Gaming,非游戏,Dating,约会,67.43%
+KOR,Organic,自然流量,Non-Gaming,非游戏,Entertainment,娱乐,40.48%
+KOR,Organic,自然流量,Non-Gaming,非游戏,Finance,金融,46.12%
+KOR,Organic,自然流量,Non-Gaming,非游戏,Food & Drink,食品与饮料,35.51%
+KOR,Organic,自然流量,Gaming,游戏,Hypercasual,超休闲,45.48%
+KOR,Organic,自然流量,Non-Gaming,非游戏,Lifestyle,生活方式,52.17%
+KOR,Organic,自然流量,Gaming,游戏,Midcore,中度游戏,65.55%
+KOR,Organic,自然流量,Non-Gaming,非游戏,Shopping,购物,45.31%
+KOR,Organic,自然流量,Non-Gaming,非游戏,Travel,旅行,30.24%
+GBR,Non-Organic,非自然流量,Gaming,游戏,Casino,赌场,61.64%
+GBR,Non-Organic,非自然流量,Gaming,游戏,Casual,休闲,48.57%
+GBR,Non-Organic,非自然流量,Non-Gaming,非游戏,Dating,约会,62.38%
+GBR,Non-Organic,非自然流量,Non-Gaming,非游戏,Entertainment,娱乐,51.69%
+GBR,Non-Organic,非自然流量,Non-Gaming,非游戏,Finance,金融,66.58%
+GBR,Non-Organic,非自然流量,Non-Gaming,非游戏,Food & Drink,食品与饮料,56.62%
+GBR,Non-Organic,非自然流量,Gaming,游戏,Hypercasual,超休闲,56.21%
+GBR,Non-Organic,非自然流量,Non-Gaming,非游戏,Lifestyle,生活方式,60.34%
+GBR,Non-Organic,非自然流量,Gaming,游戏,Midcore,中度游戏,68.63%
+GBR,Non-Organic,非自然流量,Non-Gaming,非游戏,News & Magazines,新闻和杂志,53.94%
+GBR,Non-Organic,非自然流量,Non-Gaming,非游戏,Shopping,购物,51.06%
+GBR,Non-Organic,非自然流量,Non-Gaming,非游戏,Travel,旅行,47.26%
+GBR,Organic,自然流量,Gaming,游戏,Casino,赌场,61.02%
+GBR,Organic,自然流量,Gaming,游戏,Casual,休闲,38.50%
+GBR,Organic,自然流量,Non-Gaming,非游戏,Dating,约会,51.67%
+GBR,Organic,自然流量,Non-Gaming,非游戏,Entertainment,娱乐,39.61%
+GBR,Organic,自然流量,Non-Gaming,非游戏,Finance,金融,35.94%
+GBR,Organic,自然流量,Non-Gaming,非游戏,Food & Drink,食品与饮料,28.07%
+GBR,Organic,自然流量,Gaming,游戏,Hypercasual,超休闲,30.13%
+GBR,Organic,自然流量,Non-Gaming,非游戏,Lifestyle,生活方式,38.19%
+GBR,Organic,自然流量,Gaming,游戏,Midcore,中度游戏,62.42%
+GBR,Organic,自然流量,Non-Gaming,非游戏,News & Magazines,新闻和杂志,16.09%
+GBR,Organic,自然流量,Non-Gaming,非游戏,Shopping,购物,26.24%
+GBR,Organic,自然流量,Non-Gaming,非游戏,Travel,旅行,25.91%
+USA,Non-Organic,非自然流量,Gaming,游戏,Casino,赌场,55.97%
+USA,Non-Organic,非自然流量,Gaming,游戏,Casual,休闲,48.07%
+USA,Non-Organic,非自然流量,Non-Gaming,非游戏,Dating,约会,57.77%
+USA,Non-Organic,非自然流量,Non-Gaming,非游戏,Entertainment,娱乐,50.18%
+USA,Non-Organic,非自然流量,Non-Gaming,非游戏,Finance,金融,53.50%
+USA,Non-Organic,非自然流量,Non-Gaming,非游戏,Food & Drink,食品与饮料,47.21%
+USA,Non-Organic,非自然流量,Gaming,游戏,Hypercasual,超休闲,57.44%
+USA,Non-Organic,非自然流量,Non-Gaming,非游戏,Lifestyle,生活方式,40.09%
+USA,Non-Organic,非自然流量,Gaming,游戏,Midcore,中度游戏,69.58%
+USA,Non-Organic,非自然流量,Non-Gaming,非游戏,Shopping,购物,39.82%
+USA,Non-Organic,非自然流量,Non-Gaming,非游戏,Travel,旅行,41.93%
+USA,Organic,自然流量,Gaming,游戏,Casino,赌场,48.87%
+USA,Organic,自然流量,Gaming,游戏,Casual,休闲,40.09%
+USA,Organic,自然流量,Non-Gaming,非游戏,Dating,约会,45.48%
+USA,Organic,自然流量,Non-Gaming,非游戏,Entertainment,娱乐,44.99%
+USA,Organic,自然流量,Non-Gaming,非游戏,Finance,金融,45.83%
+USA,Organic,自然流量,Non-Gaming,非游戏,Food & Drink,食品与饮料,44.68%
+USA,Organic,自然流量,Gaming,游戏,Hypercasual,超休闲,33.55%
+USA,Organic,自然流量,Non-Gaming,非游戏,Lifestyle,生活方式,29.34%
+USA,Organic,自然流量,Gaming,游戏,Midcore,中度游戏,67.23%
+USA,Organic,自然流量,Non-Gaming,非游戏,News & Magazines,新闻和杂志,22.23%
+USA,Organic,自然流量,Non-Gaming,非游戏,Shopping,购物,47.59%
+USA,Organic,自然流量,Non-Gaming,非游戏,Travel,旅行,46.20%

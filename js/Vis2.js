@@ -20,6 +20,7 @@ const CATEGORY_DEFAULT = "consumer";
 const VERTICAL_DEFAULT = {
   en: "all",
   ja: "すべて",
+  zh: "全部",
 };
 
 export function Vis2({ locale: loc }) {
@@ -47,18 +48,24 @@ export function Vis2({ locale: loc }) {
         // value, so we must also handle Japanese category names.
         const rawCat = d["vertical"] ? d["vertical"].toLowerCase() : "";
         d["category"] =
-          rawCat === "gaming" || rawCat === "ゲーム"
+          rawCat === "gaming" || rawCat === "ゲーム" || rawCat === "游戏"
             ? "gaming"
-            : rawCat === "non-gaming" || rawCat === "非ゲーム"
+            : rawCat === "non-gaming" ||
+                rawCat === "非ゲーム" ||
+                rawCat === "非游戏"
               ? "consumer"
               : null;
         d["vertical"] = d["subvertical"]; //.toLowerCase();
         // Normalize is_payer to English internal key (same duplicate-column issue).
         const rawPayer = d["is_payer"] ? d["is_payer"].toLowerCase() : "";
         d["installType"] =
-          rawPayer === "payer" || rawPayer === "有料ユーザー"
+          rawPayer === "payer" ||
+          rawPayer === "有料ユーザー" ||
+          rawPayer === "付费用户"
             ? "payer"
-            : rawPayer === "non-payer" || rawPayer === "無料ユーザー"
+            : rawPayer === "non-payer" ||
+                rawPayer === "無料ユーザー" ||
+                rawPayer === "非付费用户"
               ? "non-payer"
               : rawPayer;
       });
@@ -74,9 +81,11 @@ export function Vis2({ locale: loc }) {
         // duplicate columns where the last (Japanese) value wins.
         const rawCat = d["category"] ? d["category"].toLowerCase() : "";
         d["category"] =
-          rawCat === "gaming" || rawCat === "ゲーム"
+          rawCat === "gaming" || rawCat === "ゲーム" || rawCat === "游戏"
             ? "gaming"
-            : rawCat === "non-gaming" || rawCat === "非ゲーム"
+            : rawCat === "non-gaming" ||
+                rawCat === "非ゲーム" ||
+                rawCat === "非游戏"
               ? "consumer"
               : null;
         d["country"] = d["country"];

@@ -1,38 +1,38 @@
-id,en,ja
-,Aquisition,獲得
-,Activation,アクティベーション
-,Retention,リテンション
-,Select country,国を選択
-,Select vertical,業界を選択
-,Select install type,インストール方法を選択
-,User behavior,ユーザーアクション
-,Select vertical or sub-vertical,業界 / カテゴリーを選択
-t_consumer,Consumer,非ゲーム
-t_gaming,Gaming,ゲーム
-t_day1,Day 1 of inactivity,非アクティブ1日目
-t_day1_part1,Day 1,1日目
-t_day1_part2,of inactivity,非アクティブ
-t_day15,Day 15,15日目
-t_day30,Day 30,30日目
-t_day,Day,日
-t_returningUsers,Returning users,復帰ユーザー
-t_payers,Payers,有料ユーザー
-t_nonPayers,Non-Payers,無料ユーザー
-t_returningPayers,Returning payers,復帰有料ユーザー
-t_returningNonPayers,Returning non-payers,復帰無料ユーザー
-t_nodata,No sufficient data for [category] in selected country,選択した国において、[category] に関する十分なデータがありません
-,Select metric,指標を選択
-t_REless,RE less efficient,リエンゲージメントの効率が低い
-t_REless_part1,RE less,リエンゲージメントの
-t_REless_part2,efficient,効率が低い
-t_REmore,RE more efficient,リエンゲージメントの効率が高い
-t_REmore_part1,RE more,リエンゲージメントの
-t_REmore_part2,efficient,効率が高い
-t_impact_log,Impact on [METRIC] (Log2 Scale),[METRIC]への影響（Log2スケール）
-t_impact_metric,Impact on [METRIC],[METRIC]への影響
-t_tooltip_text1,App Type,アプリの種類
-t_tooltip_text2,CPA Delta,CPAの変化率
-t_tooltip_text3,ROAS Delta,ROASの変化率
-t_delta_metric,[METRIC] Delta,[METRIC]の変化率
-t_tooltip_explanation,A one unit shift equals a twofold change in metric,1単位のシフトは、指標における2倍の変化に相当します
-t_app,App, アプリ
+id,en,ja,zh
+,Aquisition,獲得,获取
+,Activation,アクティベーション,激活
+,Retention,リテンション,留存
+,Select country,国を選択,选择国家
+,Select vertical,業界を選択,选择行业
+,Select install type,インストール方法を選択,选择安装类型
+,User behavior,ユーザーアクション,用户行为
+,Select vertical or sub-vertical,業界 / カテゴリーを選択,选择行业或细分行业
+t_consumer,Consumer,非ゲーム,消费者
+t_gaming,Gaming,ゲーム,游戏
+t_day1,Day 1 of inactivity,非アクティブ1日目,未活跃第1天
+t_day1_part1,Day 1,1日目,1天
+t_day1_part2,of inactivity,非アクティブ,未活跃第
+t_day15,Day 15,15日目,第15天
+t_day30,Day 30,30日目,第30天
+t_day,Day,日,天
+t_returningUsers,Returning users,復帰ユーザー,回流用户
+t_payers,Payers,有料ユーザー,付费用户
+t_nonPayers,Non-Payers,無料ユーザー,非付费用户
+t_returningPayers,Returning payers,復帰有料ユーザー,回流付费用户
+t_returningNonPayers,Returning non-payers,復帰無料ユーザー,回流非付费用户
+t_nodata,No sufficient data for [category] in selected country,選択した国において、[category] に関する十分なデータがありません,所选国家/地区中，[category] 数据不足
+,Select metric,指標を選択,选择指标
+t_REless,RE less efficient,リエンゲージメントの効率が低い,再营销效率较低
+t_REless_part1,RE less,リエンゲージメントの,再营销
+t_REless_part2,efficient,効率が低い,效率较低
+t_REmore,RE more efficient,リエンゲージメントの効率が高い,再营销效率更高
+t_REmore_part1,RE more,リエンゲージメントの,再营销
+t_REmore_part2,efficient,効率が高い,效率更高
+t_impact_log,Impact on [METRIC] (Log2 Scale),[METRIC]への影響（Log2スケール）,对 [METRIC] 的影响（Log2 刻度）
+t_impact_metric,Impact on [METRIC],[METRIC]への影響,对 [METRIC] 的影响
+t_tooltip_text1,App Type,アプリの種類,应用类型
+t_tooltip_text2,CPA Delta,CPAの変化率,CPA变化率
+t_tooltip_text3,ROAS Delta,ROASの変化率,ROAS变化率
+t_delta_metric,[METRIC] Delta,[METRIC]の変化率,[METRIC]变化率
+t_tooltip_explanation,A one unit shift equals a twofold change in metric,1単位のシフトは、指標における2倍の変化に相当します,每移动 1 个单位，对应指标值变化 2 倍。
+t_app,App, アプリ,应用程序

@@ -29,6 +29,16 @@ const METRICS_SWITCHER_CATEGORIES = {
       value: "roas",
     },
   ],
+  zh: [
+    {
+      label: "CPA",
+      value: "cpa",
+    },
+    {
+      label: "ROAS",
+      value: "roas",
+    },
+  ],
 };
 
 export function Vis3({ locale: loc }) {
@@ -54,7 +64,9 @@ export function Vis3({ locale: loc }) {
               ? +d["app_number"].split(" ")[1].trim()
               : loc === "ja"
                 ? +d["app_number"].split("アプリ")[1].trim()
-                : null
+                : loc === "zh"
+                  ? +d["app_number"].split("应用程序")[1].trim()
+                  : null
             : null;
         d["appType"] =
           d["app_type_and_country"] && d["app_type_and_country"] !== ""

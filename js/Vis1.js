@@ -29,6 +29,16 @@ const CATEGORY_SWITCHER_CATEGORIES = {
       value: "ゲーム",
     },
   ],
+  zh: [
+    {
+      label: "非游戏",
+      value: "非游戏",
+    },
+    {
+      label: "游戏",
+      value: "游戏",
+    },
+  ],
 };
 const INSTALLTYPE_SWITCHER_CATEGORIES = {
   en: [
@@ -48,15 +58,27 @@ const INSTALLTYPE_SWITCHER_CATEGORIES = {
       value: "オーガニック",
     },
   ],
+  zh: [
+    {
+      label: "非自然流量",
+      value: "非自然流量",
+    },
+    {
+      label: "自然流量",
+      value: "自然流量",
+    },
+  ],
 };
 
 const CATEGORY_DEFAULT = {
   en: "consumer",
   ja: "非ゲーム",
+  zh: "非游戏",
 };
 const INSTALLTYPE_DEFAULT = {
   en: "non-organic",
   ja: "非オーガニック",
+  zh: "非自然流量",
 };
 
 export function Vis1({ locale: loc }) {

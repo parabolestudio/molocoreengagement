@@ -1,0 +1,137 @@
+country,category,category,vertical,vertical
+AUS,non-gaming,非游戏,Dating,约会
+AUS,non-gaming,非游戏,Entertainment,娱乐
+AUS,non-gaming,非游戏,Generative AI,生成式 AI
+AUS,non-gaming,非游戏,Loyalty,忠诚度
+AUS,non-gaming,非游戏,Social,社交
+AUS,non-gaming,非游戏,Utility & Productivity,工具与生产力
+BRA,non-gaming,非游戏,Dating,约会
+BRA,non-gaming,非游戏,E-Commerce,电子商务
+BRA,non-gaming,非游戏,Entertainment,娱乐
+BRA,non-gaming,非游戏,On-Demand,即时需求服务
+BRA,non-gaming,非游戏,Social,社交
+BRA,non-gaming,非游戏,Utility & Productivity,工具与生产力
+CAN,non-gaming,非游戏,Dating,约会
+CAN,non-gaming,非游戏,Finance (Trading & Investing),金融（交易与投资）
+CAN,non-gaming,非游戏,Loyalty,忠诚度
+CAN,non-gaming,非游戏,Social,社交
+CAN,non-gaming,非游戏,Utility & Productivity,工具与生产力
+DEU,non-gaming,非游戏,Dating,约会
+DEU,non-gaming,非游戏,Finance (Trading & Investing),金融（交易与投资）
+DEU,non-gaming,非游戏,Generative AI,生成式 AI
+DEU,non-gaming,非游戏,Loyalty,忠诚度
+DEU,non-gaming,非游戏,On-Demand,即时需求服务
+DEU,non-gaming,非游戏,Social,社交
+DEU,non-gaming,非游戏,Travel,旅行
+DEU,non-gaming,非游戏,Utility & Productivity,工具与生产力
+FRA,non-gaming,非游戏,E-Commerce,电子商务
+FRA,non-gaming,非游戏,Entertainment,娱乐
+FRA,non-gaming,非游戏,Generative AI,生成式 AI
+FRA,non-gaming,非游戏,Loyalty,忠诚度
+FRA,non-gaming,非游戏,Social,社交
+FRA,non-gaming,非游戏,Utility & Productivity,工具与生产力
+GBR,non-gaming,非游戏,Dating,约会
+GBR,non-gaming,非游戏,Finance (Financial Health & Banking),金融（金融健康与银行）
+GBR,non-gaming,非游戏,Generative AI,生成式 AI
+GBR,non-gaming,非游戏,Loyalty,忠诚度
+GBR,non-gaming,非游戏,On-Demand,即时需求服务
+IDN,non-gaming,非游戏,Dating,约会
+IDN,non-gaming,非游戏,Education,教育
+IDN,non-gaming,非游戏,Entertainment,娱乐
+IDN,non-gaming,非游戏,Finance (Financial Health & Banking),金融（金融健康与银行）
+IDN,non-gaming,非游戏,Social,社交
+IDN,non-gaming,非游戏,Utility & Productivity,工具与生产力
+IND,non-gaming,非游戏,Entertainment,娱乐
+IND,non-gaming,非游戏,Social,社交
+IND,non-gaming,非游戏,Utility & Productivity,工具与生产力
+JPN,non-gaming,非游戏,Dating,约会
+JPN,non-gaming,非游戏,Entertainment,娱乐
+JPN,non-gaming,非游戏,Health & Fitness,健康与健身
+JPN,non-gaming,非游戏,Social,社交
+JPN,non-gaming,非游戏,Utility & Productivity,工具与生产力
+KOR,non-gaming,非游戏,E-Commerce,电子商务
+KOR,non-gaming,非游戏,Education,教育
+KOR,non-gaming,非游戏,Entertainment,娱乐
+KOR,non-gaming,非游戏,Finance (Financial Health & Banking),金融（金融健康与银行）
+KOR,non-gaming,非游戏,Health & Fitness,健康与健身
+KOR,non-gaming,非游戏,Loyalty,忠诚度
+KOR,non-gaming,非游戏,On-Demand,即时需求服务
+KOR,non-gaming,非游戏,Social,社交
+KOR,non-gaming,非游戏,Travel,旅行
+KOR,non-gaming,非游戏,Utility & Productivity,工具与生产力
+USA,non-gaming,非游戏,Dating,约会
+USA,non-gaming,非游戏,E-Commerce,电子商务
+USA,non-gaming,非游戏,Education,教育
+USA,non-gaming,非游戏,Entertainment,娱乐
+USA,non-gaming,非游戏,Finance (Financial Health & Banking),金融（金融健康与银行）
+USA,non-gaming,非游戏,Finance (Trading & Investing),金融（交易与投资）
+USA,non-gaming,非游戏,Generative AI,生成式 AI
+USA,non-gaming,非游戏,Health & Fitness,健康与健身
+USA,non-gaming,非游戏,Loyalty,忠诚度
+USA,non-gaming,非游戏,On-Demand,即时需求服务
+USA,non-gaming,非游戏,RMG,RMG
+USA,non-gaming,非游戏,Social,社交
+USA,non-gaming,非游戏,Utility & Productivity,工具与生产力
+AUS,gaming,游戏,Casino,赌场
+AUS,gaming,游戏,MidCore,中度游戏
+AUS,gaming,游戏,Other,其他
+AUS,gaming,游戏,Hypercasual,超休闲
+BRA,gaming,游戏,Casino,赌场
+BRA,gaming,游戏,MidCore,中度游戏
+BRA,gaming,游戏,Other,其他
+BRA,gaming,游戏,Hypercasual,超休闲
+CAN,gaming,游戏,Casino,赌场
+CAN,gaming,游戏,MidCore,中度游戏
+CAN,gaming,游戏,Other,其他
+CAN,gaming,游戏,Hypercasual,超休闲
+DEU,gaming,游戏,Casino,赌场
+DEU,gaming,游戏,MidCore,中度游戏
+DEU,gaming,游戏,Other,其他
+DEU,gaming,游戏,Hypercasual,超休闲
+FRA,gaming,游戏,Casino,赌场
+FRA,gaming,游戏,MidCore,中度游戏
+FRA,gaming,游戏,Other,其他
+FRA,gaming,游戏,Hypercasual,超休闲
+GBR,gaming,游戏,Casino,赌场
+GBR,gaming,游戏,MidCore,中度游戏
+GBR,gaming,游戏,Other,其他
+GBR,gaming,游戏,Hypercasual,超休闲
+IDN,gaming,游戏,Casino,赌场
+IDN,gaming,游戏,MidCore,中度游戏
+IDN,gaming,游戏,Other,其他
+IND,gaming,游戏,Casino,赌场
+IND,gaming,游戏,MidCore,中度游戏
+IND,gaming,游戏,Other,其他
+IND,gaming,游戏,Hypercasual,超休闲
+JPN,gaming,游戏,MidCore,中度游戏
+JPN,gaming,游戏,Hypercasual,超休闲
+KOR,gaming,游戏,Casino,赌场
+KOR,gaming,游戏,MidCore,中度游戏
+KOR,gaming,游戏,Other,其他
+KOR,gaming,游戏,Hypercasual,超休闲
+USA,gaming,游戏,Casino,赌场
+USA,gaming,游戏,MidCore,中度游戏
+USA,gaming,游戏,Other,其他
+USA,gaming,游戏,Hypercasual,超休闲
+AUS,non-gaming,非游戏,all,全部
+BRA,non-gaming,非游戏,all,全部
+CAN,non-gaming,非游戏,all,全部
+DEU,non-gaming,非游戏,all,全部
+FRA,non-gaming,非游戏,all,全部
+GBR,non-gaming,非游戏,all,全部
+IDN,non-gaming,非游戏,all,全部
+IND,non-gaming,非游戏,all,全部
+JPN,non-gaming,非游戏,all,全部
+KOR,non-gaming,非游戏,all,全部
+USA,non-gaming,非游戏,all,全部
+AUS,gaming,游戏,all,全部
+BRA,gaming,游戏,all,全部
+CAN,gaming,游戏,all,全部
+DEU,gaming,游戏,all,全部
+FRA,gaming,游戏,all,全部
+GBR,gaming,游戏,all,全部
+IDN,gaming,游戏,all,全部
+IND,gaming,游戏,all,全部
+JPN,gaming,游戏,all,全部
+KOR,gaming,游戏,all,全部
+USA,gaming,游戏,all,全部

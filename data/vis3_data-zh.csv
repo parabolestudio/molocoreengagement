@@ -1,0 +1,27 @@
+app_number,app_number,app_and_country_en,app_and_country,app_type_and_country_en,app_type_and_country,country,cpa_improvement,roas_ratio,cpa delta,roas delta
+App 1,应用程序1,App 1 (India),应用程序1 (印度),Financial Trading & Investing (India),金融交易与投资(印度),IND,4.744966713,5.73,-96.27%,5212.77%
+App 2,应用程序2,App 2 (Germany),应用程序2 (德国),Financial Trading & Investing (Germany),金融交易与投资(德国),DEU,3.611006152,,-91.82%,
+App 3,应用程序3,App 3 (USA),应用程序3 (美国),Entertainment (USA),娱乐(美国),USA,2.222392421,,-78.57%,
+App 4,应用程序4,App 4 (India),应用程序4 (印度),Gaming (India),游戏(印度),IND,2.210096701,2.92,-78.39%,658.23%
+App 5,应用程序5,App 22 (Argentina),应用程序5 (阿根廷),Financial Trading & Investing (Argentina),金融交易与投资(阿根廷),ARG,2.076544593,0.56,-76.29%,47.78%
+App 6,应用程序6,App 23 (Mexico),应用程序6 (墨西哥),Gaming (Mexico),游戏(墨西哥),MEX,1.999923991,3.23,-75.00%,837.59%
+App 7,应用程序7,App 5 (India),应用程序7 (印度),On-Demand Delivery #1 (India),即时配送#1(印度),IND,1.940128544,1.97,-73.94%,290.84%
+App 8,应用程序8,App 6 (USA),应用程序8 (美国),Books & Reference (USA),书籍与参考资料(美国),USA,1.696385407,2.62,-69.14%,515.36%
+App 9,应用程序9,App 7 (USA),应用程序9 (美国),On-Demand Delivery (USA),即时配送(美国),USA,1.387982933,2.91,-61.79%,653.97%
+App 10,应用程序10,App 8 (India),应用程序10 (印度),On-Demand Delivery #2 (India),即时配送#2(印度),IND,1.270451877,3.79,-58.55%,1280.91%
+App 11,应用程序11,App 9 (USA),应用程序11 (美国),Social Media (USA),社交媒体(美国),USA,0.9600415482,,-48.60%,
+App 12,应用程序12,App 10 (UK),应用程序12 (英国),Financial Trading & Investing (USA),金融交易与投资(美国),GBR,0.8912589477,,-46.09%,
+App 13,应用程序13,App 24 (Turkey,应用程序13 (土耳其),Gaming (Turkey),游戏(土耳其),TUR,0.6451254491,1.49,-36.06%,179.97%
+App 14,应用程序14,App 11 (USA),应用程序14 (美国),Gaming (USA),游戏(美国),USA,0.3482301701,3.09,-21.45%,749.48%
+App 15,应用程序15,App 12 (India),应用程序15 (印度),Financial Trading & Investing (India),金融交易与投资(印度),IND,0.2408295677,0.71,-15.37%,63.36%
+App 16,应用程序16,App 13 (India),应用程序16 (印度),Entertainment (India),娱乐(印度),IND,0.1638248019,0.25,-10.73%,19.06%
+App 17,应用程序17,App 14 (USA),应用程序17 (美国),Financial Mobile Banking (USA),手机银行(美国),USA,-0.09474288294,-0.20,6.79%,-13.14%
+App 18,应用程序18,App 15 (USA),应用程序18 (美国),Gaming (USA),游戏(美国),USA,-0.294112717,1.36,22.61%,156.19%
+App 19,应用程序19,App 16 (India),应用程序19 (印度),Financial Trading & Investing (India),金融交易与投资(印度),IND,-0.4856004471,1.62,40.02%,206.67%
+App 20,应用程序20,App 17 (USA),应用程序20 (美国),Sportsbetting (USA),体育博彩(美国),USA,-0.5279491573,,44.19%,
+App 21,应用程序21,App 18 (India),应用程序21 (印度),Other Consumer (IND),其他消费者(印度),IND,-0.6414194824,1.67,55.99%,219.17%
+App 22,应用程序22,App 19 (USA),应用程序22 (美国),Financial Health & Banking (USA),保险与银行(美国),USA,-0.687212559,,61.02%,
+App 23,应用程序23,App 20 (USA),应用程序23 (美国),Gaming (USA),游戏(美国),USA,-1.468450014,-0.54,176.72%,-31.22%
+App 24,应用程序24,App 25 (Vietnam),应用程序24 (越南),On-Demand (Vietnam),即时需求服务(越南),VNM,-2.04019004,2.99,311.30%,692.94%
+App 25,应用程序25,App 21 (India),应用程序25 (印度),Financial Trading & Investing (India),金融交易与投资(印度),IND,-3.778208576,0.33,1272.00%,25.37%
+,,,,,,,,,$0.42,
